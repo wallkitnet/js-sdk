@@ -1,0 +1,3149 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "Wallkit/.external-ecmascript.js",
+    "static": true,
+    "longname": "Wallkit/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "Wallkit/Wallkit.js",
+    "content": "import Config from './Config';\nimport client from './WallkitClient';\nimport User from './WallkitUser';\nimport Resource from './WallkitResource';\nimport Token from './WallkitToken';\nimport Cookies from './utils/Cookies';\nimport _ from 'lodash';\nimport Event from './utils/Events';\n\n/**\n * Base Class.\n * @public\n */\nclass Wallkit {\n    /**\n     * Wallkit Base Class Constructor.\n     */\n    constructor() {\n        /**\n         * Shows Wallkit has initialized.\n         * @type {boolean}\n         */\n        this.initialized = false;\n    }\n\n    /**\n     * Method showing value with Wallkit LOG in console,  if Config.debug enabled.\n     *\n     * @public\n     * @param {string, number} log - string value to show in console\n     * @return void\n     *\n     * @example\n     * Wallkit.log('Some data'); // Wallkit LOG: Some data\n     */\n    log(log) {\n        if (Config.debug) {\n            console.log(\"Wallkit LOG: \", log);\n        }\n    }\n\n    /**\n     * Method inits Wallkit.\n     *\n     * @public\n     * @param {object} config - config instance\n     *\n     * @example\n     * Wallkit.init({\n     *    resource: \"3535\",\n     *    version: \"v1\",\n     *    host: \"api.dev.wallkit.net\",\n     * });\n     *\n     */\n    init({resource, api_url}) {\n      if (this.initialized)\n          return true;\n\n      Config.resource = resource;\n\n      if(typeof api_url !== \"undefined\")\n        Config.api_url = api_url;\n\n      /**\n      * User information.\n      * @type {WallkitUser}\n      */\n      this.user = User.deserialize();\n\n      /**\n       * Token.\n       * @type {Object}\n       */\n      this.token = Token.deserialize();\n\n      /**\n       * Resource\n       */\n      this.resource = Resource.deserialize();\n\n\n      if(this.user === null && this.token ||\n        (!_.isEmpty(this.user) && !_.isEmpty(this.user.token) && !_.isEmpty(this.token) && this.user.token !== this.token.value)\n      )\n      {\n        this.getUser();\n      }\n\n      if(this.user !== null && _.isEmpty(this.token))\n      {\n        this.logout();\n      }\n\n      /**\n       * reload resource\n       */\n      if(!this.resource && this.token)\n      {\n        this.getResource();\n      }\n\n      /**\n         * Client instance to Manipulate with API.\n         * @link WallkitClient\n         * @type {WallkitClient}\n         */\n        this.client = client;\n        /**\n         * Wallkit Config instance.\n         * @type {Object}\n         */\n        this.config = Config;\n\n        this.initListener();\n\n        return this.initialized = true;\n    }\n\n    /**\n     * Method handle Event Listeners callback.\n     *\n     * @private\n     * @return void\n     *\n     * @ignore\n     */\n    listener(event) {\n\n      //console.log(\"event:::\", event);\n\n        /*if (typeof event.data.type !== \"undefined\") {\n            switch (event.data.type) {\n                case \"wk_token\":\n                    this.log(\"wk_token: \" + event.data.data);\n                    this.authUserByToken(event.data.data);\n                    break;\n                case \"authorizationUser\":\n                    this.log(\"authorizationUser: \" + event.data);\n\n                    this.log(event.data);\n\n                    if (event.data.token) {\n                        this.authUserByToken(event.data.token, \"authorizationUser\");\n                    }\n                    break;\n                case \"registrationUser\":\n                    this.log(\"registrationUser: \" + event.data);\n                    if (event.data.token) {\n                        this.authUserByToken(event.data.token, \"registrationUser\", event.data);\n                    }\n                    break;\n                default:\n                    console.log(\"default\");\n            }\n        }*/\n    }\n\n    /**\n     * Method init Event Listeners for messages.\n     *\n     * @private\n     * @return void\n     *\n     * @ignore\n     */\n    initListener() {\n        if (window.addEventListener) {\n            window.addEventListener(\"message\", this.listener.bind(this));\n        } else {\n            // IE8\n            window.attachEvent(\"onmessage\", this.listener.bind(this));\n        }\n    }\n\n    /**\n     * Method sets token.\n     *\n     * @public\n     * @param {string} token - user token\n     * @return void\n     */\n    setToken(token) {\n        this.token = new Token({value: token});\n        this.token.serialize();\n    }\n\n  /**\n   * Returns token object, where value is token.\n   *\n   * @public\n   * @returns {null}\n   */\n  getToken() {\n      if(!_.isEmpty(this.token) && !_.isEmpty(this.user.token))\n      {\n        return this.user.token;\n      }\n      return null;\n    }\n\n    /**\n     * Method checks is user authenticated.\n     *\n     * @public\n     * @return {Boolean}\n     *\n     * @example\n     * Wallkit.isAuthenticated();\n     */\n    isAuthenticated() {\n        return !!(this.user && this.token);\n    }\n\n    /**\n     * Method init user by inited token.\n     *\n     * @public\n     * @return {Promise} returns promise with user object\n     *\n     * @example\n     * const token = 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6';\n     *\n     * Wallkit.setToken(token);\n     *\n     * Wallkit.checkAuth().then((user) => {\n     *      console.log('USER:', user);\n     *   }, (error) => {\n     *      console.log('ERROR:', error);\n     *   });\n     */\n    checkAuth() {\n        if (!this.token)\n            throw new Error('Unauthorized');\n\n        return client.get({path: '/user'})\n            .then(user => {\n                this.user = new User(user);\n                this.user.serialize();\n                return this.user\n            });\n    }\n\n    /**\n     * Method register user in Wallkit. After success authorization, method initializes token & user instances. Returns Promise with received user object.\n     *\n     * @public\n     * @param {object} data - user information\n     * @return {Promise} returns promise with user object\n     *\n     * @example\n     * Wallkit.signUp();\n     */\n    registration(data) {\n        return client.post({path: '/registration', data})\n            .then(response => {\n                //this.token = new Token({value: response.token});\n                this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});\n                this.token.serialize();\n\n                this.user = new User(response);\n                this.user.serialize();\n\n                return this.user;\n            })\n    }\n\n    /**\n     * Method loging user in Wallkit. After success authorization, method initializes token & user instances. Returns Promise with received user object.\n     *\n     * @public\n     * @param {object} data\n     * @param {object} data.email - user email\n     * @param {object} data.password - user password\n     * @return {Promise} returns promise with user object\n     *\n     * @example\n     *let user = {\n     *   email: 'dev@grandiz.com',\n     *   password: '123456'\n     *};\n     *\n     *Wallkit.login(user)\n     *   .then((user) => {\n     *      console.log(\"after login\", user);\n     *      Wallkit.checkAuth().then(user => {\n     *          console.log(\"after checkAuth\", user);\n     *      }).catch(error => {\n     *          console.log(error);\n     *      });\n     *   }, (error) => {\n     *      console.log('error:', error);\n     *   });\n     *\n     */\n    login(data) {\n        this.token = null;\n        this.user = null;\n\n        localStorage.removeItem(User.storageKey);\n        // Cookies.removeItem('pw_token');\n\n        return client.post({path: '/authorization', data})\n            .then(response => {\n                //this.token = new Token({value: response.token});\n              this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});\n\n              this.token.serialize();\n\n                this.user = new User(response);\n                this.user.serialize();\n\n                return this.user;\n            })\n    }\n\n    /**\n     * Method logout user from Wallkit. After success response, method removes token & user instances.  Removes cookies & localstorage datas.\n     *\n     * @public\n     * @return {Promise} returns Promise\n     *\n     * @example\n     * Wallkit.logout().then(() => {\n     *   alert('User has logged');\n     * });\n     */\n    logout() {\n      Event.send(\"wk-event-logout\", true);\n      this.user = null;\n      if(this.token)\n      {\n        return client.get({path: '/logout'})\n          .then(result => {\n            this.token = null;\n            localStorage.removeItem(User.storageKey);\n            localStorage.removeItem(Resource.storageKey);\n            Cookies.removeItem('wk-token');\n          })\n      }\n      else\n      {\n        this.token = null;\n        localStorage.removeItem(User.storageKey);\n        localStorage.removeItem(Resource.storageKey);\n        Cookies.removeItem('wk-token');\n      }\n\n      Cookies.removeItem('wk-refresh');\n    }\n\n    /**\n     * Method inits custom event\n     *\n     * @private\n     * @param {string} event - event name\n     * @param {object} params\n     * @param {boolean} params.bubbles - event bubble\n     * @param {boolean} params.cancelable - if event cancelable\n     * @param {object} params.detail - other event details\n     * @return {Event} returns event instance\n     *\n     * @example\n     * new this.CustomEvent(eventName + \":success\", { bubbles: false, cancelable: false, detail: data })\n     */\n    /*CustomEvent(event, params) {\n      params = params || { bubbles: false, cancelable: false, detail: undefined };\n\n      var evt = document.createEvent( 'CustomEvent' );\n      evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );\n\n      return evt;\n    }*/\n\n    getUser() {\n      return User.reload()\n        .then(user => {\n          this.user = new User(user);\n          this.user.serialize();\n          return this.user\n        })\n        .catch(e => {\n          return Promise.reject(e.response);\n        })\n    }\n\n\n  /**\n   * Method authenticate user by provided token and auth method type(authorizationUser/registrationUser).\n   * @param token\n   * @returns {Promise<any>}\n   */\n  authUserByToken(token) {\n\n        if(!token)\n        {\n          throw new Error('Incorrect token');\n        }\n        else\n        {\n            this.token = new Token({value: token});\n            this.token.serialize();\n        }\n\n        return this.getUser()\n          .then(user => {\n            this.getResource();\n            return user\n          });\n    }\n\n  /**\n   * Gets Wallkit's client resource such as `public_key`, `origin`, `payments_in_live_mode`, `stripe_public_key`.\n   *\n   * @return {Promise}\n   */\n  getResource() {\n    return Resource.reload()\n      .then(resource => {\n        this.resource = new Resource(resource);\n        this.resource.serialize();\n\n        Event.send(\"wk-event-resource\", resource);\n\n        return this.resource\n      })\n      .catch(e => {\n        console.error(\"ERROR:\", e);\n        new Error(\"Resource not configured\");\n      })\n  }\n\n  /**\n   * Returns promise with resources object which includes resources array.\n   *\n   * @returns {Promise<any>}\n   */\n  getResources() {\n    return this.client.get({path: '/resources'})\n      .then(response => {\n        Event.send(\"wk-event-resources\", response);\n        return response;\n      })\n  }\n\n  /**\n   * Reset password by user email.\n   *\n   * @param {string | object} data - user email\n   * @returns {Promise<any>}\n   */\n  passwordReset(data) {\n\n      if(typeof data !== \"object\")\n      {\n        data = {email: data}\n      }\n      return this.client.post({path: '/reset-password', data: data})\n        .then(response => {\n          Event.send(\"wk-event-reset-password\", response);\n          return response;\n        })\n  }\n\n  /**\n   * Get available subscription for payment\n   *\n   * @returns {Promise<any>}\n   */\n  getSubscriptions() {\n      return this.client.get({path: '/subscriptions'})\n        .then(response => {\n          Event.send(\"wk-event-subscriptions\", response);\n          return response;\n        })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  /*getSubscriptions() {\n    console.log(\"getSubscriptions\");\n    return this.client.get({path: '/user/subscriptions'})\n      .then(response => {\n        Event.send(\"wk-event-user-subscriptions\", response);\n      })\n  }*/\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  calculatePrice(data) {\n    return this.client.post({path: '/payment/calculate-price', data: data})\n      .then(response => {\n        Event.send(\"wk-event-calculate-price\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  checkOut(data) {\n    return this.client.post({path: '/payment', data: data})\n      .then(response => {\n\n        this.getUser();\n\n        Event.send(\"wk-event-transaction\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  validatePromo(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {promo: data}\n    }\n    return this.client.post({path: '/promo-validation', data: data})\n      .then(response => {\n        Event.send(\"wk-event-promo-validation\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param transaction_id\n   * @returns {Promise<any>}\n   */\n  getTransaction(transaction_id) {\n    return this.client.get({path: '/user/transactions/' + transaction_id})\n      .then(response => {\n        //Event.send(\"wk-event-user-transaction\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  updateUser(data) {\n    return this.client.put({path: '/user', data: data})\n      .then(response => {\n        this.user = new User(response);\n        this.user.serialize();\n        //Event.send(\"wk-event-user-update\", response);\n        return response;\n      })\n  }\n\n  /**\n   * request authorization/refresh\n   */\n  refreshToken(data) {\n    if(!data)\n    {\n      data = this.token.refresh;\n    }\n\n    if(typeof data !== \"object\")\n    {\n      data = {refresh_token: data}\n    }\n    return this.client.post({path: '/authorization/refresh', data: data})\n      .then(response => {\n        if(!_.isEmpty(response.token))\n        {\n          this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});\n          this.token.serialize();\n          Event.send(\"wk-event-token\", response.token);\n        }\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  updatePassword(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {new_password: data}\n    }\n    return this.client.put({path: '/user/password', data: data})\n      .then(response => {\n        Event.send(\"wk-event-update-password\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  updateEmail(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {email: data}\n    }\n    return this.client.put({path: '/user/email', data: data})\n      .then(response => {\n        Event.send(\"wk-event-update-email\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  suspendMe() {\n    return this.client.post({path: '/user/suspend'})\n      .then(response => {\n        Event.send(\"wk-event-user-suspend\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  confirmPassword(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {code: data}\n    }\n    return this.client.post({path: '/reset-password-validate', data: data})\n      .then(response => {\n        Event.send(\"wk-event-confirm-password\", response);\n\n        if(!_.isEmpty(response.token))\n        {\n          this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});\n          this.token.serialize();\n\n          this.user = new User(response);\n          this.user.serialize();\n        }\n\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  resendEmailConfirmation() {\n    return this.client.post({path: '/resend-confirmation'})\n      .then(response => {\n        Event.send(\"wk-event-resend-confirmation\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  confirmEmail(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {code: data}\n    }\n    return this.client.post({path: '/confirm-email', data: data})\n      .then(response => {\n        Event.send(\"wk-event-email-confirm\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param card_id\n   * @returns {Promise<any>}\n   */\n  removeCard(card_id) {\n    return this.client.del({path: '/user/card/'+card_id})\n      .then(response => {\n        Event.send(\"wk-event-remove-card\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  getCards() {\n    return this.client.get({path: '/user/cards'})\n      .then(response => {\n        Event.send(\"wk-event-cards\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param card_id\n   * @returns {Promise<any>}\n   */\n  defaultCard(card_id) {\n    return this.client.post({path: '/user/card/'+card_id+'/default'})\n      .then(response => {\n        Event.send(\"wk-event-default-card\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  getCountries() {\n    return this.client.get({path: '/countries'})\n      .then(response => {\n        Event.send(\"wk-event-countries\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  getCurrencies() {\n    return this.client.get({path: '/currency'})\n      .then(response => {\n        Event.send(\"wk-event-currency\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  validateInvite(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {invite: data}\n    }\n    return this.client.post({path: '/invite-validation', data: data})\n      .then(response => {\n        Event.send(\"wk-event-invite-validation\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @returns {Promise<any>}\n   */\n  activateInvite(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {invite: data}\n    }\n    return this.client.post({path: '/invite-activation', data: data})\n      .then(response => {\n        Event.send(\"wk-event-invite-activation\", response);\n        return response;\n      })\n  }\n\n  /**\n   *\n   * @param data\n   * @returns {Promise<any>}\n   */\n  createStripeByToken(data) {\n    if(typeof data !== \"object\")\n    {\n      data = {token: data}\n    }\n    return this.client.post({path: '/user/stripe/token', data: data})\n      .then(response => {\n        Event.send(\"wk-event-stripe-token\", response);\n        return response;\n      })\n  }\n\n}\n\nlet instance = new Wallkit();\n\n/**\n * @ignore\n */\nexport default instance;\n",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/Wallkit.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "Wallkit",
+    "memberof": "Wallkit/Wallkit.js",
+    "static": true,
+    "longname": "Wallkit/Wallkit.js~Wallkit",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/Wallkit.js",
+    "importStyle": null,
+    "description": "Base Class.",
+    "lineNumber": 14,
+    "pseudoExport": true,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#constructor",
+    "access": "public",
+    "description": "Wallkit Base Class Constructor.",
+    "lineNumber": 18
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "initialized",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#initialized",
+    "access": "public",
+    "description": "Shows Wallkit has initialized.",
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "method",
+    "name": "log",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#log",
+    "access": "public",
+    "description": "Method showing value with Wallkit LOG in console,  if Config.debug enabled.",
+    "examples": [
+      "Wallkit.log('Some data'); // Wallkit LOG: Some data"
+    ],
+    "lineNumber": 36,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string, number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "log",
+        "description": "string value to show in console"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "void"
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "init",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#init",
+    "access": "public",
+    "description": "Method inits Wallkit.",
+    "examples": [
+      "Wallkit.init({\n   resource: \"3535\",\n   version: \"v1\",\n   host: \"api.dev.wallkit.net\",\n});"
+    ],
+    "lineNumber": 56,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": "config instance"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "user",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#user",
+    "access": "public",
+    "description": "User information.",
+    "lineNumber": 69,
+    "type": {
+      "nullable": null,
+      "types": [
+        "WallkitUser"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "member",
+    "name": "token",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#token",
+    "access": "public",
+    "description": "Token.",
+    "lineNumber": 75,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "resource",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#resource",
+    "access": "public",
+    "description": "Resource",
+    "lineNumber": 80,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "member",
+    "name": "client",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#client",
+    "access": "public",
+    "description": "Client instance to Manipulate with API.",
+    "lineNumber": 108,
+    "unknown": [
+      {
+        "tagName": "@link",
+        "tagValue": "WallkitClient"
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "WallkitClient"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "member",
+    "name": "config",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#config",
+    "access": "public",
+    "description": "Wallkit Config instance.",
+    "lineNumber": 113,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "listener",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#listener",
+    "access": "private",
+    "description": "Method handle Event Listeners callback.",
+    "lineNumber": 128,
+    "ignore": true,
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "void"
+    },
+    "params": [
+      {
+        "name": "event",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "initListener",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#initListener",
+    "access": "private",
+    "description": "Method init Event Listeners for messages.",
+    "lineNumber": 167,
+    "ignore": true,
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "void"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "setToken",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#setToken",
+    "access": "public",
+    "description": "Method sets token.",
+    "lineNumber": 183,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": "user token"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "void"
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "getToken",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getToken",
+    "access": "public",
+    "description": "Returns token object, where value is token.",
+    "lineNumber": 194,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{null}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "null"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "isAuthenticated",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#isAuthenticated",
+    "access": "public",
+    "description": "Method checks is user authenticated.",
+    "examples": [
+      "Wallkit.isAuthenticated();"
+    ],
+    "lineNumber": 211,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Boolean"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "checkAuth",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#checkAuth",
+    "access": "public",
+    "description": "Method init user by inited token.",
+    "examples": [
+      "const token = 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6';\n\nWallkit.setToken(token);\n\nWallkit.checkAuth().then((user) => {\n     console.log('USER:', user);\n  }, (error) => {\n     console.log('ERROR:', error);\n  });"
+    ],
+    "lineNumber": 232,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise with user object"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "registration",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#registration",
+    "access": "public",
+    "description": "Method register user in Wallkit. After success authorization, method initializes token & user instances. Returns Promise with received user object.",
+    "examples": [
+      "Wallkit.signUp();"
+    ],
+    "lineNumber": 254,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "user information"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise with user object"
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "login",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#login",
+    "access": "public",
+    "description": "Method loging user in Wallkit. After success authorization, method initializes token & user instances. Returns Promise with received user object.",
+    "examples": [
+      "let user = {\n  email: 'dev@grandiz.com',\n  password: '123456'\n};\n\nWallkit.login(user)\n  .then((user) => {\n     console.log(\"after login\", user);\n     Wallkit.checkAuth().then(user => {\n         console.log(\"after checkAuth\", user);\n     }).catch(error => {\n         console.log(error);\n     });\n  }, (error) => {\n     console.log('error:', error);\n  });"
+    ],
+    "lineNumber": 296,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data.email",
+        "description": "user email"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data.password",
+        "description": "user password"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise with user object"
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "logout",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#logout",
+    "access": "public",
+    "description": "Method logout user from Wallkit. After success response, method removes token & user instances.  Removes cookies & localstorage datas.",
+    "examples": [
+      "Wallkit.logout().then(() => {\n  alert('User has logged');\n});"
+    ],
+    "lineNumber": 328,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns Promise"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 79,
+    "kind": "method",
+    "name": "getUser",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getUser",
+    "access": "private",
+    "description": "Method inits custom event",
+    "examples": [
+      "new this.CustomEvent(eventName + \":success\", { bubbles: false, cancelable: false, detail: data })"
+    ],
+    "lineNumber": 375,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "event",
+        "description": "event name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.bubbles",
+        "description": "event bubble"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.cancelable",
+        "description": "if event cancelable"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params.detail",
+        "description": "other event details"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Event"
+      ],
+      "spread": false,
+      "description": "returns event instance"
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "method",
+    "name": "authUserByToken",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#authUserByToken",
+    "access": "public",
+    "description": "Method authenticate user by provided token and auth method type(authorizationUser/registrationUser).",
+    "lineNumber": 393,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "method",
+    "name": "getResource",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getResource",
+    "access": "public",
+    "description": "Gets Wallkit's client resource such as `public_key`, `origin`, `payments_in_live_mode`, `stripe_public_key`.",
+    "lineNumber": 417,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 85,
+    "kind": "method",
+    "name": "getResources",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getResources",
+    "access": "public",
+    "description": "Returns promise with resources object which includes resources array.",
+    "lineNumber": 438,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 86,
+    "kind": "method",
+    "name": "passwordReset",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#passwordReset",
+    "access": "public",
+    "description": "Reset password by user email.",
+    "lineNumber": 452,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string ",
+          " object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "user email"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "method",
+    "name": "getSubscriptions",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getSubscriptions",
+    "access": "public",
+    "description": "Get available subscription for payment",
+    "lineNumber": 470,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 88,
+    "kind": "method",
+    "name": "calculatePrice",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#calculatePrice",
+    "access": "public",
+    "description": "",
+    "lineNumber": 495,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "checkOut",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#checkOut",
+    "access": "public",
+    "description": "",
+    "lineNumber": 508,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "method",
+    "name": "validatePromo",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#validatePromo",
+    "access": "public",
+    "description": "",
+    "lineNumber": 524,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "name": "getTransaction",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getTransaction",
+    "access": "public",
+    "description": "",
+    "lineNumber": 541,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "transaction_id",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "method",
+    "name": "updateUser",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#updateUser",
+    "access": "public",
+    "description": "",
+    "lineNumber": 554,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "method",
+    "name": "refreshToken",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#refreshToken",
+    "access": "public",
+    "description": "request authorization/refresh",
+    "lineNumber": 567,
+    "params": [
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "method",
+    "name": "updatePassword",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#updatePassword",
+    "access": "public",
+    "description": "",
+    "lineNumber": 594,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 97,
+    "kind": "method",
+    "name": "updateEmail",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#updateEmail",
+    "access": "public",
+    "description": "",
+    "lineNumber": 611,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "method",
+    "name": "suspendMe",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#suspendMe",
+    "access": "public",
+    "description": "",
+    "lineNumber": 627,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 99,
+    "kind": "method",
+    "name": "confirmPassword",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#confirmPassword",
+    "access": "public",
+    "description": "",
+    "lineNumber": 640,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "method",
+    "name": "resendEmailConfirmation",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#resendEmailConfirmation",
+    "access": "public",
+    "description": "",
+    "lineNumber": 666,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 103,
+    "kind": "method",
+    "name": "confirmEmail",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#confirmEmail",
+    "access": "public",
+    "description": "",
+    "lineNumber": 679,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "name": "removeCard",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#removeCard",
+    "access": "public",
+    "description": "",
+    "lineNumber": 696,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "card_id",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "method",
+    "name": "getCards",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getCards",
+    "access": "public",
+    "description": "",
+    "lineNumber": 708,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 106,
+    "kind": "method",
+    "name": "defaultCard",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#defaultCard",
+    "access": "public",
+    "description": "",
+    "lineNumber": 721,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "card_id",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "name": "getCountries",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getCountries",
+    "access": "public",
+    "description": "",
+    "lineNumber": 733,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 108,
+    "kind": "method",
+    "name": "getCurrencies",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#getCurrencies",
+    "access": "public",
+    "description": "",
+    "lineNumber": 745,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 109,
+    "kind": "method",
+    "name": "validateInvite",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#validateInvite",
+    "access": "public",
+    "description": "",
+    "lineNumber": 758,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "method",
+    "name": "activateInvite",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#activateInvite",
+    "access": "public",
+    "description": "",
+    "lineNumber": 774,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": [
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 111,
+    "kind": "method",
+    "name": "createStripeByToken",
+    "memberof": "Wallkit/Wallkit.js~Wallkit",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/Wallkit.js~Wallkit#createStripeByToken",
+    "access": "public",
+    "description": "",
+    "lineNumber": 791,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<any>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<any>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "variable",
+    "name": "instance",
+    "memberof": "Wallkit/Wallkit.js",
+    "static": true,
+    "longname": "Wallkit/Wallkit.js~instance",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/Wallkit.js",
+    "importStyle": "instance",
+    "description": "",
+    "lineNumber": 810,
+    "ignore": true,
+    "type": {
+      "types": [
+        "Wallkit/Wallkit.js~Wallkit"
+      ]
+    }
+  },
+  {
+    "__docId__": 113,
+    "kind": "file",
+    "name": "Wallkit/WallkitClient.js",
+    "content": "import 'whatwg-fetch';\nimport Config from './Config'\nimport Wallkit  from './Wallkit';\nimport _ from 'lodash';\nimport Promise from 'bluebird';\n\n/**\n * @desc Class to manipulate with Wallkit API.\n * @public\n */\nclass WallkitClient {\n    /**\n     * Wallkit Client constructor. Accepts nothing.\n     */\n    constructor() {\n    }\n\n    /**\n     * Gets token.\n     * @private\n     * @return {String}\n     */\n    get token() {\n        return (Wallkit.token || {}).value;\n    }\n\n    /**\n     * Gets Wallkit Config resource.\n     * @public\n     * @return {String}\n     */\n    get resource () {\n        return Config.resource;\n    }\n\n    /**\n     * Gets Wallkit Host based on provided config.\n     * @public\n     * @return {String}\n     */\n    get host() {\n        //return `https://${Config.host}/api/${Config.version}`;\n      return Config.api_url;\n    }\n\n    /**\n     * Method makes GET request to manipulate with Wallkit API.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @param {Object} data\n     * @property {String} path - request path\n     * @property {Object} params - request data\n     * @return {Promise} returns promise\n     *\n     * @example\n     * #Example 1\n     * WallkitClient.get({\n     *   path: \"/user/cards\",\n     *   params: {\n     *       resource: \"subscription\",\n     *       token: \"6fc5705264be925cb1b53d16631a8f55e195793d\"\n     *   }\n     * }).then(response => {\n     *     console.log('response:', response);\n     * }).catch(e => console.log('error:', e));\n     */\n    get({path,params}) {\n        return this.makeRequest({path,params})\n    }\n\n    /**\n     * Method makes POST request to manipulate with Wallkit API.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @param {Object} data\n     * @property {String} path - request path\n     * @property {Object} data - request data\n     * @return {Promise} returns promise\n     *\n     * @example\n     * #Example 1\n     * WallkitClient.post({\n     *  path: \"/invite-validation\",\n     *  data: {\n     *       invite: 'yummy',\n     *       return_invite: true\n     *   }\n     * }).then(response => {\n     *     console.log('response:', response);\n     * }).catch(e => console.log('error:', e));\n     */\n    post({path,data}) {\n        return this.makeRequest({\n            path,\n            method:'POST',\n            body: JSON.stringify(data),\n            headers: {\n                'Content-Type': 'application/json'\n            },\n        })\n    }\n\n    /**\n     * Method makes native-post request to manipulate with Wallkit API.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @return {Promise} returns promise\n     *\n     * @example\n     * #Example 1\n     * WallkitClient.get({\n     *   path: \"/user/cards\",\n     *   data: {\n     *       resource: \"subscription\",\n     *       token: \"6fc5705264be925cb1b53d16631a8f55e195793d\"\n     *   }\n     * }).then(response => {\n     *     console.log('response:', response);\n     * }).catch(e => console.log('error:', e));\n     */\n    nativePost({path,data}) {\n        return this.makeNativeRequest({\n            path,\n            method:'POST',\n            body: JSON.stringify(data),\n            headers: {\n                'Content-Type': 'application/json'\n            },\n        })\n    }\n\n    /**\n     * Method makes Post request with Form Data.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @return {Promise} returns promise\n     *\n     * @example\n     * WallkitClient.get({\n     *       path: \"/user/cards\"\n     *   }).then(response => {\n     *       console.log('response:', response);\n     *   }).catch(e => console.log('error:', e));\n     */\n    postForm({path,data}) {\n        let formData = new FormData();\n\n        try {\n            Object.keys(data).forEach(key => {\n            formData.append(key,data[key])\n          });\n        } catch (err) {\n            console.log('post form error', err);\n        }\n\n        return this.makeRequest({\n            path,\n            method:'POST',\n            body: formData,\n            headers: {}\n        })\n    }\n\n    /**\n     * Method makes PUT request to manipulate with Wallkit API.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @return {Promise} returns promise\n     *\n     * @example\n     * #Example 2\n     * WallkitClient.put({\n     *       path: \"/user/email\",\n     *       body: {\n     *         email: \"test@email.com\"\n     *       }\n     *   }).then(response => {\n     *       console.log('response:', response);\n     *   }).catch(e => console.log('error:', e));\n     */\n    put({path, data}) {\n        return this.makeRequest({\n            path,\n            method:'PUT',\n            body: JSON.stringify(data),\n            headers: {\n                'Content-Type': 'application/json'\n            },\n        })\n    }\n\n    /**\n     * Method makes DELETE request to manipulate with Wallkit API.\n     * API Documentation at https://wallkit.net/docs\n     *\n     * @public\n     * @param {String} path - request path\n     * @return {Promise} returns promise\n     *\n     * @example\n     * WallkitClient.del({\n     *       path: \"/user/teams/35\",\n     *       data: {\n     *         id: 35\n     *       }\n     *   }).then(response => {\n     *       console.log('response:', response);\n     *   }).catch(e => console.log('error:', e));\n     */\n    del({path}) {\n        return this.makeRequest({\n            path,\n            method:'DELETE'\n        })\n    }\n\n    /**\n     * Method wrapper for request to manipulate with Wallkit API.\n     *\n     * @private\n     * @return {Promise} returns promise\n     *\n     * @ignore\n     */\n    makeNativeRequest({path,method = 'GET',headers = {},body = {}}) {\n        function checkStatus(response) {\n            if (response.status >= 200 && response.status < 300) {\n                return response.json()\n            } else {\n                    let promise = new Promise((resolve, reject) => {\n                        resolve(response.json());\n                    });\n\n                    return promise.then((json) => {\n                        let error = new Error(response.statusText);\n                        error.response = json;\n                        throw error\n                    });\n\n                    // return Promise.resolve(response.json())\n                    //     .then((json) => {\n                    //         let error = new Error(response.statusText);\n                    //         error.response = json;\n                    //         throw error\n                    //     })\n\n                // return Promise.resolve(response.json())\n                //     .then((json) => {\n                //         let error = new Error(response.statusText);\n                //         error.response = json;\n                //         throw error\n                //     })\n            }\n        }\n\n        _.assign(headers,{'resource': this.resource});\n\n        if (this.token)\n            _.assign(headers,{'token': this.token});\n\n        let request = {\n            method,\n            headers\n        };\n\n        try {\n            if (_.keysIn(body).length > 0 || body instanceof FormData) {\n                _.assign(request,{'body': body});\n            }\n\n        } catch(err) {\n            console.log('make request error', err);\n        }\n        return fetch(`${this.host}${path}`, request).then(checkStatus)\n    }\n\n    /**\n     * Method wrapper for request to manipulate with Wallkit API.\n     *\n     * @private\n     * @return {Promise} returns promise\n     *\n     * @ignore\n     */\n    makeRequest({path,method = 'GET',headers = {},body = {}}) {\n\n      function checkStatus(response)\n      {\n\n\n          if (response.status >= 200 && response.status < 300) {\n              return response.json()\n          }\n          else\n          {\n              /*let promise = new Promise((resolve, reject) => {\n                  resolve(response.json());\n              });*/\n\n             /* return promise.then((json) => {\n                  let error = new Error(response.statusText);\n                  error.response = json;\n                  throw error\n              }).catch(e => {\n                  console.log('error', e)\n              })*/\n\n               return Promise.resolve(response.json())\n                   .then((json) => {\n\n                      let error = {};\n\n                      if(typeof json.error_description !== \"undefined\")\n                      {\n                        error = new Error(json.error_description);\n                      }\n                      else\n                      {\n                        error = new Error(response.statusText);\n                      }\n\n                       error.statusText = response.statusText;\n                       error.statusCode = response.statusCode;\n                       error.response = json;\n                       throw error\n                   })\n\n\n          }\n      }\n\n\n\n        _.assign(headers,{'resource': this.resource});\n        _.assign(headers,{'Wallkit-Client': 'JsSDK v1.1.0'});\n\n        if (this.token)\n            _.assign(headers,{'token': this.token});\n\n        let request = {\n            method,\n            headers\n        };\n\n        try {\n          // if(Object.keys(body).length > 0 || body instanceof FormData){\n          //   _.assign(request,{'body': body});\n          // }\n\n          if (_.keysIn(body).length > 0 || body instanceof FormData) {\n            _.assign(request,{'body': body});\n          }\n\n        } catch(err) {\n            console.log('make request error', err);\n        }\n\n        // return fetch(new URL(`${this.host}${path}`),request).then(checkStatus)\n        return fetch(`${this.host}${path}`, request).then(checkStatus)\n    }\n}\n\nlet client = new WallkitClient();\n\n/**\n * @ignore\n */\nexport default client;",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/WallkitClient.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 114,
+    "kind": "class",
+    "name": "WallkitClient",
+    "memberof": "Wallkit/WallkitClient.js",
+    "static": true,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitClient.js",
+    "importStyle": null,
+    "description": "Class to manipulate with Wallkit API.",
+    "lineNumber": 11,
+    "pseudoExport": true,
+    "interface": false
+  },
+  {
+    "__docId__": 115,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#constructor",
+    "access": "public",
+    "description": "Wallkit Client constructor. Accepts nothing.",
+    "lineNumber": 15
+  },
+  {
+    "__docId__": 116,
+    "kind": "get",
+    "name": "token",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#token",
+    "access": "private",
+    "description": "Gets token.",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 117,
+    "kind": "get",
+    "name": "resource",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#resource",
+    "access": "public",
+    "description": "Gets Wallkit Config resource.",
+    "lineNumber": 32,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 118,
+    "kind": "get",
+    "name": "host",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#host",
+    "access": "public",
+    "description": "Gets Wallkit Host based on provided config.",
+    "lineNumber": 41,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "method",
+    "name": "get",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#get",
+    "access": "public",
+    "description": "Method makes GET request to manipulate with Wallkit API.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "#Example 1\nWallkitClient.get({\n  path: \"/user/cards\",\n  params: {\n      resource: \"subscription\",\n      token: \"6fc5705264be925cb1b53d16631a8f55e195793d\"\n  }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 68,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "request path"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "params",
+        "description": "request data"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    }
+  },
+  {
+    "__docId__": 120,
+    "kind": "method",
+    "name": "post",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#post",
+    "access": "public",
+    "description": "Method makes POST request to manipulate with Wallkit API.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "#Example 1\nWallkitClient.post({\n path: \"/invite-validation\",\n data: {\n      invite: 'yummy',\n      return_invite: true\n  }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 94,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "request path"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "request data"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "method",
+    "name": "nativePost",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#nativePost",
+    "access": "public",
+    "description": "Method makes native-post request to manipulate with Wallkit API.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "#Example 1\nWallkitClient.get({\n  path: \"/user/cards\",\n  data: {\n      resource: \"subscription\",\n      token: \"6fc5705264be925cb1b53d16631a8f55e195793d\"\n  }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 124,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"path\": *, \"data\": *}"
+        ],
+        "defaultRaw": {
+          "path": null,
+          "data": null
+        },
+        "defaultValue": "{\"path\":null,\"data\":null}"
+      }
+    ]
+  },
+  {
+    "__docId__": 122,
+    "kind": "method",
+    "name": "postForm",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#postForm",
+    "access": "public",
+    "description": "Method makes Post request with Form Data.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "WallkitClient.get({\n      path: \"/user/cards\"\n  }).then(response => {\n      console.log('response:', response);\n  }).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 149,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"path\": *, \"data\": *}"
+        ],
+        "defaultRaw": {
+          "path": null,
+          "data": null
+        },
+        "defaultValue": "{\"path\":null,\"data\":null}"
+      }
+    ]
+  },
+  {
+    "__docId__": 123,
+    "kind": "method",
+    "name": "put",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#put",
+    "access": "public",
+    "description": "Method makes PUT request to manipulate with Wallkit API.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "#Example 2\nWallkitClient.put({\n      path: \"/user/email\",\n      body: {\n        email: \"test@email.com\"\n      }\n  }).then(response => {\n      console.log('response:', response);\n  }).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 186,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"path\": *, \"data\": *}"
+        ],
+        "defaultRaw": {
+          "path": null,
+          "data": null
+        },
+        "defaultValue": "{\"path\":null,\"data\":null}"
+      }
+    ]
+  },
+  {
+    "__docId__": 124,
+    "kind": "method",
+    "name": "del",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#del",
+    "access": "public",
+    "description": "Method makes DELETE request to manipulate with Wallkit API.\nAPI Documentation at https://wallkit.net/docs",
+    "examples": [
+      "WallkitClient.del({\n      path: \"/user/teams/35\",\n      data: {\n        id: 35\n      }\n  }).then(response => {\n      console.log('response:', response);\n  }).catch(e => console.log('error:', e));"
+    ],
+    "lineNumber": 215,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "request path"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    }
+  },
+  {
+    "__docId__": 125,
+    "kind": "method",
+    "name": "makeNativeRequest",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#makeNativeRequest",
+    "access": "private",
+    "description": "Method wrapper for request to manipulate with Wallkit API.",
+    "lineNumber": 230,
+    "ignore": true,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"path\": *, \"method\": *, \"headers\": *, \"body\": *}"
+        ],
+        "defaultRaw": {
+          "path": null,
+          "method": null,
+          "headers": null,
+          "body": null
+        },
+        "defaultValue": "{\"path\":null,\"method\":null,\"headers\":null,\"body\":null}"
+      }
+    ]
+  },
+  {
+    "__docId__": 126,
+    "kind": "method",
+    "name": "makeRequest",
+    "memberof": "Wallkit/WallkitClient.js~WallkitClient",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitClient.js~WallkitClient#makeRequest",
+    "access": "private",
+    "description": "Method wrapper for request to manipulate with Wallkit API.",
+    "lineNumber": 290,
+    "ignore": true,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "returns promise"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"path\": *, \"method\": *, \"headers\": *, \"body\": *}"
+        ],
+        "defaultRaw": {
+          "path": null,
+          "method": null,
+          "headers": null,
+          "body": null
+        },
+        "defaultValue": "{\"path\":null,\"method\":null,\"headers\":null,\"body\":null}"
+      }
+    ]
+  },
+  {
+    "__docId__": 127,
+    "kind": "variable",
+    "name": "client",
+    "memberof": "Wallkit/WallkitClient.js",
+    "static": true,
+    "longname": "Wallkit/WallkitClient.js~client",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitClient.js",
+    "importStyle": "client",
+    "description": "",
+    "lineNumber": 373,
+    "ignore": true,
+    "type": {
+      "types": [
+        "Wallkit/WallkitClient.js~WallkitClient"
+      ]
+    }
+  },
+  {
+    "__docId__": 128,
+    "kind": "file",
+    "name": "Wallkit/WallkitResource.js",
+    "content": "import _ from 'lodash';\nimport client from './WallkitClient';\nimport Event from \"./utils/Events\";\nimport WallkitUser from \"./WallkitUser\";\n\n/**\n * Class to manipulate with Resources.\n */\nexport default class WallkitResource {\n    /**\n     * Constructor for WallkitResource class.\n     *\n     * @param {object} props - object with user information\n     *\n     */\n    constructor(props) {\n      Object.keys(props).forEach((key) => {\n        Object.defineProperty(this, key, {\n          value: props[key],\n          enumerable: true\n        })\n      });\n\n    }\n\n\n\n    /**\n     * Serialize resource instance and insert it in localstorage\n     *\n     * @public\n     * @return {function}\n     *\n     * @example\n     * WallkitResource.serialize();\n     */\n    serialize() {\n        return localStorage.setItem(WallkitResource.storageKey,JSON.stringify(this))\n    }\n\n\n}\n\nWallkitResource.storageKey = 'WallkitResource';\n\n/**\n * Deserialize user from localStorage and creates instance of {@link WallkitResource}\n *\n * @example\n * WallkitResource.deserialize();\n */\nWallkitResource.deserialize = function () {\n\n    let storedResource = JSON.parse(localStorage.getItem(WallkitResource.storageKey));\n\n    if (storedResource)\n    {\n      return new WallkitResource(storedResource);\n    }\n    return null\n};\n\nWallkitResource.reload = function () {\n  return client.get({path: '/resource'});\n};\n\n\n",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/WallkitResource.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 129,
+    "kind": "class",
+    "name": "WallkitResource",
+    "memberof": "Wallkit/WallkitResource.js",
+    "static": true,
+    "longname": "Wallkit/WallkitResource.js~WallkitResource",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitResource.js",
+    "importStyle": "WallkitResource",
+    "description": "Class to manipulate with Resources.",
+    "lineNumber": 9,
+    "interface": false
+  },
+  {
+    "__docId__": 130,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "Wallkit/WallkitResource.js~WallkitResource",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitResource.js~WallkitResource#constructor",
+    "access": "public",
+    "description": "Constructor for WallkitResource class.",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "object with user information"
+      }
+    ]
+  },
+  {
+    "__docId__": 131,
+    "kind": "method",
+    "name": "serialize",
+    "memberof": "Wallkit/WallkitResource.js~WallkitResource",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitResource.js~WallkitResource#serialize",
+    "access": "public",
+    "description": "Serialize resource instance and insert it in localstorage",
+    "examples": [
+      "WallkitResource.serialize();"
+    ],
+    "lineNumber": 37,
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 132,
+    "kind": "function",
+    "name": "deserialize",
+    "memberof": "Wallkit/WallkitResource.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "Wallkit/WallkitResource.js~deserialize",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitResource.js",
+    "importStyle": null,
+    "description": "Deserialize user from localStorage and creates instance of {@link WallkitResource}",
+    "examples": [
+      "WallkitResource.deserialize();"
+    ],
+    "lineNumber": 52,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 133,
+    "kind": "function",
+    "name": "reload",
+    "memberof": "Wallkit/WallkitResource.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "Wallkit/WallkitResource.js~reload",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitResource.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 63,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 134,
+    "kind": "file",
+    "name": "Wallkit/WallkitToken.js",
+    "content": "import Cookies from './utils/Cookies';\n\n\n/**\n * Class to manipulate with Tokens.\n *\n * @public\n */\nexport default class WallkitToken {\n    /**\n     * Constructor for WallkitToken Class.\n     *\n     * @param {object} object token\n     * @property {string} value - token key\n     * @property {number} expire - timestamp of token expire\n     *\n     * @example\n     * let token = new WallkitToken({\n     *  value: \"0b0f8ef5b5c4f3bf2f332a79d323b427a9c30676\",\n     *  expire: \"1553700315\"\n     * });\n     */\n    constructor({value, refresh, expire}) {\n\n    /**\n       * @type {string} value - token key\n       */\n      this.value = value;\n\n      /**\n       * @type {string} value - refresh token key\n       */\n      this.refresh = refresh;\n\n      /**\n       * @type {number} expire - timestamp of token expire\n       */\n      this.expire = expire;\n    }\n\n    exist() {\n\n      if(this.value && typeof this.value !== \"undefined\")\n      {\n        return true;\n      }\n\n      return false;\n    }\n\n    /**\n     * Serialize token instance and insert it in localstorage\n     *\n     * @public\n     * @return void\n     *\n     * @example\n     * WallkitToken.serialize();\n     */\n    serialize() {\n        // set cookie on year\n        let expires = Infinity;\n        //Cookies.setItem(`_wk_token_${Config.resource}`,JSON.stringify(this), expires, '/');\n        Cookies.setItem('wk-token',this.value, expires, '/');\n        if(typeof this.refresh !== \"undefined\")\n        {\n          Cookies.setItem('wk-refresh',this.refresh, Infinity, '/');\n        }\n    }\n}\nWallkitToken.storageKey = 'WallkitToken';\n\n/**\n * Deserialize token from localStorage and creates instance of {@link WallkitToken}\n *\n * @public\n * @return {WallkitToken} - return WallkitToken instance\n *\n * @example\n * WallkitToken.deserialize();\n */\nWallkitToken.deserialize = function () {\n    //let data = JSON.parse(Cookies.getItem(`_wk_token_${Config.resource}`));\n    let data = Cookies.getItem('wk-token');\n    let refresh = Cookies.getItem('wk-refresh');\n\n    if (data || refresh) {\n      return new WallkitToken({value: data, refresh: refresh});\n    }\n    return null\n};\n",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/WallkitToken.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 135,
+    "kind": "class",
+    "name": "WallkitToken",
+    "memberof": "Wallkit/WallkitToken.js",
+    "static": true,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitToken.js",
+    "importStyle": "WallkitToken",
+    "description": "Class to manipulate with Tokens.",
+    "lineNumber": 9,
+    "interface": false
+  },
+  {
+    "__docId__": 136,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#constructor",
+    "access": "public",
+    "description": "Constructor for WallkitToken Class.",
+    "examples": [
+      "let token = new WallkitToken({\n value: \"0b0f8ef5b5c4f3bf2f332a79d323b427a9c30676\",\n expire: \"1553700315\"\n});"
+    ],
+    "lineNumber": 23,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "object",
+        "description": "token"
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "value",
+        "description": "token key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "expire",
+        "description": "timestamp of token expire"
+      }
+    ]
+  },
+  {
+    "__docId__": 137,
+    "kind": "member",
+    "name": "value",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#value",
+    "access": "public",
+    "description": "",
+    "lineNumber": 28,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "member",
+    "name": "refresh",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#refresh",
+    "access": "public",
+    "description": "",
+    "lineNumber": 33,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "member",
+    "name": "expire",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#expire",
+    "access": "public",
+    "description": "",
+    "lineNumber": 38,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 140,
+    "kind": "method",
+    "name": "exist",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#exist",
+    "access": "public",
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 141,
+    "kind": "method",
+    "name": "serialize",
+    "memberof": "Wallkit/WallkitToken.js~WallkitToken",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitToken.js~WallkitToken#serialize",
+    "access": "public",
+    "description": "Serialize token instance and insert it in localstorage",
+    "examples": [
+      "WallkitToken.serialize();"
+    ],
+    "lineNumber": 60,
+    "return": {
+      "nullable": null,
+      "types": [
+        "*"
+      ],
+      "spread": false,
+      "description": "void"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 142,
+    "kind": "function",
+    "name": "deserialize",
+    "memberof": "Wallkit/WallkitToken.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "Wallkit/WallkitToken.js~deserialize",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitToken.js",
+    "importStyle": null,
+    "description": "Deserialize token from localStorage and creates instance of {@link WallkitToken}",
+    "examples": [
+      "WallkitToken.deserialize();"
+    ],
+    "lineNumber": 82,
+    "return": {
+      "nullable": null,
+      "types": [
+        "WallkitToken"
+      ],
+      "spread": false,
+      "description": "return WallkitToken instance"
+    },
+    "params": [],
+    "ignore": true
+  },
+  {
+    "__docId__": 143,
+    "kind": "file",
+    "name": "Wallkit/WallkitUser.js",
+    "content": "import _ from 'lodash';\nimport client from './WallkitClient';\nimport Event from \"./utils/Events\";\n\n/**\n * Class to manipulate with User.\n */\nexport default class WallkitUser {\n    /**\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@grandiz.com\",\n     *    ...\n     * })\n     */\n    constructor(props) {\n      Object.keys(props).forEach((key) => {\n        Object.defineProperty(this, key, {\n          value: props[key],\n          enumerable: true\n        })\n      });\n\n\n      if (!_.isEmpty(this.token))\n      {\n        Event.send(\"wk-event-token\", this.token);\n      }\n\n      Event.send(\"wk-event-user\", this);\n\n    }\n\n\n\n    /**\n     * Serialize user instance and insert it in localstorage\n     *\n     * @public\n     * @return {function}\n     *\n     * @example\n     * WallkitUser.serialize();\n     */\n    serialize() {\n        return localStorage.setItem(WallkitUser.storageKey,JSON.stringify(this))\n    }\n\n    /**\n     * Method checks is user passed confirmation.\n     *\n     * @public\n     * @return {boolean} - confirmation state\n     *\n     * @example\n     * WallkitUser.isConfirmed();\n     */\n    isConfirmed() {\n        return !!this.confirm;\n    }\n\n    /**\n     * Method gets user's plans list.\n     *\n     * @public\n     * @return {array} - array with plan objects\n     *\n     * @example\n     * WallkitUser.plans();\n     */\n    plans() {\n        return this.subscriptions.length === 0 ? [{title:'guest'}] : this.subscriptions.map(subscription => subscription.plan);\n    }\n\n    /**\n     * Method checks if User has provided plan.\n     *\n     * @public\n     * @param {Object} plan - user's plan object\n     * @return {boolean} - is plan exist in user.\n     *\n     * @example\n     * const plan = {\n     *    can_own_teams: true,\n     *    full_access: true,\n     *    priority: 400,\n     *    slug: \"premium\",\n     *    title: \"Premium\"\n     * };\n     *\n     * WallkitUser.hasPlan(plan); //true\n     */\n    hasPlan(plan) {\n        return this.plans().includes(plan);\n    }\n\n}\n\nWallkitUser.storageKey = 'WallkitUser';\n\n/**\n * Deserialize user from localStorage and creates instance of {@link WallkitUser}\n *\n * @public\n * @return {WallkitToken} - return WallkitToken instance\n *\n * @example\n * WallkitToken.deserialize();\n */\nWallkitUser.deserialize = function () {\n\n    let storedUser = JSON.parse(localStorage.getItem(WallkitUser.storageKey));\n\n    if (storedUser && storedUser.id)\n    {\n      return new WallkitUser(storedUser);\n    }\n    return null\n};\n\nWallkitUser.reload = function () {\n    return client.get({path: '/user'});\n};\n\n",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/WallkitUser.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 144,
+    "kind": "class",
+    "name": "WallkitUser",
+    "memberof": "Wallkit/WallkitUser.js",
+    "static": true,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser",
+    "access": "public",
+    "export": true,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitUser.js",
+    "importStyle": "WallkitUser",
+    "description": "Class to manipulate with User.",
+    "lineNumber": 8,
+    "interface": false
+  },
+  {
+    "__docId__": 145,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "Wallkit/WallkitUser.js~WallkitUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser#constructor",
+    "access": "public",
+    "description": "Constructor for WallkitUser class.",
+    "examples": [
+      "let user = new WallkitUser({\n  active: true,\n   can_own_teams: true,\n   city: \"Odessa\",\n   company: \"Grandiz\",\n   confirm: true,\n   country: \"American Samoa\",\n   created_at: \"2015-12-16 12:33:18\",\n   email: \"dev@grandiz.com\",\n   ...\n})"
+    ],
+    "lineNumber": 27,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "object with user information"
+      }
+    ]
+  },
+  {
+    "__docId__": 146,
+    "kind": "method",
+    "name": "serialize",
+    "memberof": "Wallkit/WallkitUser.js~WallkitUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser#serialize",
+    "access": "public",
+    "description": "Serialize user instance and insert it in localstorage",
+    "examples": [
+      "WallkitUser.serialize();"
+    ],
+    "lineNumber": 56,
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 147,
+    "kind": "method",
+    "name": "isConfirmed",
+    "memberof": "Wallkit/WallkitUser.js~WallkitUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser#isConfirmed",
+    "access": "public",
+    "description": "Method checks is user passed confirmation.",
+    "examples": [
+      "WallkitUser.isConfirmed();"
+    ],
+    "lineNumber": 69,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "confirmation state"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 148,
+    "kind": "method",
+    "name": "plans",
+    "memberof": "Wallkit/WallkitUser.js~WallkitUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser#plans",
+    "access": "public",
+    "description": "Method gets user's plans list.",
+    "examples": [
+      "WallkitUser.plans();"
+    ],
+    "lineNumber": 82,
+    "return": {
+      "nullable": null,
+      "types": [
+        "array"
+      ],
+      "spread": false,
+      "description": "array with plan objects"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 149,
+    "kind": "method",
+    "name": "hasPlan",
+    "memberof": "Wallkit/WallkitUser.js~WallkitUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "Wallkit/WallkitUser.js~WallkitUser#hasPlan",
+    "access": "public",
+    "description": "Method checks if User has provided plan.",
+    "examples": [
+      "const plan = {\n   can_own_teams: true,\n   full_access: true,\n   priority: 400,\n   slug: \"premium\",\n   title: \"Premium\"\n};\n\nWallkitUser.hasPlan(plan); //true"
+    ],
+    "lineNumber": 104,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "plan",
+        "description": "user's plan object"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "is plan exist in user."
+    }
+  },
+  {
+    "__docId__": 150,
+    "kind": "function",
+    "name": "deserialize",
+    "memberof": "Wallkit/WallkitUser.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "Wallkit/WallkitUser.js~deserialize",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitUser.js",
+    "importStyle": null,
+    "description": "Deserialize user from localStorage and creates instance of {@link WallkitUser}",
+    "examples": [
+      "WallkitToken.deserialize();"
+    ],
+    "lineNumber": 121,
+    "return": {
+      "nullable": null,
+      "types": [
+        "WallkitToken"
+      ],
+      "spread": false,
+      "description": "return WallkitToken instance"
+    },
+    "params": [],
+    "ignore": true
+  },
+  {
+    "__docId__": 151,
+    "kind": "function",
+    "name": "reload",
+    "memberof": "Wallkit/WallkitUser.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "Wallkit/WallkitUser.js~reload",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/WallkitUser.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 132,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 152,
+    "kind": "file",
+    "name": "Wallkit/utils/Events.js",
+    "content": "\n\nvar Events = {\n\n\n\n  send(name, value, params)\n  {\n\n    let data = {\n      name: name,\n      value: value,\n      params: params\n    };\n\n    /*if(_.isEqual(data, this.event_tmp))\n    {\n      return ;\n    }*/\n\n    //this.event_tmp = data;\n    //top.postMessage(data, document.location.origin);\n\n    top.postMessage(data, '*');\n\n    console.log(\"WkJsSDK EVENT:\", data);\n  }\n\n\n};\n\nif(typeof module !== \"undefined\" && typeof module.exports !== \"undefined\") {\n  module.exports = Events;\n}",
+    "static": true,
+    "longname": "/Users/shamrylo/wallkit-js-sdk/src/Wallkit/utils/Events.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 153,
+    "kind": "variable",
+    "name": "Events",
+    "memberof": "Wallkit/utils/Events.js",
+    "static": true,
+    "longname": "Wallkit/utils/Events.js~Events",
+    "access": "public",
+    "export": false,
+    "importPath": "wallkit-js-sdk/Wallkit/utils/Events.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"send\": function}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "kind": "index",
+    "content": "![logo](https://wallkit.net/wallkit/images/wallkit-logo.svg \"Wallkit\")\n\n# Usage\n\n - [Installation](#installation)\n - [Initialization](#initialization)\n - [What next?](#what-next-)\n \n \n## Installation\n\n1. Download Wallkit SDK from https://wallkit.net/\n\n2. Include Wallkit SDK To Website/App  \n\n    - As HTML \n    ```html\n    <script src=\"wallkit.umd.min.js\"></script>\n    ```\n    \n    - As UMD\n    ```javascript\n    require('wallkit.umd.min.js');\n    ```\n    \n    - As ES module\n    ```javascript\n    import Wallkit from 'wallkit.esm.min.js';\n    ```\n\n## Initialization\n\n To start using Wallkit SDK, use [Wallkit.init()](class/Wallkit/Wallkit.js~Wallkit.html#instance-method-init) method, with [config](./manual/Config.html).\n \n ```js\n// Example\nWallkit.init({\n    resource: \"3535\"\n});\n```\n\n## What next?\n\nAs you see it is really easy to integrate Wallkit SDK into your website or app. So here are your next steps:\n\n - Go to [Documentation](./manual/Methods.html) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.\n - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    ",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/Index.md",
+    "name": "./manual/Index.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"wallkit-js-sdk\",\n  \"version\": \"0.0.35\",\n  \"description\": \"Wallkit\",\n  \"main\": \"dist/wallkit.umd.min.js\",\n  \"private\": true,\n  \"directories\": {\n    \"example\": \"examples\"\n  },\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"server\": \"webpack-dev-server --content-base public/\",\n    \"watch\": \"webpack --env.watch --progress --config ./configs/webpack.library.config.js && webpack --env.watch --progress --config ./configs/webpack.esm.config.js\",\n    \"build\": \"webpack --env --config ./configs/webpack.library.config.js && webpack --env --config ./configs/webpack.esm.config.js\",\n    \"doc\": \"./node_modules/.bin/esdoc\"\n  },\n  \"files\": [\n    \"dist\",\n    \"src\",\n    \".babelrc\"\n  ],\n  \"author\": \"Wallkit\",\n  \"license\": \"UNLICENSED\",\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.4.0\",\n    \"@babel/plugin-proposal-class-properties\": \"^7.4.0\",\n    \"@babel/plugin-proposal-export-default-from\": \"^7.2.0\",\n    \"@babel/plugin-proposal-object-rest-spread\": \"^7.4.0\",\n    \"@purtuga/esm-webpack-plugin\": \"^1.0.1\",\n    \"babel-loader\": \"^8.0.5\",\n    \"babel-preset-es2015\": \"^6.24.1\",\n    \"babel-preset-stage-0\": \"^6.22.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-custom-theme\": \"^1.4.2\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-inject-style-plugin\": \"^1.0.0\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jquery\": \"^3.2.0\",\n    \"jsdoc\": \"^3.4.0\",\n    \"lodash\": \"^4.17.4\",\n    \"uglify-js\": \"^3.5.2\",\n    \"validate.js\": \"^0.11.1\",\n    \"webpack\": \"^4.29.6\",\n    \"webpack-cli\": \"^3.3.0\",\n    \"webpack-dev-server\": \"^2.4.2\",\n    \"whatwg-fetch\": \"^2.0.3\"\n  },\n  \"dependencies\": {\n    \"@babel/polyfill\": \"^7.4.0\",\n    \"@babel/preset-env\": \"^7.4.2\",\n    \"bluebird\": \"^3.5.0\",\n    \"es6-promise\": \"^4.1.1\"\n  }\n}\n",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manualIndex",
+    "globalIndex": false,
+    "content": "![logo](https://wallkit.net/wallkit/images/wallkit-logo.svg \"Wallkit\")\n\n# Usage\n\n - [Installation](#installation)\n - [Initialization](#initialization)\n - [What next?](#what-next-)\n \n \n## Installation\n\n1. Download Wallkit SDK from https://wallkit.net/\n\n2. Include Wallkit SDK To Website/App  \n\n    - As HTML \n    ```html\n    <script src=\"wallkit.umd.min.js\"></script>\n    ```\n    \n    - As UMD\n    ```javascript\n    require('wallkit.umd.min.js');\n    ```\n    \n    - As ES module\n    ```javascript\n    import Wallkit from 'wallkit.esm.min.js';\n    ```\n\n## Initialization\n\n To start using Wallkit SDK, use [Wallkit.init()](class/Wallkit/Wallkit.js~Wallkit.html#instance-method-init) method, with [config](./manual/Config.html).\n \n ```js\n// Example\nWallkit.init({\n    resource: \"3535\"\n});\n```\n\n## What next?\n\nAs you see it is really easy to integrate Wallkit SDK into your website or app. So here are your next steps:\n\n - Go to [Documentation](./manual/Methods.html) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.\n - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    ",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/Index.md",
+    "name": "./manual/Index.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/Usage.md",
+    "name": "./manual/Usage.md",
+    "content": "# Usage\n\n - [Installation](#installation)\n - [Initialization](#initialization)\n - [What next?](#what-next-)\n \n \n## Installation\n\n1. Download Wallkit SDK from https://wallkit.net/\n\n2. Include Wallkit SDK To Website/App  \n\n    - As HTML \n    ```html\n    <script src=\"wallkit.umd.min.js\"></script>\n    ```\n    \n    - As UMD\n    ```javascript\n    require('wallkit.umd.min.js');\n    ```\n    \n    - As ES module\n    ```javascript\n    import Wallkit from 'wallkit.esm.min.js';\n    ```\n\n## Initialization\n\n To start using Wallkit SDK, use [Wallkit.init()](../class/Wallkit/Wallkit.js~Wallkit.html#instance-method-init) method, with [config](Config.html).\n \n ```js\n// Example\nWallkit.init({\n    resource: \"3535\"\n});\n```\n\n## What next?\n\nAs you see it is really easy to integrate Wallkit SDK into your website or app. So here are your next steps:\n\n - Go to [Documentation](Methods.html) or [Reference](../identifiers.html) to learn more about Wallkit SDK and how to use it.\n - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    ",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/API.md",
+    "name": "./manual/API.md",
+    "content": "# API\n  \n  You can find API Documentation and try it out at [Wallkit API Documentation](http://wallkit.net/docs).",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/Methods.md",
+    "name": "./manual/Methods.md",
+    "content": "# Methods\n\nHere you can see method list with examples.\n\nFor detailed information about methods see [Reference](../identifiers.html).\n\n## All methods\n\n - [Wallkit](Methods.html#wallkit)\n   - [Wallkit.init](Methods.html#wallkit-init)\n   - [Wallkit.login](Methods.html#wallkit-login)\n   - [Wallkit.logout](Methods.html#wallkit-logout)\n   - [Wallkit.registration](Methods.html#wallkit-registration)\n   - [Wallkit.checkAuth](Methods.html#wallkit-checkauth)\n   - [Wallkit.isAuthenticated](Methods.html#wallkit-isauthenticated)\n   - [Wallkit.setToken](Methods.html#wallkit-settoken)\n   - [Wallkit.getToken](Methods.html#wallkit-gettoken)\n   - [Wallkit.getResource](Methods.html#wallkit-getresource)\n   - [Wallkit.getResources](Methods.html#wallkit-getresources)\n   - [Wallkit.passwordReset](Methods.html#wallkit-passwordreset)\n   - [Wallkit.getSubscriptions](Methods.html#wallkit-getsubscriptions)\n   - [Wallkit.calculatePrice](Methods.html#wallkit-calculateprice)\n   - [Wallkit.checkOut](Methods.html#wallkit-checkout)\n   - [Wallkit.validatePromo](Methods.html#wallkit-validatepromo)\n   - [Wallkit.getTransaction](Methods.html#wallkit-gettransaction)\n   - [Wallkit.updateUser](Methods.html#wallkit-updateuser)\n   - [Wallkit.refreshToken](Methods.html#wallkit-refreshtoken)\n   - [Wallkit.updatePassword](Methods.html#wallkit-updatepassword)\n   - [Wallkit.updateEmail](Methods.html#wallkit-updateemail)\n   - [Wallkit.suspendMe](Methods.html#wallkit-suspendMe)\n   - [Wallkit.confirmPassword](Methods.html#wallkit-confirmpassword)\n   - [Wallkit.resendEmailConfirmation](Methods.html#wallkit-resendemailconfirmation)\n   - [Wallkit.confirmEmail](Methods.html#wallkit-confirmemail)\n   - [Wallkit.removeCard](Methods.html#wallkit-removecard)\n   - [Wallkit.getCards](Methods.html#wallkit-getcards)\n   - [Wallkit.defaultCard](Methods.html#wallkit-defaultcard)\n   - [Wallkit.getCountries](Methods.html#wallkit-getcountries)\n   - [Wallkit.validateInvite](Methods.html#wallkit-validateinvite)\n   - [Wallkit.activateInvite](Methods.html#wallkit-activateinvite)\n   - [Wallkit.createStripeByToken](Methods.html#wallkit-createstripebytoken)\n - [Wallkit.client](Methods.html#wallkitclient)\n   - [Wallkit.client.get](Methods.html#wallkitclient-get)\n   - [Wallkit.client.post](Methods.html#wallkitclient-post)\n   - [Wallkit.client.put](Methods.html#wallkitclient-put)\n   - [Wallkit.client.del](Methods.html#wallkitclient-del)\n   - [Wallkit.client.postForm](Methods.html#wallkitclient-postform)\n - [Wallkit.user](Methods.html#wallkituser)\n    - [Wallkit.user.isConfirmed](Methods.html#wallkituser-isconfirmed)\n    - [Wallkit.user.plans](Methods.html#wallkituser-plans)\n    - [Wallkit.user.hasPlan](Methods.html#wallkituser-hasplan)\n \n## Wallkit\n\nGlobal Wallkit SDK methods.\n\n### Walkit.init\n\nInitializes Wallkit SDK Method.\n\n[See how to configure it.](Config.html) \n\n```js\nWallkit.init();\n```\n\n**Example**\n\n```javascript\nWallkit.init({\n    resource: \"3535\"\n});\n```\n\n### Wallkit.login\n\nLogging user into Wallkit. After successful authorization, method initializes token & user instances. Returns Promise with received user object.\n\n```javascript\nWallkit.login(data);\n```\n\n**Example**\n```javascript\nconst user = {\n  email: 'email@mail.com',\n  password: '12345'\n}\n\nWallkit.login(user)\n       .then((user) => {\n          console.log('USER:' user);\n       }, (error) => {\n          console.log('ERROR:', error);\n       });\n```\n\n### Wallkit.logout\n\nLogs out user from Wallkit. After successful response, method removes token & user instances.  Removes cookies & localstorage datas.\n\n```javascript\nWallkit.logut();\n```\n\n**Example**\n```javascript\nWallkit.logout()\n        .then(() => {\n          alert('User has logged');\n        }, (error) => {\n          console.log('ERROR:', error);\n        });\n```\n\n### Wallkit.registration\n\nRegisters user in Wallkit. After successful authorization, method initializes token & user instances. Returns Promise with received user object. \n\n```javascript\nWallkit.registration(data);\n```\n\n**Data example** \n```json\n{\n  \"email\": \"string\",\n  \"password\": \"string\",\n  \"password_confirm\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"company\": \"string\",\n  \"job\": \"string\",\n  \"zip\": \"string\",\n  \"phone\": \"string\",\n  \"country\": \"string\",\n  \"state\": \"string\",\n  \"city\": \"string\",\n  \"ip\": \"string\",\n  \"invite\": \"string\",\n  \"extra\": {}\n}\n```\n\n**Example**\n```js\nWallkit.registration(user)\n       .then((user) => {\n          console.log('USER:', user);\n       }, (error) => {\n          console.log('ERROR:', error);\n       });\n```\n\n### Wallkit.checkAuth\n\nInitializes user by defined token. After successful response, method initializes user instance. Returns Promise with received user object.  \n\n```javascript\nWallkit.checkAuth();\n```\n**Example**\n```javascript\nconst token = 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6';\n\nWallkit.setToken(token);\n\nWallkit.checkAuth()\n        .then((user) => {\n           console.log('USER:', user);\n        }, (error) => {\n           console.log('ERROR:', error);\n        });\n```\n\n\n### Wallkit.isAuthenticated\n\nChecks user authentication status.\n\n```javascript\nWallkit.isAuthenticated();\n```\n\n### Wallkit.setToken\n\nSets user token.\n\n```javascript\nWallkit.setToken(token);\n```\n\n**Example**\n```javascript\nconst token = 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6';\n\nWallkit.setToken(token);\n```\n\n### Wallkit.getToken\n\nReturns token object, where value is token.\n\n```javascript\nWallkit.getToken(); // {value: 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6' }\n```\n\n### Wallkit.getResource\n\nGets Wallkit's client resource such as `public_key`, `origin`, `payments_in_live_mode`, `stripe_public_key`. \n\nReturns promise with resource object.\n\n```javascript\nWallkit.getResource();\n```\n\n### Wallkit.getResources\n\nReturns promise with resources object which includes resources array.\n\n```javascript\nWallkit.getResources();\n```\n\n### Wallkit.passwordReset\n\nReset password by user email. Returns promise with result.\n\n```javascript\nWallkit.passwordReset(object|string);\n```\n\n**Example**\n```javascript\nWallkit.passwordReset('test@mail.com')\n        .then((response) => {\n            if (response.result) {\n                alert('Your password reset.')\n            } else {\n                alert('Your password not reset.')\n            }\n        }).catch((error) => {\n            alert(error);\n        });\n```\n\n### Wallkit.getSubscriptions\n\nGets available subscriptions for payment. \n\nReturns promise with includes array with subscriptions.\n\n```javascript\nWallkit.getSubscriptions();\n```\n\n### Wallkit.calculatePrice\n\nRequest for calculate final price with discount. \n\nBefore buying, it is advisable to make a recalculation, that would show the price, taking into account the discount, and the full purchase price. Also check the ability to make a purchase by the user.\n\nReturns promise with price calculation info.\n\n```javascript\nWallkit.calculatePrice(Array);\n```\n\n**Data example**\n```json\n[\n  {\n    \"item_type\": \"string\",\n    \"item_key\": \"string\",\n    \"user_card_id\": 0,\n    \"item_resource\": \"string\",\n    \"promo\": \"string\"\n  }\n]\n```\n\n**Response example**\n```json\n{\n  \"total_price\": 0,\n  \"discount\": 0,\n  \"discounted_total_price\": 0,\n  \"currency\": \"string\",\n  \"purchases\": [\n    {\n      \"item_type\": \"string\",\n      \"item_key\": \"string\",\n      \"promo\": \"string\",\n      \"price\": 0,\n      \"discount\": 0,\n      \"discounted_price\": 0,\n      \"currency\": \"string\"\n    }\n  ]\n}\n```\n\n### Wallkit.checkOut\n\nThe process of buying users of one or more content, bundle or subscription\n\nReturns promise with transactions info.\n\n```javascript\nWallkit.checkOut(Array);\n```\n\n**Data example**\n```json\n[\n  {\n    \"item_type\": \"string\",\n    \"item_key\": \"string\",\n    \"user_card_id\": 0,\n    \"item_resource\": \"string\",\n    \"promo\": \"string\"\n  }\n]\n```\n\n### Wallkit.validatePromo\n\nBefore buying, a promo code must (optional) be validated. \n\nReturns promise with validation info.\n\n```javascript\nWallkit.validatePromo(string | object);\n```\n\n### Wallkit.getTransaction\n\nGets transaction by id.\n\nReturns promise with transaction info.\n\n```javascript\nWallkit.getTransaction(number);\n```\n\n### Wallkit.updateUser\n\nUpdates user's info.\n\nReturns promise with user updated info.\n\n```javascript\nWallkit.updateUser(object);\n```\n\n**Data Example**\n```json\n{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"job\": \"string\",\n  \"zip\": \"string\",\n  \"phone\": \"string\",\n  \"country\": \"string\",\n  \"state\": \"string\",\n  \"city\": \"string\",\n  \"company\": \"string\",\n  \"extra\": {}\n}\n```\n\n### Wallkit.refreshToken\n\nRefresh token by refresh code.\n\nReturns promise with token info.\n\n```javascript\nWallkit.refreshToken(string | object);\n```\n\n**Data Example**\n```json\n{\n  \"first_name\": \"string\",\n  \"last_name\": \"string\",\n  \"job\": \"string\",\n  \"zip\": \"string\",\n  \"phone\": \"string\",\n  \"country\": \"string\",\n  \"state\": \"string\",\n  \"city\": \"string\",\n  \"company\": \"string\",\n  \"extra\": {}\n}\n```\n\n### Wallkit.updatePassword\n\nUpdates user's password.\n\nReturns promise with success info.\n\n```javascript\nWallkit.updatePassword(object);\n```\n\n**Data Example**\n```json\n{\n  \"password\": \"string\",\n  \"password_confirm\": \"string\"\n}\n```\n\n### Wallkit.updateEmail\n\nUpdates user's email.\n\nReturns promise with success info.\n\n```javascript\nWallkit.updateEmail(string|object);\n```\n\n**Object Data Example**\n```json\n{\n  \"email\": \"test@mail.com\",\n}\n```\n\n### Wallkit.suspendMe\n\nSuspends user from all resources, auto-renew will be suspended. The user will not be able to log in.\n\nReturns promise with user info.\n\n```javascript\nWallkit.suspendMe();\n```\n\n### Wallkit.confirmPassword\n\nConfirms user reset password by code. Also sets new token & inits user.\n\nReturns promise with user info.\n\n```javascript\nWallkit.confirmPassword(string|object);\n```\n\n### Wallkit.resendEmailConfirmation\n\nResends user confirmation email.\n\nIf the user did not receive the letter after registration, and the mail is not confirmed, you can request a new email with a confirmation code.\nPlease configure event “Resend Confirmation” to send the respective email.\n\nReturns promise with result status.\n\n```javascript\nWallkit.resendEmailConfirmation();\n```\n\n### Wallkit.confirmEmail\n\nConfirms email by activation code.\n \nReturns promise with result status.\n\n```javascript\nWallkit.confirmEmail(string|object);\n```\n\n### Wallkit.removeCard\n\nDeletes a user card. A user may have several cards, and there must be a default card. If a card is deleted by default, its nearest card becomes the default card.\n \nReturns promise with result status.\n\n```javascript\nWallkit.removeCard(number);\n```\n\n### Wallkit.getCards\n\nGets user's card list.\n \nReturns promise with response object which includes cards array(items) and pagination object.\n\n```javascript\nWallkit.getCards();\n```\n\n**Response Example**\n```json\n{\n  \"paginator\": {\n    \"current_page\": 0,\n    \"last_page\": 0,\n    \"total_pages\": 0,\n    \"total_items\": 0,\n    \"limit\": 0\n  },\n  \"items\": [\n    {\n      \"id\": 0,\n      \"card_brand\": \"string\",\n      \"card_country\": \"string\",\n      \"card_last4\": \"string\",\n      \"pay_system\": \"string\",\n      \"default\": true,\n      \"expiration_date\": \"string\",\n      \"created_at\": \"string\"\n    }\n  ]\n}\n```\n\n### Wallkit.defaultCard\n\nSets user default card by card id.\n\nReturns promise with result status.\n\n```javascript\nWallkit.defaultCard(number);\n```\n\n### Wallkit.getCountries\n\nFor ease of registration or other forms, you can use the list of all countries, if the request is un, then the user’s country will be marked as “selected”.\n\nReturns promise with result status.\n\n```javascript\nWallkit.getCountries();\n```\n\n**Response Example**\n```json\n{\n  \"items\": [\n    {\n      \"title\": \"string\",\n      \"code\": \"string\",\n      \"sort\": 0,\n      \"selected\": true,\n      \"states\": [\n        {\n          \"title\": \"string\",\n          \"code\": \"string\"\n        }\n      ]\n    }\n  ]\n}\n```\n\n### Wallkit.getCurrencies\n\nGets list of supported currencies.\n\nReturns promise with currencies list.\n\n```javascript\nWallkit.getCurrencies();\n```\n\n**Response Example**\n```json\n{\n  \"items\": [\n    {\n      \"title\": \"string\"\n    }\n  ]\n}\n```\n\n### Wallkit.validateInvite\n\nValidates invite by invite code.\n\nReturns promise with result status.\n\n```javascript\nWallkit.validateInvite(string | object);\n```\n\n### Wallkit.activateInvite\n\nActivates invite for an authorized user by invite code.\n\nReturns promise with result status.\n\n```javascript\nWallkit.activateInvite(string | object);\n```\n\n### Wallkit.createStripeByToken\n\nIf you use Stripe.js (or other stripeSDK), then it returns the token that needs to be passed to this request. Then the card will be added to the user and will become by default.\n\nReturns promise with result status.\n\n```javascript\nWallkit.activateInvite(string | object);\n```\n\n\n## Wallkit.client\n\nMethods list to communicate with API.\n[See Wallkit API Documentation](http://wallkit.net/docs).\n\n### Wallkit.client.get\n\nGET request to manipulate Wallkit API.\n\n```javascript\nWallkit.client.get({path, data});\n```\n\n**Example**\n```javascript\nWallkit.client.get({\n    path: \"/user/cards\"\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));\n```\n\n### WallkitClient.post\nPOST request to manipulate Wallkit API.\n\n```javascript\nWallkit.client.post({path, data});\n```\n**Example**\n```javascript\nWallkit.client.post({\n    path: \"/invite-validation\",\n    data: {\n        invite: 'yummy',\n        return_invite: true\n    }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));\n```\n\n### WallkitClient.put\nPUT request to manipulate Wallkit API.\n\n```javascript\nWallkit.client.put({path, data});\n```\n\n**Example**\n```javascript\nWallkit.client.put({\n    path: \"/user/email\",\n    body: {\n      email: \"test@email.com\"\n    }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));\n```\n\n### Wallkit.client.del\nDELETE request to manipulate Wallkit API.\n\n```javascript\nWallkit.client.del({path, data});\n```\n\n**Example**\n```javascript\nWallkit.client.del({\n    path: \"/user/teams/35\",\n    data: {\n      id: 35\n    }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));\n```\n\n### Wallkit.client.postForm\nPOST request with form data to manipulate Wallkit API.\n\n```javascript\nWallkit.client.postForm({path, data});\n```\n\n**Example**\n```javascript\nconst userData = {\n   name: \"Volodimir\",\n   description: \"Volidimir Giant\",\n   member_limit: 3\n}\n\nWallkit.client.postForm({\n    path: \"/registration\",\n    data: {\n      id: 35\n    }\n}).then(response => {\n    console.log('response:', response);\n}).catch(e => console.log('error:', e));\n```\n\n\n## Wallkit.user\n\n### Wallkit.user.isConfirmed\nChecks is user has confirmed his email.\n\n```js\nWallkit.user.isConfirmed();\n```\n\n\n### Wallkit.user.plans\nGets user's plans list.\n\n```js\nWallkit.user.plans();\n```\n\n**Return value example**\n```js\n[{\n    can_own_teams: true,\n    full_access: true,\n    priority: 400,\n    slug: \"premium\",\n    title: \"Premium\"\n }, {\n    can_own_teams: false,\n    full_access: false,\n    priority: 300,\n    slug: \"premium\",\n    title: \"Premium\"\n}]\n```\n\n### WallkitUser.hasPlan\nChecks if user is subscribed to the plan.\n\n```js\nWallkit.user.hasPlan(plan);\n```\n\nPlan data example:\n```js\n{\n  can_own_teams: true,\n  full_access: true,\n  priority: 400,\n  slug: \"premium\",\n  title: \"Premium\"\n}\n```\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/Users/shamrylo/wallkit-js-sdk/manual/Config.md",
+    "name": "./manual/Config.md",
+    "content": "# Config \r\r**Wallkit SDK config.**\r\r\rIn additional changes, Wallkit Team will notify you.\r\rName              | Required | Default | Description                                  | Example\r----------------- | -------- | ------- | -------------------------------------------- | ---------\rapi_url           | true     | -       | API host                                     | api.wallkit.net\rresource          | true     | -       | Public key from http://wallkit.net/resources | 35D02754-9A51-2C23-A5F7-79970C4\rdebug             | false    | true    | Debug mode                                   | false",
+    "static": true,
+    "access": "public"
+  }
+]

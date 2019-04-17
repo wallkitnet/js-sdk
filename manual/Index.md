@@ -1,17 +1,5 @@
 ![logo](https://wallkit.net/wallkit/images/wallkit-logo.svg "Wallkit")
 
-## Introduction
-
-> Welcome to Wallkit JS-SDK.
-
-## Installation
-
-Use the package manager [npm](https://nodejs.org/en/) to install packages.
-```bash
-$ npm install
-```
-
-
 # Usage
 
  - [Installation](#installation)
@@ -47,7 +35,7 @@ $ npm install
  ```js
 // Example
 Wallkit.init({
-    resource: "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
+    resource: "3535"
 });
 ```
 
@@ -57,11 +45,3 @@ As you see it is really easy to integrate Wallkit SDK into your website or app. 
 
  - Go to [Documentation](./manual/Methods.html) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.
  - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    
-## Documentation 
-
-To generate documentation please install packages and run:
-
-```bash
-$ npm run doc
-```
-

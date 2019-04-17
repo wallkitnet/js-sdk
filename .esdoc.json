@@ -1,0 +1,36 @@
+{
+  "source": "./src/Wallkit/",
+  "destination": "./docs",
+  "index": "./manual/Index.md",
+  "excludes": ["\\Params\\.js$", "\\Cookies\\.js$"],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "brand": {
+          "title": "Wallkit",
+          "site": "https://wallkit.net/",
+          "logo": "./manual/styles/wallkit-logo.png"
+        },
+        "manual": {
+          "globalIndex": false,
+          "index": "./manual/Index.md",
+          "files": ["./manual/Usage.md", "./manual/API.md", "./manual/Methods.md", "./manual/Config.md"]
+        }
+      }
+    }, {
+      "name": "esdoc-publish-html-plugin",
+      "option": {
+        "template": "./node_modules/esdoc-custom-theme/template"
+      }
+    },  {
+      "name": "esdoc-inject-style-plugin",
+      "option": {
+        "enable": true,
+        "styles": [
+          "./manual/styles/customs-styles.css"
+        ]
+      }
+    }
+  ]
+}

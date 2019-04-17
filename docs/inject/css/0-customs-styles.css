@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600');
+
+:root {
+    --sans-serif: Roboto, sans-serif;
+    --main-color: #333;
+}
+
+:root.light {
+    --main-color: #565656;
+    --main-link-color: #684287;
+
+    --main-header-shadow: 1px 1px 4px #0000002e;
+    --main-header-background: #fff;
+    --main-header-color: #684287;
+    --main-focus-color: transparent;
+
+    --left-sidebar-indent-background: #684287;
+    --left-sidebar-background-active: transparent;
+    --left-sidebar-border-color: transparent;
+    --left-sidebar-color-active: #684287;
+    --left-sidebar-background: #fff;
+
+    --right-sidebar-headline-background: #684287;
+
+    --active-target-color: #684287;
+    --active-target-background: transparent;
+    --active-target-border-color: #684287;
+
+    --thead-border-color: transparent;
+    --thead-background: #8da6ce3b;
+    --thead-color: #333;
+
+    --td-background: transparent;
+    --td-border-color: transparent;
+
+    --content-detail-background: #d5eaf94f;
+
+    --right-sidebar-shadow: -1px 1px 4px #0000002e;
+    --right-sidebar-border-color: transparent;
+    --right-sidebar-background: #f5fbff;
+
+    --code-background: #f7fafc;
+}
+
+:root.dark {
+    --main-background: #1a1f36;
+    --main-color: #a3acb9;
+    --main-link-color: #684287;
+    --main-focus-color: transparent;
+
+    --main-header-color: #fff;
+    --main-header-background: #684287;
+
+    --left-sidebar-indent-background: #684287;
+    --left-sidebar-background: #1a1f36;
+    --left-sidebar-background-active: transparent;
+    --left-sidebar-border-color: transparent;
+
+    --right-sidebar-headline-background: #684287;
+    --right-sidebar-border-color: transparent;
+}
+
+.sidebar-left {
+    box-shadow: inset -1px 0 0 0 #e3e8ee;
+    padding-top: 10px;
+
+}
+
+td, th {
+    border: none;
+}
+
+a {
+    font-weight: 500;
+}
+
+.sidebar .fake-nav-link a, .sidebar .nav-link {
+    height: 30px;
+    font-weight: 500;
+    color: #697386;
+    padding-left: 24px;
+}
+
+.sidebar-left ._indent-h1 .nav-link:before,
+.sidebar-left ._indent-h2 .nav-link:before,
+.sidebar-left ._indent-h3 .nav-link:before,
+.sidebar-left ._indent-h4 .nav-link:before,
+.sidebar-left .indent-h1 .nav-link:before,
+.sidebar-left .indent-h2 .nav-link:before,
+.sidebar-left .indent-h3 .nav-link:before,
+.sidebar-left .indent-h4 .nav-link:before {
+    height: 8px;
+    border-radius: 35px;
+    width: 11px;
+    padding: 0;
+}
+
+.sidebar .fake-nav-link .kind {
+    height: 30px;
+}
+
+.dark .sidebar {
+    box-shadow: inset -1px 0 0 0 #000000;
+}
+
+._indent-h2 .nav-link {
+    font-weight: 600;
+}
+
+.CodeMirror {
+    border-radius: 5px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    border-radius: 5px;
+    border-bottom: 0!important;
+}
+
+.content .detail .code {
+    color: #684287;
+}
+
+._kind-class, .kind-class {
+    border-radius: 5px;
+}
+
+:not(.CodeMirror) code, :not(pre) code {
+    --code-background: #f7fafc;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.dark :not(.CodeMirror) code, :not(pre) code {
+    --code-background: #333333;
+}
+
+.main-nav img {
+    border-radius: 50px;
+}
+
+img[title="Wallkit"] {
+    background-color: white;
+    border-radius: 154px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    display: block;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

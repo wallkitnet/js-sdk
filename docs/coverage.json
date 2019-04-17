@@ -1,0 +1,45 @@
+{
+  "coverage": "95.12%",
+  "expectCount": 82,
+  "actualCount": 78,
+  "files": {
+    "Wallkit/Wallkit.js": {
+      "expectCount": 46,
+      "actualCount": 46,
+      "undocumentLines": []
+    },
+    "Wallkit/WallkitClient.js": {
+      "expectCount": 14,
+      "actualCount": 14,
+      "undocumentLines": []
+    },
+    "Wallkit/WallkitResource.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        63
+      ]
+    },
+    "Wallkit/WallkitToken.js": {
+      "expectCount": 8,
+      "actualCount": 7,
+      "undocumentLines": [
+        41
+      ]
+    },
+    "Wallkit/WallkitUser.js": {
+      "expectCount": 8,
+      "actualCount": 7,
+      "undocumentLines": [
+        132
+      ]
+    },
+    "Wallkit/utils/Events.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    }
+  }
+}

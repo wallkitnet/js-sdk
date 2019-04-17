@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Wallkit#getUser",
+    "filePath": "Wallkit/Wallkit.js",
+    "lines": [
+      {
+        "lineNumber": 365,
+        "line": "    /*CustomEvent(event, params) {"
+      },
+      {
+        "lineNumber": 366,
+        "line": "      params = params || { bubbles: false, cancelable: false, detail: undefined };"
+      },
+      {
+        "lineNumber": 367,
+        "line": ""
+      },
+      {
+        "lineNumber": 368,
+        "line": "      var evt = document.createEvent( 'CustomEvent' );"
+      },
+      {
+        "lineNumber": 369,
+        "line": "      evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );"
+      },
+      {
+        "lineNumber": 370,
+        "line": ""
+      },
+      {
+        "lineNumber": 371,
+        "line": "      return evt;"
+      },
+      {
+        "lineNumber": 372,
+        "line": "    }*/"
+      },
+      {
+        "lineNumber": 373,
+        "line": ""
+      },
+      {
+        "lineNumber": 374,
+        "line": "    getUser() {"
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "event",
+      "params"
+    ]
+  }
+]
