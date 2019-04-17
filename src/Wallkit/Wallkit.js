@@ -276,8 +276,8 @@ class Wallkit {
      *
      * @example
      *let user = {
-     *   email: 'dev@grandiz.com',
-     *   password: '123456'
+     *   email: 'dev@gwallkit.net',
+     *   password: '******'
      *};
      *
      *Wallkit.login(user)

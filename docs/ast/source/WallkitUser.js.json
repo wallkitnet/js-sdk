@@ -1303,7 +1303,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@grandiz.com\",\n     *    ...\n     * })\n     ",
+                    "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@gwallkit.net\",\n     *    ...\n     * })\n     ",
                     "start": 180,
                     "end": 636,
                     "loc": {
@@ -3679,7 +3679,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@grandiz.com\",\n     *    ...\n     * })\n     ",
+      "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@gwallkit.net\",\n     *    ...\n     * })\n     ",
       "start": 180,
       "end": 636,
       "loc": {
@@ -4327,7 +4327,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@grandiz.com\",\n     *    ...\n     * })\n     ",
+      "value": "*\n     * Constructor for WallkitUser class.\n     *\n     * @param {object} props - object with user information\n     *\n     * @example\n     * let user = new WallkitUser({\n     *   active: true,\n     *    can_own_teams: true,\n     *    city: \"Odessa\",\n     *    company: \"Grandiz\",\n     *    confirm: true,\n     *    country: \"American Samoa\",\n     *    created_at: \"2015-12-16 12:33:18\",\n     *    email: \"dev@gwallkit.net\",\n     *    ...\n     * })\n     ",
       "start": 180,
       "end": 636,
       "loc": {

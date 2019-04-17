@@ -20,7 +20,7 @@ export default class WallkitUser {
      *    confirm: true,
      *    country: "American Samoa",
      *    created_at: "2015-12-16 12:33:18",
-     *    email: "dev@grandiz.com",
+     *    email: "dev@gwallkit.net",
      *    ...
      * })
      */

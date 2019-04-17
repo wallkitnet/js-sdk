@@ -12,9 +12,9 @@ $ npm install
 $ npm run build
 ```
 
-## Integration
-
-1. Include Wallkit SDK To Website/App  
+## Usage and Integration
+  
+ - Include Wallkit SDK To Website/App  
 
     - As HTML 
     ```html
@@ -30,10 +30,7 @@ $ npm run build
     ```javascript
     import Wallkit from 'wallkit.esm.min.js';
     ```
-
-## Usage
-
- To start using Wallkit SDK, use Wallkit.init() method, where resource - your Wallkit public key.
+ - To start using Wallkit SDK, use Wallkit.init() method, where resource - your Wallkit public key.
  
  ```js
 // Example
@@ -41,6 +38,7 @@ Wallkit.init({
     resource: "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
 });
 ```
+  
   
 ## Documentation 
 
