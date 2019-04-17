@@ -9,21 +9,12 @@
 Use the package manager [npm](https://nodejs.org/en/) to install packages.
 ```bash
 $ npm install
+$ npm run build
 ```
 
+## Integration
 
-# Usage
-
- - [Installation](#installation)
- - [Initialization](#initialization)
- - [What next?](#what-next-)
- 
- 
-## Installation
-
-1. Download Wallkit SDK from https://wallkit.net/
-
-2. Include Wallkit SDK To Website/App  
+1. Include Wallkit SDK To Website/App  
 
     - As HTML 
     ```html
@@ -40,9 +31,9 @@ $ npm install
     import Wallkit from 'wallkit.esm.min.js';
     ```
 
-## Initialization
+## Usage
 
- To start using Wallkit SDK, use [Wallkit.init()](class/Wallkit/Wallkit.js~Wallkit.html#instance-method-init) method, with [config](./manual/Config.html).
+ To start using Wallkit SDK, use Wallkit.init() method, where resource - your Wallkit public key.
  
  ```js
 // Example
@@ -50,13 +41,7 @@ Wallkit.init({
     resource: "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
 });
 ```
-
-## What next?
-
-As you see it is really easy to integrate Wallkit SDK into your website or app. So here are your next steps:
-
- - Go to [Documentation](/manual/Methods.md) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.
- - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    
+  
 ## Documentation 
 
 To generate documentation please install packages and run:
@@ -64,4 +49,8 @@ To generate documentation please install packages and run:
 ```bash
 $ npm run doc
 ```
+
+ - Go to [Documentation](/manual/Methods.md) to learn more about Wallkit JS-SDK and how to use it.
+ - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    
+
 
