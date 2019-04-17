@@ -7,12 +7,12 @@ import Client from './Wallkit/WallkitClient';
 window.onload = function () {
 
     Wallkit.init({
-        resource: "3535"
+        resource: "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
     });
 
 
-    let email = 'dev@grandiz.com';
-    let password = '123456';
+    let email = 'dev@wallkit.net';
+    let password = '**********';
 
     Wallkit.login({email, password})
         .then((user) => {

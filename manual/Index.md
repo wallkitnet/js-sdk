@@ -35,7 +35,7 @@
  ```js
 // Example
 Wallkit.init({
-    resource: "3535"
+    resource: "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx"
 });
 ```
 
