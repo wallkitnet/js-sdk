@@ -55,7 +55,7 @@ Wallkit.init({
 
 As you see it is really easy to integrate Wallkit SDK into your website or app. So here are your next steps:
 
- - Go to [Documentation](/wallkitnet/js-sdk/blob/master/manual/Methods.md) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.
+ - Go to [Documentation](/manual/Methods.md) or [Reference](identifiers.html) to learn more about Wallkit SDK and how to use it.
  - If you have questions about Wallkit SDK don't hesitate to ask them to our [Wallkit Team.](http://wallkit.net)    
 ## Documentation 
 
