@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import Config from './Config'
 import Wallkit  from './Wallkit';
-import _ from 'lodash';
+import {assign, keysIn} from 'lodash';
 import Promise from 'bluebird';
 
 /**
@@ -258,10 +258,10 @@ class WallkitClient {
             }
         }
 
-        _.assign(headers,{'resource': this.resource});
+        assign(headers,{'resource': this.resource});
 
         if (this.token)
-            _.assign(headers,{'token': this.token});
+            assign(headers,{'token': this.token});
 
         let request = {
             method,
@@ -269,8 +269,8 @@ class WallkitClient {
         };
 
         try {
-            if (_.keysIn(body).length > 0 || body instanceof FormData) {
-                _.assign(request,{'body': body});
+            if (keysIn(body).length > 0 || body instanceof FormData) {
+                assign(request,{'body': body});
             }
 
         } catch(err) {
@@ -325,7 +325,8 @@ class WallkitClient {
                       }
 
                        error.statusText = response.statusText;
-                       error.statusCode = response.statusCode;
+                       error.statusCode = response.status;
+                       error.requestUrl = response.url;
                        error.response = json;
                        throw error
                    })
@@ -336,11 +337,11 @@ class WallkitClient {
 
 
 
-        _.assign(headers,{'resource': this.resource});
-        _.assign(headers,{'Wallkit-Client': 'JsSDK v1.1.0'});
+        assign(headers,{'resource': this.resource});
+        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.0'});
 
         if (this.token)
-            _.assign(headers,{'token': this.token});
+            assign(headers,{'token': this.token});
 
         let request = {
             method,
@@ -349,11 +350,11 @@ class WallkitClient {
 
         try {
           // if(Object.keys(body).length > 0 || body instanceof FormData){
-          //   _.assign(request,{'body': body});
+          //   assign(request,{'body': body});
           // }
 
-          if (_.keysIn(body).length > 0 || body instanceof FormData) {
-            _.assign(request,{'body': body});
+          if (keysIn(body).length > 0 || body instanceof FormData) {
+            assign(request,{'body': body});
           }
 
         } catch(err) {

@@ -4,7 +4,7 @@ import User from './WallkitUser';
 import Resource from './WallkitResource';
 import Token from './WallkitToken';
 import Cookies from './utils/Cookies';
-import _ from 'lodash';
+import {isEmpty} from 'lodash';
 import Event from './utils/Events';
 
 /**
@@ -81,13 +81,16 @@ class Wallkit {
 
 
       if(this.user === null && this.token ||
-        (!_.isEmpty(this.user) && !_.isEmpty(this.user.token) && !_.isEmpty(this.token) && this.user.token !== this.token.value)
+        (!isEmpty(this.user) && !isEmpty(this.user.token) && !isEmpty(this.token) && this.user.token !== this.token.value)
       )
       {
-        this.getUser();
+        this.getUser()
+          .catch(e => {
+
+          });
       }
 
-      if(this.user !== null && _.isEmpty(this.token))
+      if(this.user !== null && isEmpty(this.token))
       {
         this.logout();
       }
@@ -192,7 +195,7 @@ class Wallkit {
    * @returns {null}
    */
   getToken() {
-      if(!_.isEmpty(this.token) && !_.isEmpty(this.user.token))
+      if(this.user !== null && typeof this.token !== "undefined" && !isEmpty(this.token) && !isEmpty(this.user.token))
       {
         return this.user.token;
       }
@@ -238,7 +241,18 @@ class Wallkit {
                 this.user = new User(user);
                 this.user.serialize();
                 return this.user
-            });
+            })
+            .catch(e => {
+              if(e.statusCode === 401)
+              {
+                this.token = null
+                this.user = null
+                localStorage.removeItem(User.storageKey);
+                Cookies.removeItem('wk-token');
+                throw new Error('Unauthorized');
+              }
+              return Promise.reject(e.response);
+            })
     }
 
     /**
@@ -334,7 +348,7 @@ class Wallkit {
           .then(result => {
             this.token = null;
             localStorage.removeItem(User.storageKey);
-            localStorage.removeItem(Resource.storageKey);
+            //localStorage.removeItem(Resource.storageKey);
             Cookies.removeItem('wk-token');
           })
       }
@@ -342,7 +356,7 @@ class Wallkit {
       {
         this.token = null;
         localStorage.removeItem(User.storageKey);
-        localStorage.removeItem(Resource.storageKey);
+        //localStorage.removeItem(Resource.storageKey);
         Cookies.removeItem('wk-token');
       }
 
@@ -380,6 +394,13 @@ class Wallkit {
           return this.user
         })
         .catch(e => {
+          if(e.statusCode === 401)
+          {
+            this.token = null
+            this.user = null
+            localStorage.removeItem(User.storageKey);
+            Cookies.removeItem('wk-token');
+          }
           return Promise.reject(e.response);
         })
     }
@@ -576,7 +597,7 @@ class Wallkit {
     }
     return this.client.post({path: '/authorization/refresh', data: data})
       .then(response => {
-        if(!_.isEmpty(response.token))
+        if(!isEmpty(response.token))
         {
           this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
           this.token.serialize();
@@ -646,7 +667,7 @@ class Wallkit {
       .then(response => {
         Event.send("wk-event-confirm-password", response);
 
-        if(!_.isEmpty(response.token))
+        if(!isEmpty(response.token))
         {
           this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
           this.token.serialize();
@@ -796,6 +817,42 @@ class Wallkit {
     return this.client.post({path: '/user/stripe/token', data: data})
       .then(response => {
         Event.send("wk-event-stripe-token", response);
+        return response;
+      })
+  }
+
+
+  /**
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  validateEmail(data) {
+    if(typeof data !== "object")
+    {
+      data = {email: data}
+    }
+    return this.client.post({path: '/email-validation', data: data})
+      .then(response => {
+        Event.send("wk-event-email-validation", response);
+        return response;
+      })
+  }
+
+  /**
+   *
+   * @param content_key
+   * @returns {Promise<any>}
+   */
+  checkAccess(content_key) {
+
+    if(typeof content_key === "undefined")
+    {
+      return Promise.reject("Incorrect content key");
+    }
+
+    return this.client.get({path: '/user/content/'+content_key})
+      .then(response => {
         return response;
       })
   }

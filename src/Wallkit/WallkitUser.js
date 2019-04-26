@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import {isEmpty} from 'lodash';
 import client from './WallkitClient';
 import Event from "./utils/Events";
 
@@ -33,7 +33,7 @@ export default class WallkitUser {
       });
 
 
-      if (!_.isEmpty(this.token))
+      if (!isEmpty(this.token))
       {
         Event.send("wk-event-token", this.token);
       }

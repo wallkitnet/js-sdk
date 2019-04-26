@@ -58,9 +58,7 @@ export default class WallkitToken {
      * WallkitToken.serialize();
      */
     serialize() {
-        // set cookie on year
         let expires = Infinity;
-        //Cookies.setItem(`_wk_token_${Config.resource}`,JSON.stringify(this), expires, '/');
         Cookies.setItem('wk-token',this.value, expires, '/');
         if(typeof this.refresh !== "undefined")
         {
@@ -80,7 +78,6 @@ WallkitToken.storageKey = 'WallkitToken';
  * WallkitToken.deserialize();
  */
 WallkitToken.deserialize = function () {
-    //let data = JSON.parse(Cookies.getItem(`_wk_token_${Config.resource}`));
     let data = Cookies.getItem('wk-token');
     let refresh = Cookies.getItem('wk-refresh');
 

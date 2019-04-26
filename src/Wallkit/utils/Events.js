@@ -2,8 +2,6 @@
 
 var Events = {
 
-
-
   send(name, value, params)
   {
 

@@ -1,7 +1,4 @@
-import _ from 'lodash';
 import client from './WallkitClient';
-import Event from "./utils/Events";
-import WallkitUser from "./WallkitUser";
 
 /**
  * Class to manipulate with Resources.
@@ -24,7 +21,6 @@ export default class WallkitResource {
     }
 
 
-
     /**
      * Serialize resource instance and insert it in localstorage
      *
@@ -37,7 +33,6 @@ export default class WallkitResource {
     serialize() {
         return localStorage.setItem(WallkitResource.storageKey,JSON.stringify(this))
     }
-
 
 }
 
