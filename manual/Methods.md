@@ -38,6 +38,7 @@ For detailed information about methods see [Reference](../identifiers.html).
    - [Wallkit.validateInvite](Methods.html#wallkit-validateinvite)
    - [Wallkit.activateInvite](Methods.html#wallkit-activateinvite)
    - [Wallkit.createStripeByToken](Methods.html#wallkit-createstripebytoken)
+   - [Wallkit.sendPageView](Methods.html#wallkit-send-page-view)
  - [Wallkit.client](Methods.html#wallkitclient)
    - [Wallkit.client.get](Methods.html#wallkitclient-get)
    - [Wallkit.client.post](Methods.html#wallkitclient-post)
@@ -607,6 +608,16 @@ Returns promise with result status.
 
 ```javascript
 Wallkit.activateInvite(string | object);
+```
+
+### Wallkit.sendPageView
+
+Method pushes 'page view' event to analytic.
+
+Returns promise with result status.
+
+```javascript
+Wallkit.sendPageView(string);
 ```
 
 
