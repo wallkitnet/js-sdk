@@ -617,7 +617,28 @@ Method pushes 'page view' event to analytic.
 Returns promise with result status.
 
 ```javascript
-Wallkit.sendPageView(string);
+Wallkit.sendPageView(string, string);
+```
+
+**Example**
+```javascript
+Wallkit.sendPageView("/content/post-123456789", "123456789")
+  .then(response => {
+    console.log('response:', response);
+  })
+  .catch(e => console.log('error:', e));
+```
+or
+```javascript
+Wallkit.sendPageView({
+     "name": "page_view",
+     "value": "/content/post-123456789",
+     "content_key": "123456789" 
+    })
+    .then(response => {
+      console.log('response:', response);
+    })
+    .catch(e => console.log('error:', e));
 ```
 
 
