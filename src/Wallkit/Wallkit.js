@@ -857,6 +857,45 @@ class Wallkit {
       })
   }
 
+
+  /**
+   *
+   * @param data
+   * @returns {Promise}
+   */
+  sendEvent(data) {
+    if (typeof data !== "object") {
+      throw new Error('Event data must be an object.');
+    }
+    return this.client.post({path: '/user/event', data: data});
+  }
+
+  /**
+   *
+   * @param data
+   * @param content_key
+   * @returns {Promise<any>}
+   */
+  sendPageView(data, content_key) {
+    if (!data) throw new Error('No argument passed');
+
+    if (typeof data !== "object") {
+      data = {
+        name: 'page_view',
+        value: data,
+        content_key: content_key,
+      };
+    }
+    else
+    {
+      if(typeof data.name === "undefined" || data.name !== "page_view")
+      {
+        data.name = "page_view";
+      }
+    }
+    return this.sendEvent(data);
+  }
+
 }
 
 let instance = new Wallkit();

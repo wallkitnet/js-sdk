@@ -259,6 +259,7 @@ class WallkitClient {
         }
 
         assign(headers,{'resource': this.resource});
+        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.1'});
 
         if (this.token)
             assign(headers,{'token': this.token});
@@ -338,7 +339,7 @@ class WallkitClient {
 
 
         assign(headers,{'resource': this.resource});
-        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.0'});
+        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.1'});
 
         if (this.token)
             assign(headers,{'token': this.token});
