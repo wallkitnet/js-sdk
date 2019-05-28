@@ -79,7 +79,9 @@ class Wallkit {
        */
       this.resource = Resource.deserialize();
 
-
+      /**
+       * check and retrieve user if exist token on token not match
+       */
       if(this.user === null && this.token ||
         (!isEmpty(this.user) && !isEmpty(this.user.token) && !isEmpty(this.token) && this.user.token !== this.token.value)
       )
@@ -90,10 +92,6 @@ class Wallkit {
           });
       }
 
-      if(this.user !== null && isEmpty(this.token))
-      {
-        this.logout();
-      }
 
       /**
        * reload resource
@@ -248,6 +246,7 @@ class Wallkit {
                 this.token = null
                 this.user = null
                 localStorage.removeItem(User.storageKey);
+                localStorage.removeItem(Token.storageKey);
                 Cookies.removeItem('wk-token');
                 throw new Error('Unauthorized');
               }
@@ -312,7 +311,7 @@ class Wallkit {
         this.user = null;
 
         localStorage.removeItem(User.storageKey);
-        // Cookies.removeItem('pw_token');
+        localStorage.removeItem(Token.storageKey);
 
         return client.post({path: '/authorization', data})
             .then(response => {
@@ -346,7 +345,7 @@ class Wallkit {
           .then(result => {
             this.token = null;
             localStorage.removeItem(User.storageKey);
-            //localStorage.removeItem(Resource.storageKey);
+            localStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token');
           })
       }
@@ -354,7 +353,7 @@ class Wallkit {
       {
         this.token = null;
         localStorage.removeItem(User.storageKey);
-        //localStorage.removeItem(Resource.storageKey);
+        localStorage.removeItem(Token.storageKey);
         Cookies.removeItem('wk-token');
       }
 
@@ -397,6 +396,7 @@ class Wallkit {
             this.token = null
             this.user = null
             localStorage.removeItem(User.storageKey);
+            localStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token');
           }
           return Promise.reject(e.response);
