@@ -24,7 +24,7 @@ export default class WallkitUser {
      *    ...
      * })
      */
-    constructor(props) {
+    constructor(props, event) {
       Object.keys(props).forEach((key) => {
         Object.defineProperty(this, key, {
           value: props[key],
@@ -32,16 +32,17 @@ export default class WallkitUser {
         })
       });
 
-
-      if (!isEmpty(this.token))
+      if(event)
       {
-        Event.send("wk-event-token", this.token);
+        if(!isEmpty(this.token))
+        {
+          Event.send("wk-event-token", this.token);
+        }
+
+        Event.send("wk-event-user", this);
       }
 
-      Event.send("wk-event-user", this);
-
     }
-
 
 
     /**

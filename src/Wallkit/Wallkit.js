@@ -238,7 +238,7 @@ class Wallkit {
 
         return client.get({path: '/user'})
             .then(user => {
-                this.user = new User(user);
+                this.user = new User(user, true);
                 this.user.serialize();
                 return this.user
             })
@@ -272,9 +272,9 @@ class Wallkit {
                 this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
                 this.token.serialize();
 
-                this.user = new User(response);
+                this.user = new User(response, false);
                 this.user.serialize();
-
+                Event.send("wk-event-registration", response);
                 return this.user;
             })
     }
@@ -318,13 +318,11 @@ class Wallkit {
             .then(response => {
                 //this.token = new Token({value: response.token});
               this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
-
               this.token.serialize();
-
-                this.user = new User(response);
-                this.user.serialize();
-
-                return this.user;
+              this.user = new User(response, false);
+              this.user.serialize();
+              Event.send("wk-event-auth", response);
+              return this.user;
             })
     }
 
@@ -389,7 +387,7 @@ class Wallkit {
     getUser() {
       return User.reload()
         .then(user => {
-          this.user = new User(user);
+          this.user = new User(user, true);
           this.user.serialize();
           return this.user
         })
@@ -575,7 +573,7 @@ class Wallkit {
   updateUser(data) {
     return this.client.put({path: '/user', data: data})
       .then(response => {
-        this.user = new User(response);
+        this.user = new User(response, false);
         this.user.serialize();
         //Event.send("wk-event-user-update", response);
         return response;
@@ -672,7 +670,7 @@ class Wallkit {
           this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
           this.token.serialize();
 
-          this.user = new User(response);
+          this.user = new User(response, true);
           this.user.serialize();
         }
 
