@@ -193,10 +193,16 @@ class Wallkit {
    * @returns {null}
    */
   getToken() {
-      if(this.user !== null && typeof this.token !== "undefined" && !isEmpty(this.token) && !isEmpty(this.user.token))
+      if(this.user !== null && typeof this.token !== "undefined" && !isEmpty(this.user.token))
       {
         return this.user.token;
       }
+
+      if(this.token !== null && typeof this.token !== "undefined" && !isEmpty(this.token.value))
+      {
+        return this.token.value;
+      }
+
       return null;
     }
 
@@ -336,8 +342,11 @@ class Wallkit {
      *   alert('User has logged');
      * });
      */
-    logout() {
-      Event.send("wk-event-logout", true);
+    logout(event = true) {
+      if(event)
+      {
+        Event.send("wk-event-logout", true);
+      }
       this.user = null;
       if(this.token)
       {
@@ -356,7 +365,6 @@ class Wallkit {
         localStorage.removeItem(Token.storageKey);
         Cookies.removeItem('wk-token');
       }
-
       Cookies.removeItem('wk-refresh');
     }
 
@@ -395,9 +403,7 @@ class Wallkit {
           {
             this.token = null
             this.user = null
-            localStorage.removeItem(User.storageKey);
-            localStorage.removeItem(Token.storageKey);
-            Cookies.removeItem('wk-token');
+            this.logout(false);
           }
           return Promise.reject(e.response);
         })
@@ -409,23 +415,24 @@ class Wallkit {
    * @param token
    * @returns {Promise<any>}
    */
-  authUserByToken(token) {
+  authUserByToken(token = false) {
 
-        if(!token)
-        {
-          throw new Error('Incorrect token');
-        }
-        else
-        {
-            this.token = new Token({value: token});
-            this.token.serialize();
-        }
+    if(!token)
+    {
+      throw new Error('Incorrect token');
+    }
 
-        return this.getUser()
-          .then(user => {
-            this.getResource();
-            return user
-          });
+    if(this.getToken() !== token)
+    {
+      this.token = new Token({value: token});
+      this.token.serialize();
+    }
+
+    return this.getUser()
+      .then(user => {
+        this.getResource();
+        return user
+      });
     }
 
   /**
