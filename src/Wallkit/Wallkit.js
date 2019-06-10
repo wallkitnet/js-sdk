@@ -356,16 +356,20 @@ class Wallkit {
             localStorage.removeItem(User.storageKey);
             localStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token');
+            Cookies.removeItem('wk-refresh');
           })
       }
       else
       {
-        this.token = null;
-        localStorage.removeItem(User.storageKey);
-        localStorage.removeItem(Token.storageKey);
-        Cookies.removeItem('wk-token');
+        return new Promise((resolve) => {
+          this.token = null;
+          localStorage.removeItem(User.storageKey);
+          localStorage.removeItem(Token.storageKey);
+          Cookies.removeItem('wk-token');
+          Cookies.removeItem('wk-refresh');
+          resolve(true);
+        });
       }
-      Cookies.removeItem('wk-refresh');
     }
 
     /**
