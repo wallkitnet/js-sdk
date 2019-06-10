@@ -173,6 +173,25 @@ Wallkit.checkAuth()
         });
 ```
 
+### Wallkit.getUser
+
+Retrieve user information from api server. 
+User data automatic stored in LocalStorage and available from object in Wallkit.user
+
+```javascript
+Wallkit.getUser();
+```
+**Example**
+```javascript
+
+Wallkit.getUser()
+        .then((user) => {
+           console.log('USER:', user);
+        }, (error) => {
+           console.log('ERROR:', error);
+        });
+```
+
 
 ### Wallkit.isAuthenticated
 
@@ -210,6 +229,8 @@ Wallkit.getToken(); // {value: 'f96b2464-1ec2-4a1b-8c83-1b3aadb1fbb6' }
 Gets Wallkit's client resource such as `public_key`, `origin`, `payments_in_live_mode`, `stripe_public_key`. 
 
 Returns promise with resource object.
+
+Data automatic stored in LocalStorage and available from object in Wallkit.resource.
 
 ```javascript
 Wallkit.getResource();
@@ -748,6 +769,34 @@ Wallkit.client.postForm({
 
 
 ## Wallkit.user
+
+
+### Wallkit.user
+Get current user 
+
+```js
+Wallkit.user;
+```
+
+**Return value example**
+```js
+{
+  "id":xxxx,
+  "email":"xxxxxxxxx@xxxx.com",
+  "first_name":"xxx",
+  "last_name":"xxx",
+  "active":true,
+  "confirm":true,
+  "country":"xxx",
+  "city":"xxx",
+  "state":"",
+  "company":"xxx",
+  "job":"xxx",
+  "zip":null,
+  "created_at":"xxx",
+  ...
+}
+```
 
 ### Wallkit.user.isConfirmed
 Checks is user has confirmed his email.
