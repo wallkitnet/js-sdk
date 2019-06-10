@@ -772,7 +772,7 @@ Wallkit.client.postForm({
 
 
 ### Wallkit.user
-Get current user 
+Get current user from localStorage
 
 ```js
 Wallkit.user;
