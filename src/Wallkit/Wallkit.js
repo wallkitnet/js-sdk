@@ -578,6 +578,19 @@ class Wallkit {
 
   /**
    *
+   * @param transaction_id
+   * @returns {Promise<any>}
+   */
+  getTransactions() {
+    return this.client.get({path: '/user/transactions'})
+      .then(response => {
+        //Event.send("wk-event-user-transaction", response);
+        return response;
+      })
+  }
+
+  /**
+   *
    * @param data
    * @returns {Promise<any>}
    */
