@@ -38,6 +38,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.defaultCard](#wallkitdefaultcard)
     - [Wallkit.getCountries](#wallkitgetcountries)
     - [Wallkit.validateInvite](#wallkitvalidateinvite)
+    - [Wallkit.validateEmail](#wallkitvalidateemail)
     - [Wallkit.activateInvite](#wallkitactivateinvite)
     - [Wallkit.createStripeByToken](#wallkitcreatestripebytoken)
     - [Wallkit.sendPageView](#wallkitsendpageview)
@@ -625,6 +626,18 @@ Returns promise with result status.
 ```javascript
 Wallkit.validateInvite(string | object);
 ```
+
+
+### Wallkit.validateEmail
+
+Check email exists in wallkit and resource.
+
+Returns promise with boolean result "exists" and "exists_in_resource".
+
+```javascript
+Wallkit.validateEmail(string | object);
+```
+
 
 ### Wallkit.activateInvite
 
