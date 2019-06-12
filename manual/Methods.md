@@ -630,7 +630,7 @@ Wallkit.validateInvite(string | object);
 
 ### Wallkit.validateEmail
 
-Check email exists in wallkit and resource.
+Checks if email exists in wallkit and resource
 
 Returns promise with boolean result "exists" and "exists_in_resource".
 
