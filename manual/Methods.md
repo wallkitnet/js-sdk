@@ -24,6 +24,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.checkOut](#wallkitcheckout)
     - [Wallkit.validatePromo](#wallkitvalidatepromo)
     - [Wallkit.getTransaction](#wallkitgettransaction)
+    - [Wallkit.getTransactions](#wallkitgettransactions)
     - [Wallkit.updateUser](#wallkitupdateuser)
     - [Wallkit.refreshToken](#wallkitrefreshtoken)
     - [Wallkit.updatePassword](#wallkitupdatepassword)
@@ -367,6 +368,17 @@ Returns promise with transaction info.
 Wallkit.getTransaction(number);
 ```
 
+
+### Wallkit.getTransactions
+
+Gets user transactions list
+
+Returns promise with user transactions.
+
+```javascript
+Wallkit.getTransactions();
+```
+
 ### Wallkit.updateUser
 
 Updates user's info.
@@ -433,7 +445,8 @@ Wallkit.updatePassword(object);
 ```json
 {
   "password": "string",
-  "password_confirm": "string"
+  "password_confirm": "string",
+  "old_password": "string"
 }
 ```
 
