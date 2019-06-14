@@ -238,7 +238,9 @@ class Wallkit {
      */
     checkAuth() {
         if (!this.token)
-            throw new Error('Unauthorized');
+        {
+          return Promise.reject("Unauthorized");
+        }
 
         return client.get({path: '/user'})
             .then(user => {
