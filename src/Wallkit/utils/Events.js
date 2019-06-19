@@ -17,11 +17,12 @@ var Events = {
     }*/
 
     //this.event_tmp = data;
+    //window.postMessage({"name":"test","value":"11111"}, '*');
     //top.postMessage(data, document.location.origin);
 
     top.postMessage(data, '*');
 
-    console.log("WkJsSDK EVENT:", data);
+    console.log("WkJsSDK ==>", data);
   }
 
 

@@ -18,6 +18,13 @@ export default class WallkitResource {
         })
       });
 
+      //console.log("resource props 2", props);
+
+      if(typeof props.origin !== "undefined")
+      {
+        WallkitResource.allOrigins.push(props.origin);
+      }
+
     }
 
 
@@ -37,6 +44,21 @@ export default class WallkitResource {
 }
 
 WallkitResource.storageKey = 'WallkitResource';
+
+WallkitResource.allOrigins =  [
+  'https://wallkit.net',
+  'https://dev.wallkit.net',
+  'https://wallkit.local',
+];
+
+WallkitResource.hasOrigin = function (key) {
+  //console.log("check has origin 2", key, WallkitResource.allOrigins);
+  return (WallkitResource.allOrigins.indexOf(key) >= 0)
+};
+
+WallkitResource.getOrigins = function () {
+  return WallkitResource.allOrigins;
+};
 
 /**
  * Deserialize user from localStorage and creates instance of {@link WallkitResource}

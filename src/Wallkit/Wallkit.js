@@ -55,12 +55,16 @@ class Wallkit {
      */
     init({resource, api_url}) {
       if (this.initialized)
-          return true;
+      {
+        return true;
+      }
 
       Config.resource = resource;
 
       if(typeof api_url !== "undefined")
+      {
         Config.api_url = api_url;
+      }
 
       /**
       * User information.
@@ -128,33 +132,64 @@ class Wallkit {
      */
     listener(event) {
 
-      //console.log("event:::", event);
+        //console.log("WallkitResource.hasOrigin(event.origin)". Resource.getOrigins());
 
-        /*if (typeof event.data.type !== "undefined") {
-            switch (event.data.type) {
-                case "wk_token":
-                    this.log("wk_token: " + event.data.data);
-                    this.authUserByToken(event.data.data);
-                    break;
-                case "authorizationUser":
-                    this.log("authorizationUser: " + event.data);
+        if (typeof event.origin !== "undefined" &&
+            typeof document !== "undefined" &&
+            Resource.hasOrigin(event.origin) &&
+            event.origin !== document.location.origin &&
+            typeof event === "object" &&
+            typeof event.data === "object" &&
+            typeof event.data.name !== "undefined" &&
+            typeof event.data.value !== "undefined")
+        {
 
-                    this.log(event.data);
+          switch (event.data.name)
+          {
+            case "wk-event-registration" :
+            case "wk-event-auth" :
+            case "wk-event-user" :
+            case "wk-event-user-update" :
+            case "wk-event-confirm-password" :
 
-                    if (event.data.token) {
-                        this.authUserByToken(event.data.token, "authorizationUser");
-                    }
-                    break;
-                case "registrationUser":
-                    this.log("registrationUser: " + event.data);
-                    if (event.data.token) {
-                        this.authUserByToken(event.data.token, "registrationUser", event.data);
-                    }
-                    break;
-                default:
-                    console.log("default");
-            }
-        }*/
+              if(typeof event.data.value.token !== "undefined")
+              {
+                this.token = new Token({
+                  value: event.data.value.token,
+                  refresh: event.data.value.refresh_token,
+                  expire:event.data.value.expires
+                });
+                this.token.serialize();
+              }
+
+              this.user = new User(event.data.value, false);
+              this.user.serialize();
+              break;
+
+            case "wk-event-logout" :
+              localStorage.removeItem(User.storageKey);
+              localStorage.removeItem(Token.storageKey);
+              Cookies.removeItem('wk-token');
+              Cookies.removeItem('wk-refresh');
+              this.token = null;
+              this.user = null;
+              break;
+
+            case "wk-event-token" :
+              this.token = new Token({
+                value: event.data.value,
+                refresh: null,
+                expire: null,
+              });
+              this.token.serialize();
+              break;
+
+            case "wk-event-resource" :
+              this.resource = new Resource(event.data.value);
+              this.resource.serialize();
+              break;
+          }
+        }
     }
 
     /**
@@ -246,6 +281,10 @@ class Wallkit {
             .then(user => {
                 this.user = new User(user, true);
                 this.user.serialize();
+                if(!this.resource && this.token)
+                {
+                  this.getResource();
+                }
                 return this.user
             })
             .catch(e => {
@@ -281,6 +320,10 @@ class Wallkit {
 
                 this.user = new User(response, false);
                 this.user.serialize();
+                if(!this.resource && this.token)
+                {
+                  this.getResource();
+                }
                 Event.send("wk-event-registration", response);
                 return this.user;
             })
@@ -315,21 +358,28 @@ class Wallkit {
      *
      */
     login(data) {
-        this.token = null;
+       /* this.token = null;
         this.user = null;
 
         localStorage.removeItem(User.storageKey);
-        localStorage.removeItem(Token.storageKey);
+        localStorage.removeItem(Token.storageKey);*/
 
         return client.post({path: '/authorization', data})
             .then(response => {
-                //this.token = new Token({value: response.token});
               this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
               this.token.serialize();
               this.user = new User(response, false);
               this.user.serialize();
+              if(!this.resource && this.token)
+              {
+                this.getResource();
+              }
               Event.send("wk-event-auth", response);
               return this.user;
+            })
+            .catch(e => {
+
+              return Promise.reject(e);
             })
     }
 
@@ -402,6 +452,10 @@ class Wallkit {
         .then(user => {
           this.user = new User(user, true);
           this.user.serialize();
+          if(!this.resource && this.token)
+          {
+            this.getResource();
+          }
           return this.user
         })
         .catch(e => {
@@ -601,7 +655,7 @@ class Wallkit {
       .then(response => {
         this.user = new User(response, false);
         this.user.serialize();
-        //Event.send("wk-event-user-update", response);
+        Event.send("wk-event-user-update", response);
         return response;
       })
   }
@@ -687,9 +741,8 @@ class Wallkit {
     {
       data = {code: data}
     }
-    return this.client.post({path: '/reset-password-validate', data: data})
+    return this.client.post({path: '/confirm-password', data: data})
       .then(response => {
-        Event.send("wk-event-confirm-password", response);
 
         if(!isEmpty(response.token))
         {
@@ -698,8 +751,13 @@ class Wallkit {
 
           this.user = new User(response, true);
           this.user.serialize();
-        }
 
+          if(!this.resource && this.token)
+          {
+            this.getResource();
+          }
+        }
+        Event.send("wk-event-confirm-password", response);
         return response;
       })
   }

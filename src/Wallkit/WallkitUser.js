@@ -34,7 +34,7 @@ export default class WallkitUser {
 
       if(event)
       {
-        if(!isEmpty(this.token))
+        if(typeof this.token !== "undefined" && !isEmpty(this.token))
         {
           Event.send("wk-event-token", this.token);
         }
