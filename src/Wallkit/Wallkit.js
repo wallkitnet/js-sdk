@@ -132,8 +132,6 @@ class Wallkit {
      */
     listener(event) {
 
-        //console.log("WallkitResource.hasOrigin(event.origin)". Resource.getOrigins());
-
         if (typeof event.origin !== "undefined" &&
             typeof document !== "undefined" &&
             Resource.hasOrigin(event.origin) &&
@@ -143,6 +141,7 @@ class Wallkit {
             typeof event.data.name !== "undefined" &&
             typeof event.data.value !== "undefined")
         {
+          console.log("WkJsSDK <==", event.data);
 
           switch (event.data.name)
           {
@@ -182,6 +181,7 @@ class Wallkit {
                 expire: null,
               });
               this.token.serialize();
+              this.getUser();
               break;
 
             case "wk-event-resource" :
@@ -201,9 +201,13 @@ class Wallkit {
      * @ignore
      */
     initListener() {
-        if (window.addEventListener) {
+
+        if (window.addEventListener)
+        {
             window.addEventListener("message", this.listener.bind(this));
-        } else {
+        }
+        else
+        {
             // IE8
             window.attachEvent("onmessage", this.listener.bind(this));
         }
@@ -560,6 +564,7 @@ class Wallkit {
           return response;
         })
   }
+
 
   /**
    *

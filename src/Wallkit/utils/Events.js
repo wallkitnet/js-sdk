@@ -1,6 +1,6 @@
 
-
 var Events = {
+
 
   send(name, value, params)
   {
@@ -11,20 +11,26 @@ var Events = {
       params: params
     };
 
-    /*if(_.isEqual(data, this.event_tmp))
+    if(typeof window !== "undefined" && typeof top !== "undefined" && window == top)
     {
-      return ;
-    }*/
 
-    //this.event_tmp = data;
-    //window.postMessage({"name":"test","value":"11111"}, '*');
-    //top.postMessage(data, document.location.origin);
+      let frames = document.getElementsByTagName('iframe');
+      for (let i = 0; i < frames.length; i++) {
 
-    top.postMessage(data, '*');
+        if(typeof frames[i] !== "undefined")
+        {
+          frames[i].contentWindow.postMessage(data, '*');
+        }
+      }
+
+    }
+    else
+    {
+      top.postMessage(data, '*');
+    }
 
     console.log("WkJsSDK ==>", data);
   }
-
 
 };
 

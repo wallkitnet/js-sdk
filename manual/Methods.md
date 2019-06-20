@@ -51,6 +51,7 @@ For detailed information about methods see [Reference](../identifiers.html).
   - [Wallkit.user](#wallkituser)
      - [Wallkit.user](#wallkituser-1)
      - [Wallkit.user.isConfirmed](#wallkituserisconfirmed)
+     - [Wallkit.user.hasPaidSubscriptions](#wallkituserhaspaidsubscriptions)
      - [Wallkit.user.plans](#wallkituserplans)
      - [Wallkit.user.hasPlan](#wallkituserhasplan)
  
@@ -831,6 +832,13 @@ Checks is user has confirmed his email.
 
 ```js
 Wallkit.user.isConfirmed();
+```
+
+### Wallkit.user.hasPaidSubscriptions
+Checks if user has one or more paid (with price greater than zero) plans.
+
+```js
+Wallkit.user.hasPaidSubscriptions();
 ```
 
 

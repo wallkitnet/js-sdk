@@ -106,6 +106,24 @@ export default class WallkitUser {
         return this.plans().includes(plan);
     }
 
+    /**
+     *
+     * @returns {boolean}
+     */
+    hasPaidSubscriptions() {
+      if(this && typeof this.subscriptions !== "undefined" && this.subscriptions.length)
+      {
+        for(let k in this.subscriptions)
+        {
+          if(typeof this.subscriptions[k] !== "undefined" && this.subscriptions[k].price > 0)
+          {
+            return true;
+          }
+
+        }
+      }
+      return false;
+    }
 }
 
 WallkitUser.storageKey = 'WallkitUser';
