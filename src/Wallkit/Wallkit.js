@@ -188,6 +188,13 @@ class Wallkit {
               this.resource = new Resource(event.data.value);
               this.resource.serialize();
               break;
+
+            case "wk-event-check-token" :
+              if(this.token && typeof this.token.value !== "undefined")
+              {
+                Event.send("wk-event-token", this.token.value);
+              }
+              break;
           }
         }
     }
