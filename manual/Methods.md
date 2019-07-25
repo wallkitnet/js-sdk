@@ -42,6 +42,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.activateInvite](#wallkitactivateinvite)
     - [Wallkit.createStripeByToken](#wallkitcreatestripebytoken)
     - [Wallkit.sendPageView](#wallkitsendpageview)
+    - [Wallkit.checkAccess](#wallkitcheckaccess)
   - [Wallkit.client](#wallkitclient)
     - [Wallkit.client.get](#wallkitclientget)
     - [Wallkit.client.post](#wallkitclientpost)
@@ -658,6 +659,16 @@ Returns promise with result status.
 
 ```javascript
 Wallkit.activateInvite(string | object);
+```
+
+### Wallkit.checkAccess
+
+Check access to content by content_key (WP postID).
+
+Returns promise with result status.
+
+```javascript
+Wallkit.checkAccess(string);
 ```
 
 ### Wallkit.sendPageView
