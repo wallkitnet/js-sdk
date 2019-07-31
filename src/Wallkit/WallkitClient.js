@@ -3,6 +3,7 @@ import Config from './Config'
 import Wallkit  from './Wallkit';
 import {assign, keysIn} from 'lodash';
 import Promise from 'bluebird';
+import Cookies from './utils/Cookies';
 
 /**
  * @desc Class to manipulate with Wallkit API.
@@ -260,6 +261,12 @@ class WallkitClient {
 
         assign(headers,{'resource': this.resource});
         assign(headers,{'Wallkit-Client': 'JsSDK v1.1.1'});
+
+        const session = Cookies.getItem('PHPSESSID');
+
+        if (session){
+            assign(headers,{'session': this.session});
+        }
 
         if (this.token)
             assign(headers,{'token': this.token});
