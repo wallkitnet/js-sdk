@@ -260,12 +260,12 @@ class WallkitClient {
         }
 
         assign(headers,{'resource': this.resource});
-        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.1'});
+        assign(headers,{'Wallkit-Client': 'JsSDK v0.0.37'});
 
         const session = Cookies.getItem('PHPSESSID');
 
         if (session){
-            assign(headers,{'session': this.session});
+            assign(headers,{'session': session});
         }
 
         if (this.token)
@@ -346,7 +346,13 @@ class WallkitClient {
 
 
         assign(headers,{'resource': this.resource});
-        assign(headers,{'Wallkit-Client': 'JsSDK v1.1.1'});
+        assign(headers,{'Wallkit-Client': 'JsSDK v0.0.37'});
+
+        const session = Cookies.getItem('PHPSESSID');
+
+        if (session){
+            assign(headers,{'session': session});
+        }
 
         if (this.token)
             assign(headers,{'token': this.token});

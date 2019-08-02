@@ -1,6 +1,6 @@
 {
   "name": "wallkit-js-sdk",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "description": "Wallkit",
   "main": "dist/wallkit.umd.min.js",
   "private": true,
