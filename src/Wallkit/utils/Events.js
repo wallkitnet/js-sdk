@@ -11,10 +11,10 @@ var Events = {
       params: params
     };
 
-    if(typeof window !== "undefined" && typeof top !== "undefined" && window == top)
-    {
+    let frames = document.getElementsByTagName('iframe');
 
-      let frames = document.getElementsByTagName('iframe');
+    if(window && top && window === top && !!frames.length)
+    {
       for (let i = 0; i < frames.length; i++) {
 
         if(typeof frames[i] !== "undefined")
