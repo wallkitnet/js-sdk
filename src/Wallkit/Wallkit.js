@@ -184,10 +184,10 @@ class Wallkit {
               this.getUser();
               break;
 
-            case "wk-event-resource" :
+            /*case "wk-event-resource" :
               this.resource = new Resource(event.data.value);
               this.resource.serialize();
-              break;
+              break;*/
 
             case "wk-event-check-token" :
               if(this.token && typeof this.token.value !== "undefined")
