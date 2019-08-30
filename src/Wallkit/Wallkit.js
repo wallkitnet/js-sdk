@@ -894,6 +894,8 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   confirmStripePaymentMethod(data) {
+    if (!data) throw new Error('No payment method id passed');
+
     if(typeof data !== "object")
     {
       data = {payment_method_id: data}
@@ -911,6 +913,8 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   confirmStripePaymentIntent(data) {
+    if (!data) throw new Error('No payment intent id passed');
+
     if(typeof data !== "object")
     {
       data = {payment_intent_id: data}
