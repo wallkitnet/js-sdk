@@ -926,6 +926,19 @@ class Wallkit {
       })
   }
 
+    /**
+     *
+     * @param data
+     * @returns {Promise<any>}
+     */
+    setupStripeIntent() {
+        return this.client.get({path: '/user/stripe/setup-intent'})
+            .then(response => {
+                Event.send("wk-event-setup-intent", response);
+                return response;
+            })
+    }
+
 
   /**
    *
