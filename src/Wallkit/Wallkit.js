@@ -919,7 +919,7 @@ class Wallkit {
     {
       data = {payment_intent_id: data}
     }
-    return this.client.post({path: '/user/stripe/confirm-payment-intent', data: data})
+    return this.client.post({path: '/payment/stripe/confirm-intent', data: data})
       .then(response => {
         Event.send("wk-event-stripe-confirm-payment-intent", response);
         return response;
@@ -932,7 +932,7 @@ class Wallkit {
      * @returns {Promise<any>}
      */
     setupStripeIntent() {
-        return this.client.get({path: '/user/stripe/setup-intent'})
+        return this.client.get({path: '/payment/stripe/setup-intent'})
             .then(response => {
                 Event.send("wk-event-setup-intent", response);
                 return response;
