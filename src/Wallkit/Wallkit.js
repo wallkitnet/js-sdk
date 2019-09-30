@@ -958,8 +958,15 @@ class Wallkit {
      * @param data
      * @returns {Promise<any>}
      */
-    setupStripeIntent() {
-        return this.client.get({path: '/payment/stripe/setup-intent'})
+    setupStripeIntent(data) {
+        if (!data) throw new Error('No customer passed as argument');
+
+        if(typeof data !== "object")
+        {
+            data = {customer: data}
+        }
+
+        return this.client.post({path: '/payment/stripe/setup-intent', data: data})
             .then(response => {
                 Event.send("wk-event-setup-intent", response);
                 return response;
