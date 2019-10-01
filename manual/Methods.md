@@ -41,6 +41,8 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.validateEmail](#wallkitvalidateemail)
     - [Wallkit.activateInvite](#wallkitactivateinvite)
     - [Wallkit.createStripeByToken](#wallkitcreatestripebytoken)
+    - [Wallkit.confirmStripePaymentMethod](#wallkitconfirmstripepaymentmethod)
+    - [Wallkit.confirmStripePaymentIntent](#wallkitconfirmstripepaymentintent)
     - [Wallkit.sendPageView](#wallkitsendpageview)
     - [Wallkit.checkAccess](#wallkitcheckaccess)
     - [Wallkit.getCampaignMonitorData](#wallkitgetcampaignmonitordata)
@@ -660,6 +662,26 @@ Returns promise with result status.
 
 ```javascript
 Wallkit.createStripeByToken(string | object);
+```
+
+### Wallkit.confirmStripePaymentMethod
+
+If you use Stripe.js (or other stripeSDK), then it returns the payment method id that needs to be passed to this request. Then if a payment need additional confirmation, a modal will be showed.
+
+Returns promise with result status.
+
+```javascript
+Wallkit.confirmStripePaymentMethod(string | object);
+```
+
+### Wallkit.confirmStripePaymentIntent
+
+In case of additional confirmation of payment, payment intent id needs to be passed to this request. Then the card will be added to the user and will become by default.
+
+Returns promise with result status.
+
+```javascript
+Wallkit.confirmStripePaymentIntent(string | object);
 ```
 
 ### Wallkit.checkAccess
