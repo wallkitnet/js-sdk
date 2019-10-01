@@ -953,26 +953,41 @@ class Wallkit {
       })
   }
 
-    /**
-     *
-     * @param data
-     * @returns {Promise<any>}
-     */
-    setupStripeIntent(data) {
-        if (!data) throw new Error('No customer passed as argument');
+  /**
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  setupStripeIntent(data) {
+      if (!data) throw new Error('No customer passed as argument');
 
-        if(typeof data !== "object")
-        {
-            data = {customer: data}
-        }
+      if(typeof data !== "object")
+      {
+          data = {customer: data}
+      }
 
-        return this.client.post({path: '/payment/stripe/setup-intent', data: data})
-            .then(response => {
-                Event.send("wk-event-setup-intent", response);
-                return response;
-            })
-    }
+      return this.client.post({path: '/payment/stripe/setup-intent', data: data})
+          .then(response => {
+              Event.send("wk-event-setup-intent", response);
+              return response;
+          })
+  }
 
+  /**
+   *
+   * @param customerId
+   * @returns {Promise<any>}
+   */
+  removeStripeCustomer(customerId) {
+    if (!data) throw new Error('No customer id passed as argument');
+
+    return this.client.del({path: `/user/stripe/customer/${customerId}`})
+      .then(response => {
+        Event.send("wk-event-stripe-customer-delete", response);
+        return response;
+      })
+
+  }
 
   /**
    *
