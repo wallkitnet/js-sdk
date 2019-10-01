@@ -952,7 +952,7 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   removeStripeCustomer(customerId) {
-    if (!data) throw new Error('No customer id passed as argument');
+    if (!customerId) throw new Error('No customer id passed as argument');
 
     return this.client.del({path: `/user/stripe/customer/${customerId}`})
       .then(response => {
