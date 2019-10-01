@@ -43,6 +43,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.createStripeByToken](#wallkitcreatestripebytoken)
     - [Wallkit.sendPageView](#wallkitsendpageview)
     - [Wallkit.checkAccess](#wallkitcheckaccess)
+    - [Wallkit.getCampaignMonitorData](#wallkitgetcampaignmonitordata)
   - [Wallkit.client](#wallkitclient)
     - [Wallkit.client.get](#wallkitclientget)
     - [Wallkit.client.post](#wallkitclientpost)
@@ -658,7 +659,7 @@ If you use Stripe.js (or other stripeSDK), then it returns the token that needs 
 Returns promise with result status.
 
 ```javascript
-Wallkit.activateInvite(string | object);
+Wallkit.createStripeByToken(string | object);
 ```
 
 ### Wallkit.checkAccess
@@ -669,6 +670,16 @@ Returns promise with result status.
 
 ```javascript
 Wallkit.checkAccess(string);
+```
+
+### Wallkit.getCampaignMonitorData
+
+Gets list Campaign Monitor clients if it is connected to resource. 
+
+Returns promise with response object which includes clients array(items).
+
+```javascript
+Wallkit.getCampaignMonitorData();
 ```
 
 ### Wallkit.sendPageView
