@@ -888,6 +888,40 @@ class Wallkit {
         })
   }
 
+  /**
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  confirmStripePaymentMethod(data) {
+    if(typeof data !== "object")
+    {
+      data = {payment_method_id: data}
+    }
+    return this.client.post({path: '/user/stripe/confirm-payment-method', data: data})
+      .then(response => {
+        Event.send("wk-event-stripe-confirm-payment-method", response);
+        return response;
+      })
+  }
+
+  /**
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  confirmStripePaymentIntent(data) {
+    if(typeof data !== "object")
+    {
+      data = {payment_intent_id: data}
+    }
+    return this.client.post({path: '/user/stripe/confirm-payment-intent', data: data})
+      .then(response => {
+        Event.send("wk-event-stripe-confirm-payment-intent", response);
+        return response;
+      })
+  }
+
 
   /**
    *
