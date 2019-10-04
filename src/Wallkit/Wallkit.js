@@ -715,6 +715,39 @@ class Wallkit {
    *
    * @returns {Promise<any>}
    */
+  getUserCampaignMonitorLists() {
+    return this.client.get({path: '/integrations/campaignmonitor/interests'})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
+  addUserToCampaignMonitorLists(data) {
+    return this.client.post({path: '/integrations/campaignmonitor/subscribe', data: data})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
+  removeUserFromCampaignMonitorLists(data) {
+    return this.client.post({path: '/integrations/campaignmonitor/unsubscribe', data: data})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
   suspendMe() {
     return this.client.post({path: '/user/suspend'})
         .then(response => {
