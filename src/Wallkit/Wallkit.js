@@ -644,6 +644,14 @@ class Wallkit {
           Event.send("wk-event-user-update", response);
           return response;
         })
+        .catch(e => {
+            if (e.statusCode === 401) {
+                this.token = null
+                this.user = null
+                this.logout(false);
+            }
+            return Promise.reject(e.response);
+        })
   }
 
   /**
@@ -802,6 +810,14 @@ class Wallkit {
           Event.send("wk-event-cards", response);
           return response;
         })
+        .catch(e => {
+            if (e.statusCode === 401) {
+                this.token = null;
+                this.user = null;
+                this.logout(false);
+            }
+            return Promise.reject(e.response);
+        })
   }
 
   /**
@@ -885,6 +901,14 @@ class Wallkit {
         .then(response => {
           Event.send("wk-event-stripe-token", response);
           return response;
+        })
+        .catch(e => {
+            if (e.statusCode === 401) {
+                this.token = null;
+                this.user = null;
+                this.logout(false);
+            }
+            return Promise.reject(e.response);
         })
   }
 
@@ -992,6 +1016,14 @@ class Wallkit {
     return this.client.get({path: '/user/content/' + content_key})
         .then(response => {
           return response;
+        })
+        .catch(e => {
+            if (e.statusCode === 401) {
+                this.token = null;
+                this.user = null;
+                this.logout(false);
+            }
+            return Promise.reject(e.response);
         })
   }
 
