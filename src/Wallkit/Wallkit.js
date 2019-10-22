@@ -161,8 +161,8 @@ class Wallkit {
         case "wk-event-logout" :
           localStorage.removeItem(User.storageKey);
           localStorage.removeItem(Token.storageKey);
-          Cookies.removeItem('wk-token');
-          Cookies.removeItem('wk-refresh');
+          Cookies.removeItem('wk-token', '/');
+          Cookies.removeItem('wk-refresh', '/');
           this.token = null;
           this.user = null;
           break;
@@ -207,6 +207,18 @@ class Wallkit {
       // IE8
       window.attachEvent("onmessage", this.listener.bind(this));
     }
+  }
+
+
+  /**
+   * Method sends event.
+   *
+   * @public
+   * @param {string} name - event name
+   * @param {object} params - params
+   */
+  dispatchEvent(name, params) {
+    Event.send(name, params)
   }
 
   /**
@@ -289,7 +301,7 @@ class Wallkit {
             this.user = null
             localStorage.removeItem(User.storageKey);
             localStorage.removeItem(Token.storageKey);
-            Cookies.removeItem('wk-token');
+            Cookies.removeItem('wk-token', '/');
             throw new Error('Unauthorized');
           }
           return Promise.reject(e.response);
@@ -398,16 +410,16 @@ class Wallkit {
             this.token = null;
             localStorage.removeItem(User.storageKey);
             localStorage.removeItem(Token.storageKey);
-            Cookies.removeItem('wk-token');
-            Cookies.removeItem('wk-refresh');
+            Cookies.removeItem('wk-token', '/');
+            Cookies.removeItem('wk-token', '/');
           })
     } else {
       return new Promise((resolve) => {
         this.token = null;
         localStorage.removeItem(User.storageKey);
         localStorage.removeItem(Token.storageKey);
-        Cookies.removeItem('wk-token');
-        Cookies.removeItem('wk-refresh');
+        Cookies.removeItem('wk-token', '/');
+        Cookies.removeItem('wk-refresh', '/');
         resolve(true);
       });
     }
@@ -449,9 +461,9 @@ class Wallkit {
         })
         .catch(e => {
           if (e.statusCode === 401) {
-            this.token = null
-            this.user = null
-            this.logout(false);
+            // this.token = null
+            // this.user = null
+            this.logout(true);
           }
           return Promise.reject(e.response);
         })
@@ -542,6 +554,20 @@ class Wallkit {
     return this.client.get({path: '/subscriptions'})
         .then(response => {
           Event.send("wk-event-subscriptions", response);
+          return response;
+        })
+  }
+
+
+  /**
+   * Method sends event.
+   *
+   * @public
+   * @param {object} subscription_id - subscription id
+   */
+  deleteUserSubscription(subscription_id) {
+    return this.client.del({path: `/user/subscriptions/${subscription_id}`})
+        .then(response => {
           return response;
         })
   }
@@ -646,9 +672,9 @@ class Wallkit {
         })
         .catch(e => {
             if (e.statusCode === 401) {
-                this.token = null
-                this.user = null
-                this.logout(false);
+                this.token = null;
+                this.user = null;
+                this.logout(true);
             }
             return Promise.reject(e.response);
         })
@@ -714,6 +740,39 @@ class Wallkit {
    */
   getCampaignMonitorData() {
     return this.client.get({path: '/integrations/campaignmonitor/get-lists'})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
+  getUserCampaignMonitorLists() {
+    return this.client.get({path: '/integrations/campaignmonitor/interests'})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
+  addUserToCampaignMonitorLists(data) {
+    return this.client.post({path: '/integrations/campaignmonitor/subscribe', data: data})
+        .then(response => {
+          return response;
+        })
+  }
+
+  /**
+   *
+   * @returns {Promise<any>}
+   */
+  removeUserFromCampaignMonitorLists(data) {
+    return this.client.post({path: '/integrations/campaignmonitor/unsubscribe', data: data})
         .then(response => {
           return response;
         })
@@ -814,7 +873,7 @@ class Wallkit {
             if (e.statusCode === 401) {
                 this.token = null;
                 this.user = null;
-                this.logout(false);
+                this.logout(true);
             }
             return Promise.reject(e.response);
         })
@@ -906,7 +965,7 @@ class Wallkit {
             if (e.statusCode === 401) {
                 this.token = null;
                 this.user = null;
-                this.logout(false);
+                this.logout(true);
             }
             return Promise.reject(e.response);
         })
@@ -1021,7 +1080,7 @@ class Wallkit {
             if (e.statusCode === 401) {
                 this.token = null;
                 this.user = null;
-                this.logout(false);
+                this.logout(true);
             }
             return Promise.reject(e.response);
         })
