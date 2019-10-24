@@ -563,10 +563,12 @@ class Wallkit {
    * Method sends event.
    *
    * @public
-   * @param {object} subscription_id - subscription id
+   * @param {number} subscription_id - subscription id
+   * @param {boolean} autorenew - autorenew status
+   * @returns {Promise<any>}
    */
-  deleteUserSubscription(subscription_id) {
-    return this.client.del({path: `/user/subscriptions/${subscription_id}`})
+  changeUserSubscriptionAutorenewStatus(subscription_id, autorenew) {
+    return this.client.put({path: `/user/subscriptions/${subscription_id}`, data: {autorenew: autorenew}})
         .then(response => {
           return response;
         })

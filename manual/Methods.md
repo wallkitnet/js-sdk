@@ -298,14 +298,14 @@ Returns promise with includes array with subscriptions.
 Wallkit.getSubscriptions();
 ```
 
-### Wallkit.deleteUserSubscription
+### Wallkit.changeUserSubscriptionRenewStatus
 
-Unsubscribes user from subscription.
+Change user's subscription autorenew status.
 
-Returns promise with result.
+Returns promise with user object.
 
 ```javascript
-Wallkit.deleteUserSubscription(subscription_id);
+Wallkit.changeUserSubscriptionAutorenewStatus(number, boolean);
 ```
 
 ### Wallkit.calculatePrice
