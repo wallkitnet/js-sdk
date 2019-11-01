@@ -13,6 +13,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.registration](#wallkitregistration)
     - [Wallkit.checkAuth](#wallkitcheckauth)
     - [Wallkit.isAuthenticated](#wallkitisauthenticated)
+    - [Wallkit.dispatchEvent](#wallkitdispatchevent)
     - [Wallkit.setToken](#wallkitsettoken)
     - [Wallkit.getToken](#wallkitgettoken)
     - [Wallkit.getUser](#wallkitgetuser)
@@ -20,6 +21,7 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.getResources](#wallkitgetresources)
     - [Wallkit.passwordReset](#wallkitpasswordreset)
     - [Wallkit.getSubscriptions](#wallkitgetsubscriptions)
+    - [Wallkit.deleteUserSubscription](#wallkitdeleteusersubscription)
     - [Wallkit.calculatePrice](#wallkitcalculateprice)
     - [Wallkit.checkOut](#wallkitcheckout)
     - [Wallkit.validatePromo](#wallkitvalidatepromo)
@@ -45,6 +47,10 @@ For detailed information about methods see [Reference](../identifiers.html).
     - [Wallkit.confirmStripePaymentIntent](#wallkitconfirmstripepaymentintent)
     - [Wallkit.sendPageView](#wallkitsendpageview)
     - [Wallkit.checkAccess](#wallkitcheckaccess)
+    - [Wallkit.getCampaignMonitorData](#wallkitgetcampaignmonitordata)
+    - [Wallkit.getUserCampaignMonitorLists](#wallkitgetusercampaignmonitorlists)
+    - [Wallkit.addUserToCampaignMonitorLists](#wallkitaddusertocampaignmonitorlists)
+    - [Wallkit.removeUserFromCampaignMonitorLists](#wallkitremoveuserfromcampaignmonitorlists)
   - [Wallkit.client](#wallkitclient)
     - [Wallkit.client.get](#wallkitclientget)
     - [Wallkit.client.post](#wallkitclientpost)
@@ -209,6 +215,14 @@ Checks user authentication status.
 Wallkit.isAuthenticated();
 ```
 
+### Wallkit.dispatchEvent
+
+Sends event.
+
+```javascript
+Wallkit.dispatchEvent(name, params);
+```
+
 ### Wallkit.setToken
 
 Sets user token.
@@ -282,6 +296,16 @@ Returns promise with includes array with subscriptions.
 
 ```javascript
 Wallkit.getSubscriptions();
+```
+
+### Wallkit.changeUserSubscriptionRenewStatus
+
+Change user's subscription autorenew status.
+
+Returns promise with user object.
+
+```javascript
+Wallkit.changeUserSubscriptionAutorenewStatus(number, boolean);
 ```
 
 ### Wallkit.calculatePrice
@@ -691,6 +715,47 @@ Returns promise with result status.
 
 ```javascript
 Wallkit.checkAccess(string);
+```
+
+### Wallkit.getCampaignMonitorData
+
+Gets list of Campaign Monitor clients if it is connected to resource. 
+
+Returns promise with response object which includes clients array (items).
+
+```javascript
+Wallkit.getCampaignMonitorData();
+
+```
+
+### Wallkit.getUserCampaignMonitorLists
+
+Gets Campaign Monitor lists that the user is subscribed for in particular resource.
+
+Returns promise with response object which includes lists array (lists).
+
+```javascript
+Wallkit.getUserCampaignMonitorLists();
+```
+
+### Wallkit.addUserToCampaignMonitorLists
+
+Subscribes user to Campaign Monitor lists in particular resource.
+
+Returns promise with response object which includes lists array (lists).
+
+```javascript
+Wallkit.addUserToCampaignMonitorLists([list_id, list_id]);
+```
+
+### Wallkit.removeUserFromCampaignMonitorLists
+
+Unubscribes user from Campaign Monitor lists in particular resource.
+
+Returns promise with response object which includes lists array (lists).
+
+```javascript
+Wallkit.removeUserFromCampaignMonitorLists([list_id, list_id]);
 ```
 
 ### Wallkit.sendPageView
