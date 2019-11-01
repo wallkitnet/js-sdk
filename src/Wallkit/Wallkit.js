@@ -673,6 +673,58 @@ class Wallkit {
   }
 
   /**
+   *
+   * Register user using Socials
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  socialRegistration(data) {
+    return client.post({path: '/social-registration', data})
+      .then(response => {
+        //this.token = new Token({value: response.token});
+        this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
+        this.token.serialize();
+
+        this.user = new User(response, false);
+        this.user.serialize();
+        if(!this.resource && this.token)
+        {
+          this.getResource();
+        }
+        Event.send("wk-event-registration", response);
+        return this.user;
+      })
+  }
+
+  /**
+   *
+   * Auth user using Socials
+   *
+   * @param data
+   * @returns {Promise<any>}
+   */
+  socialAuthorization(data) {
+    return client.post({path: '/social-authorization', data})
+      .then(response => {
+        this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
+        this.token.serialize();
+        this.user = new User(response, false);
+        this.user.serialize();
+        if(!this.resource && this.token)
+        {
+          this.getResource();
+        }
+        Event.send("wk-event-auth", response);
+        return this.user;
+      })
+      .catch(e => {
+
+        return Promise.reject(e);
+      });
+  }
+
+  /**
    * request authorization/refresh
    */
   refreshToken(data) {
