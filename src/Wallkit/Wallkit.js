@@ -686,7 +686,7 @@ class Wallkit {
    *
    * Register user using Socials
    *
-   * @param data
+   * @param data - social response
    * @returns {Promise<any>}
    */
   socialRegistration(data) {
@@ -711,7 +711,7 @@ class Wallkit {
    *
    * Auth user using Socials
    *
-   * @param data
+   * @param data - social response
    * @returns {Promise<any>}
    */
   socialAuthorization(data) {
@@ -732,6 +732,20 @@ class Wallkit {
 
         return Promise.reject(e);
       });
+  }
+
+  /**
+   *
+   * Link user social account
+   *
+   * @param data - social response
+   * @returns {Promise<any>}
+   */
+  linkSocialAccount(data) {
+    return client.put({path: '/social', data})
+      .then(response => {
+        return response;
+      })
   }
 
   /**
