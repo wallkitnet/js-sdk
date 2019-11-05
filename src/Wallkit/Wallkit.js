@@ -742,7 +742,7 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   linkSocialAccount(data) {
-    return client.put({path: '/social', data})
+    return client.put({path: '/user/social', data})
       .then(response => {
         return response;
       })
