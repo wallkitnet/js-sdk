@@ -742,7 +742,29 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   linkSocialAccount(data) {
+    if (!data) throw new Error('No data provided for social link');
+
     return client.put({path: '/user/social', data})
+      .then(response => {
+        return response;
+      })
+  }
+
+  /**
+   *
+   * Unlink user social account
+   *
+   * @param data - social response
+   * @returns {Promise<any>}
+   */
+  unlinkSocialAccount(data) {
+    if (!data) throw new Error('No data provided for social unlink');
+
+    if (typeof data !== "object") {
+      data = {method: data}
+    }
+
+    return client.post({path: '/user/social/delete', data})
       .then(response => {
         return response;
       })
