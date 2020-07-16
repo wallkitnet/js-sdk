@@ -3,6 +3,7 @@ import client from './WallkitClient';
 import User from './WallkitUser';
 import Resource from './WallkitResource';
 import Token from './WallkitToken';
+import Firebase from './WallkitFirebase';
 import Cookies from './utils/Cookies';
 import {isEmpty} from 'lodash';
 import Event from './utils/Events';
@@ -75,6 +76,8 @@ class Wallkit {
      * @type {Object}
      */
     this.token = Token.deserialize();
+
+    this.firebase = new Firebase();
 
     /**
      * Resource
@@ -165,6 +168,15 @@ class Wallkit {
           Cookies.removeItem('wk-refresh', '/');
           this.token = null;
           this.user = null;
+
+          if (this.firebase.token) {
+            this.firebase.removeFirebaseToken();
+          }
+
+          break;
+
+        case "wk-firebase-token" :
+          this.setFirebaseToken(event.data.value);
           break;
 
         case "wk-event-token" :
@@ -234,6 +246,17 @@ class Wallkit {
   }
 
   /**
+   * Method sets firebase token.
+   *
+   * @public
+   * @param {string} token - user token
+   * @return void
+   */
+  setFirebaseToken(token) {
+    this.firebase.setFirebaseToken(token);
+  }
+
+  /**
    * Returns token object, where value is token.
    *
    * @public
@@ -249,6 +272,17 @@ class Wallkit {
     }
 
     return null;
+  }
+
+
+  /**
+   * Returns firebase token.
+   *
+   * @public
+   * @returns {null}
+   */
+  getFirebaseToken() {
+    return this.firebase.getToken;
   }
 
   /**
@@ -297,8 +331,9 @@ class Wallkit {
         })
         .catch(e => {
           if (e.statusCode === 401) {
-            this.token = null
-            this.user = null
+            this.token = null;
+            this.user = null;
+            this.firebase.removeFirebaseToken();
             localStorage.removeItem(User.storageKey);
             localStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token', '/');
@@ -389,6 +424,29 @@ class Wallkit {
   }
 
   /**
+   * Method login user with Firebase.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  authenticateWithFirebase(firebase_id_token) {
+    if (!firebase_id_token) throw new Error('Token is not provided as argument');
+
+    this.setFirebaseToken(firebase_id_token);
+
+    return client.post({path: '/firebase/oauth/token'})
+      .then(({token}) => {
+        this.authUserByToken(token);
+        Event.send("wk-event-token", token);
+      })
+      .catch(e => {
+        this.firebase.removeFirebaseToken();
+        return Promise.reject(e);
+      })
+  }
+
+  /**
    * Method logout user from Wallkit. After success response, method removes token & user instances.  Removes cookies & localstorage datas.
    *
    * @public
@@ -412,6 +470,7 @@ class Wallkit {
             localStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token', '/');
             Cookies.removeItem('wk-token', '/');
+            this.firebase.removeFirebaseToken();
           })
     } else {
       return new Promise((resolve) => {
@@ -420,6 +479,47 @@ class Wallkit {
         localStorage.removeItem(Token.storageKey);
         Cookies.removeItem('wk-token', '/');
         Cookies.removeItem('wk-refresh', '/');
+        this.firebase.removeFirebaseToken();
+        resolve(true);
+      });
+    }
+  }
+
+  /**
+   * Method logout user from Firebase. After success response, method removes firebase token, Wallkit token & user instances.  Removes cookies & localstorage datas.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   * @example
+   * Wallkit.logout().then(() => {
+   *   alert('User has logged');
+   * });
+   */
+  logoutFromFirebase() {
+    let removeAllData = () => {
+      this.token = null;
+      localStorage.removeItem(User.storageKey);
+      localStorage.removeItem(Token.storageKey);
+      Cookies.removeItem('wk-token', '/');
+      Cookies.removeItem('wk-refresh', '/');
+      this.firebase.removeFirebaseToken();
+    };
+
+    Event.send("wk-event-logout", true);
+    this.user = null;
+
+    if (this.firebase.token) {
+      return client.post({path: '/firebase/revoke-token'})
+        .then( ({status}) => {
+          if (status === true) {
+            removeAllData();
+            return true;
+          }
+        });
+    } else {
+      return new Promise((resolve) => {
+        removeAllData();
         resolve(true);
       });
     }

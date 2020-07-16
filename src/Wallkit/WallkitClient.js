@@ -25,6 +25,16 @@ class WallkitClient {
     return (Wallkit.token || {}).value;
   }
 
+
+  /**
+   * Gets firebase token.
+   * @private
+   * @return {String}
+   */
+  get firebaseToken() {
+    return Wallkit.firebase.getToken;
+  }
+
   /**
    * Gets Wallkit Config resource.
    * @public
@@ -295,6 +305,10 @@ class WallkitClient {
     if (this.token)
       assign(headers, {'token': this.token});
 
+    if (this.firebaseToken) {
+      assign(headers, {'firebase-token': this.firebaseToken});
+    }
+
     let request = {
       method,
       headers
@@ -360,6 +374,10 @@ class WallkitClient {
 
     if (this.token)
       assign(headers, {'token': this.token});
+
+    if (this.firebaseToken) {
+      assign(headers, {'firebase-token': this.firebaseToken});
+    }
 
     let request = {
       method,
