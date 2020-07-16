@@ -46,6 +46,7 @@ export default class WallkitResource {
 WallkitResource.storageKey = 'WallkitResource';
 
 WallkitResource.allOrigins =  [
+  'http://127.0.0.1:8000',
   'https://wallkit.net',
   'https://dev.wallkit.net',
   'https://wallkit.local',
