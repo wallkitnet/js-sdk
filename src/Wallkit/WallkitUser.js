@@ -55,7 +55,13 @@ export default class WallkitUser {
      * WallkitUser.serialize();
      */
     serialize() {
-        return localStorage.setItem(WallkitUser.storageKey,JSON.stringify(this))
+        let user = {
+          id: this.id,
+          active: this.active,
+          confirm: this.confirm
+        };
+
+        return localStorage.setItem(WallkitUser.storageKey,JSON.stringify(user))
     }
 
     /**
