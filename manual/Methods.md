@@ -745,7 +745,7 @@ Subscribes user to Campaign Monitor lists in particular resource.
 Returns promise with response object which includes lists array (lists).
 
 ```javascript
-Wallkit.addUserToCampaignMonitorLists([list_id, list_id]);
+Wallkit.addUserToCampaignMonitorLists({lists: [list_id, list_id]});
 ```
 
 ### Wallkit.removeUserFromCampaignMonitorLists
@@ -755,7 +755,7 @@ Unubscribes user from Campaign Monitor lists in particular resource.
 Returns promise with response object which includes lists array (lists).
 
 ```javascript
-Wallkit.removeUserFromCampaignMonitorLists([list_id, list_id]);
+Wallkit.removeUserFromCampaignMonitorLists({lists: [list_id, list_id]});
 ```
 
 ### Wallkit.sendPageView
