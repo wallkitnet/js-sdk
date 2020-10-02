@@ -110,11 +110,18 @@ class Wallkit {
      * @type {WallkitClient}
      */
     this.client = client;
+
     /**
      * Wallkit Config instance.
      * @type {Object}
      */
     this.config = Config;
+
+    /**
+     * Wallkit Events Callbacks.
+     * @type {Array}
+     */
+    this.callbacks = [];
 
     this.initListener();
 
@@ -159,6 +166,7 @@ class Wallkit {
 
           this.user = new User(event.data.value, false);
           this.user.serialize();
+          this.dispatchLocalEvent('user', this.user);
           break;
 
         case "wk-event-logout" :
@@ -324,6 +332,7 @@ class Wallkit {
         .then(user => {
           this.user = new User(user, true);
           this.user.serialize();
+          this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
           }
@@ -362,6 +371,7 @@ class Wallkit {
 
           this.user = new User(response, false);
           this.user.serialize();
+          this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
           }
@@ -411,16 +421,28 @@ class Wallkit {
           this.token.serialize();
           this.user = new User(response, false);
           this.user.serialize();
+          this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
           }
           Event.send("wk-event-auth", response);
+          this.dispatchLocalEvent('auth', response);
           return this.user;
         })
         .catch(e => {
 
           return Promise.reject(e);
         })
+  }
+
+  firebaseAccountSettings() {
+    return client.get({path: '/firebase/account'})
+      .then(({web_app_config}) => {
+        return web_app_config;
+      })
+      .catch(e => {
+        return Promise.reject(e);
+      })
   }
 
   /**
@@ -471,6 +493,7 @@ class Wallkit {
             Cookies.removeItem('wk-token', '/');
             Cookies.removeItem('wk-token', '/');
             this.firebase.removeFirebaseToken();
+            this.dispatchLocalEvent('logout');
           })
     } else {
       return new Promise((resolve) => {
@@ -557,6 +580,7 @@ class Wallkit {
           if (!this.resource && this.token) {
             this.getResource();
           }
+          this.dispatchLocalEvent('user', this.user);
           return this.user
         })
         .catch(e => {
@@ -798,6 +822,7 @@ class Wallkit {
 
         this.user = new User(response, false);
         this.user.serialize();
+        this.dispatchLocalEvent('user', this.user);
         if(!this.resource && this.token)
         {
           this.getResource();
@@ -821,6 +846,7 @@ class Wallkit {
         this.token.serialize();
         this.user = new User(response, false);
         this.user.serialize();
+        this.dispatchLocalEvent('user', this.user);
         if(!this.resource && this.token)
         {
           this.getResource();
@@ -998,6 +1024,7 @@ class Wallkit {
 
             this.user = new User(response, true);
             this.user.serialize();
+            this.dispatchLocalEvent('user', this.user);
 
             if (!this.resource && this.token) {
               this.getResource();
@@ -1310,6 +1337,32 @@ class Wallkit {
       }
     }
     return this.sendEvent(data);
+  }
+
+  subscribeLocalEvent(event, callback) {
+    this.callbacks.push({"event": event, "callback": callback});
+  }
+
+  unsubscribeLocalEvent(event, callback) {
+    this.callbacks = this.callbacks.filter((item) => {
+      if (item.event !== event && item.callback !== callback) {
+        return true;
+      }
+    });
+  }
+
+  dispatchLocalEvent(event, params) {
+    if (this.callbacks.length > 0) {
+      this.callbacks.map(item => {
+        if (item.event && item.event === event && item.callback) {
+          try {
+            item.callback(params);
+          } catch (e) {
+            console.log('Error', e);
+          }
+        }
+      })
+    }
   }
 
 }

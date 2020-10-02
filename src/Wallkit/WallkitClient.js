@@ -32,7 +32,7 @@ class WallkitClient {
    * @return {String}
    */
   get firebaseToken() {
-    return Wallkit.firebase.getToken;
+    return Wallkit.firebase ? Wallkit.firebase.getToken : null;
   }
 
   /**
