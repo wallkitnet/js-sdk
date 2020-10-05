@@ -460,7 +460,7 @@ class Wallkit {
     return client.post({path: '/firebase/oauth/token'})
       .then(({token}) => {
         this.authUserByToken(token);
-        Event.send("wk-event-token", token);
+        Event.send("wk-event-firebase-auth", token);
       })
       .catch(e => {
         this.firebase.removeFirebaseToken();
@@ -608,6 +608,7 @@ class Wallkit {
     if (this.getToken() !== token) {
       this.token = new Token({value: token});
       this.token.serialize();
+      Event.send("wk-event-token", token);
     }
 
     return this.getUser()
