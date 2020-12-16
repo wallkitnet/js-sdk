@@ -1336,8 +1336,8 @@ class Wallkit {
 
     return this.client.get({path: '/user/content-access-details/' + content_key})
       .then(response => {
+        Event.send('wk-event-access-details', response);
         return response;
-        Event.send("wk-event-access-details", response);
       })
       .catch(e => {
         return Promise.reject(e);
@@ -1415,8 +1415,8 @@ class Wallkit {
   updateUserFirestore(data) {
     return this.client.put({path: '/firebase/firestore/user', data: {firestore: data}})
       .then(response => {
-        return response;
         Event.send("wk-event-firestore-update", response);
+        return response;
       })
       .catch(e => {
         return Promise.reject(e);
