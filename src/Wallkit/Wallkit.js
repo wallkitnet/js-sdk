@@ -458,13 +458,31 @@ class Wallkit {
     this.setFirebaseToken(firebase_id_token);
 
     return client.post({path: '/firebase/oauth/token'})
-      .then(({token}) => {
-        this.authUserByToken(token);
-        Event.send("wk-event-firebase-auth", token);
+      .then((data) => {
+        this.authUserByToken(data.token);
+        Event.send("wk-event-firebase-auth", data.token);
+        return data;
       })
       .catch(e => {
         this.firebase.removeFirebaseToken();
         return Promise.reject(e);
+      })
+  }
+
+  /**
+   * Method verifies Firebase Token.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  verifyFirebaseToken() {
+    return client.post({path: '/firebase/verify-token'})
+      .then(({status}) => {
+        return status;
+      }).catch((error) => {
+        this.logout(true);
+        return Promise.reject(error);
       })
   }
 
@@ -1307,6 +1325,28 @@ class Wallkit {
 
   /**
    *
+   * @param content_key
+   * @returns {Promise<any>}
+   */
+  getAccessDetails(content_key) {
+
+    if (typeof content_key === "undefined") {
+      return Promise.reject("Incorrect content key");
+    }
+
+    return this.client.get({path: '/user/content-access-details/' + content_key})
+      .then(response => {
+        return response;
+        Event.send("wk-event-access-details", response);
+      })
+      .catch(e => {
+        return Promise.reject(e);
+      })
+  }
+
+
+  /**
+   *
    * @param data
    * @returns {Promise}
    */
@@ -1364,6 +1404,23 @@ class Wallkit {
         }
       })
     }
+  }
+
+  /**
+   * Method updates user firestore data.
+   *
+   * @param data
+   * @returns {Promise}
+   */
+  updateUserFirestore(data) {
+    return this.client.put({path: '/firebase/firestore/user', data: {firestore: data}})
+      .then(response => {
+        return response;
+        Event.send("wk-event-firestore-update", response);
+      })
+      .catch(e => {
+        return Promise.reject(e);
+      })
   }
 
 }
