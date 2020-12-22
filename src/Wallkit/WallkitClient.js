@@ -4,6 +4,7 @@ import Wallkit from './Wallkit';
 import {assign, keysIn} from 'lodash';
 import Promise from 'bluebird';
 import Cookies from './utils/Cookies';
+import LocalStorage from './utils/LocalStorage';
 
 /**
  * @desc Class to manipulate with Wallkit API.
@@ -51,13 +52,13 @@ class WallkitClient {
    */
 
   get session () {
-    const session = localStorage.getItem('wk-session') || Cookies.getItem('wk-session');
+    const session = LocalStorage.getItem('wk-session') || Cookies.getItem('wk-session');
 
     if (session) {
       return session;
     } else {
       const newSession = this.generateHash(32);
-      localStorage.setItem('wk-session', newSession);
+      LocalStorage.setItem('wk-session', newSession);
       Cookies.setItem('wk-session', newSession,  Infinity, '/');
 
       return newSession;

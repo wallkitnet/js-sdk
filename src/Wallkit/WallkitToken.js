@@ -1,4 +1,5 @@
 import Cookies from './utils/Cookies';
+import LocalStorage from './utils/LocalStorage';
 
 /**
  * Class to manipulate with Tokens.
@@ -68,7 +69,7 @@ export default class WallkitToken {
           Cookies.setItem('wk-refresh',this.refresh, Infinity, '/');
         }
 
-        return localStorage.setItem(WallkitToken.storageKey,JSON.stringify(this))
+        return LocalStorage.setItem(WallkitToken.storageKey,JSON.stringify(this))
 
     }
 }
@@ -92,7 +93,7 @@ WallkitToken.deserialize = function () {
       return new WallkitToken({value: data, refresh: refresh});
     }
 
-    let storedToken = JSON.parse(localStorage.getItem(WallkitToken.storageKey));
+    let storedToken = JSON.parse(LocalStorage.getItem(WallkitToken.storageKey));
 
     if (storedToken && storedToken.value)
     {

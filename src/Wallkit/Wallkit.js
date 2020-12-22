@@ -5,6 +5,7 @@ import Resource from './WallkitResource';
 import Token from './WallkitToken';
 import Firebase from './WallkitFirebase';
 import Cookies from './utils/Cookies';
+import LocalStorage from './utils/LocalStorage';
 import {isEmpty} from 'lodash';
 import Event from './utils/Events';
 
@@ -125,6 +126,8 @@ class Wallkit {
 
     this.initListener();
 
+    this.isLocalStorageAvailable = LocalStorage.isAvailable();
+
     return this.initialized = true;
   }
 
@@ -170,8 +173,8 @@ class Wallkit {
           break;
 
         case "wk-event-logout" :
-          localStorage.removeItem(User.storageKey);
-          localStorage.removeItem(Token.storageKey);
+          LocalStorage.removeItem(User.storageKey);
+          LocalStorage.removeItem(Token.storageKey);
           Cookies.removeItem('wk-token', '/');
           Cookies.removeItem('wk-refresh', '/');
           this.token = null;
@@ -343,8 +346,8 @@ class Wallkit {
             this.token = null;
             this.user = null;
             this.firebase.removeFirebaseToken();
-            localStorage.removeItem(User.storageKey);
-            localStorage.removeItem(Token.storageKey);
+            LocalStorage.removeItem(User.storageKey);
+            LocalStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token', '/');
             throw new Error('Unauthorized');
           }
@@ -412,8 +415,8 @@ class Wallkit {
     /* this.token = null;
      this.user = null;
 
-     localStorage.removeItem(User.storageKey);
-     localStorage.removeItem(Token.storageKey);*/
+     LocalStorage.removeItem(User.storageKey);
+     LocalStorage.removeItem(Token.storageKey);*/
 
     return client.post({path: '/authorization', data})
         .then(response => {
@@ -506,8 +509,8 @@ class Wallkit {
       return client.get({path: '/logout'})
           .then(result => {
             this.token = null;
-            localStorage.removeItem(User.storageKey);
-            localStorage.removeItem(Token.storageKey);
+            LocalStorage.removeItem(User.storageKey);
+            LocalStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token', '/');
             Cookies.removeItem('wk-token', '/');
             this.firebase.removeFirebaseToken();
@@ -516,8 +519,8 @@ class Wallkit {
     } else {
       return new Promise((resolve) => {
         this.token = null;
-        localStorage.removeItem(User.storageKey);
-        localStorage.removeItem(Token.storageKey);
+        LocalStorage.removeItem(User.storageKey);
+        LocalStorage.removeItem(Token.storageKey);
         Cookies.removeItem('wk-token', '/');
         Cookies.removeItem('wk-refresh', '/');
         this.firebase.removeFirebaseToken();
@@ -540,8 +543,8 @@ class Wallkit {
   logoutFromFirebase() {
     let removeAllData = () => {
       this.token = null;
-      localStorage.removeItem(User.storageKey);
-      localStorage.removeItem(Token.storageKey);
+      LocalStorage.removeItem(User.storageKey);
+      LocalStorage.removeItem(Token.storageKey);
       Cookies.removeItem('wk-token', '/');
       Cookies.removeItem('wk-refresh', '/');
       this.firebase.removeFirebaseToken();

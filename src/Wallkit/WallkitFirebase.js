@@ -1,3 +1,5 @@
+import LocalStorage from './utils/LocalStorage';
+
 const FIREBASE_TOKEN_KEY = 'firebase-token';
 
 export default class WallkitFirebase {
@@ -20,15 +22,15 @@ export default class WallkitFirebase {
   }
 
   storeFirebaseToken(token) {
-    return window.localStorage.setItem(FIREBASE_TOKEN_KEY, token);
+    return LocalStorage.setItem(FIREBASE_TOKEN_KEY, token);
   }
 
   getStoredFirebaseToken() {
-    return window.localStorage.getItem(FIREBASE_TOKEN_KEY);
+    return LocalStorage.getItem(FIREBASE_TOKEN_KEY);
   }
 
   removeFirebaseTokenFromStorage() {
-    return window.localStorage.removeItem(FIREBASE_TOKEN_KEY);
+    return LocalStorage.removeItem(FIREBASE_TOKEN_KEY);
   }
 
   removeFirebaseToken() {
