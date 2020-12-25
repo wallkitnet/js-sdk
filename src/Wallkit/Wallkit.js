@@ -6,6 +6,7 @@ import Token from './WallkitToken';
 import Firebase from './WallkitFirebase';
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
+import Session from './utils/Session';
 import {isEmpty} from 'lodash';
 import Event from './utils/Events';
 
@@ -459,11 +460,15 @@ class Wallkit {
     if (!firebase_id_token) throw new Error('Token is not provided as argument');
 
     this.setFirebaseToken(firebase_id_token);
+    Session.removeSession();
 
     return client.post({path: '/firebase/oauth/token'})
       .then((data) => {
         this.authUserByToken(data.token);
-        Event.send("wk-event-firebase-auth", data.token);
+        Event.send("wk-event-firebase-auth", {
+          wk_token: data.token,
+          firebase_token: firebase_id_token
+        });
         return data;
       })
       .catch(e => {
@@ -547,6 +552,8 @@ class Wallkit {
       LocalStorage.removeItem(Token.storageKey);
       Cookies.removeItem('wk-token', '/');
       Cookies.removeItem('wk-refresh', '/');
+      Cookies.removeItem('wk-session', '/');
+      LocalStorage.removeItem('wk-session');
       this.firebase.removeFirebaseToken();
     };
 
