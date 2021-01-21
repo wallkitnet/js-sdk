@@ -1428,7 +1428,7 @@ class Wallkit {
    *
    * @returns {Promise<any>}
    */
-  getTiEvents() {
+  getTicketsEvents() {
     return this.client.get({path: '/ti-events'})
       .then(response => {
         Event.send("wk-event-tickets", response);
@@ -1437,7 +1437,7 @@ class Wallkit {
   }
 
   /**
-   * Get available event for tickets
+   * Get available tickets
    *
    * @returns {Promise<any>}
    */
