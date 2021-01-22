@@ -1433,6 +1433,32 @@ class Wallkit {
       })
   }
 
+  /**
+   * Get available event for tickets
+   *
+   * @returns {Promise<any>}
+   */
+  getTiEvents() {
+    return this.client.get({path: '/ti-events'})
+      .then(response => {
+        Event.send("wk-event-tickets", response);
+        return response;
+      })
+  }
+
+  /**
+   * Get available event for tickets
+   *
+   * @returns {Promise<any>}
+   */
+  getTickets(id) {
+    return this.client.get({path: `/ti-event/${id}/tickets`})
+      .then(response => {
+        Event.send("wk-tickets", response);
+        return response;
+      })
+  }
+
 }
 
 let instance = new Wallkit();
