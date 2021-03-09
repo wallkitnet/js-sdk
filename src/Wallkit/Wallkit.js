@@ -1468,7 +1468,7 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   assignTicket(ticketId, userId) {
-    return this.client.put({path: `/ti-event/ticket/pass/${ticketId}/user`, data: {user_id: userId}})
+    return this.client.put({path: `/user/pass/${ticketId}/assign`, data: {assign_id: userId}})
         .then(response => {
           Event.send("wk-tickets", response);
           return response;
