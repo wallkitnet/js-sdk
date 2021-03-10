@@ -1455,7 +1455,7 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   getUserPassesTickets(id) {
-    return this.client.get({path: `/ti-event/ticket/user/${id}/passes`})
+    return this.client.get({path: `/user/ti-event/${id}/passes`})
         .then(response => {
           Event.send("wk-tickets-passes", response);
           return response;
