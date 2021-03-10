@@ -1,4 +1,4 @@
-import {isEmpty} from 'lodash';
+import isEmpty from 'lodash.isempty';
 import client from './WallkitClient';
 import Event from "./utils/Events";
 import LocalStorage from './utils/LocalStorage';

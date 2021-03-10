@@ -7,7 +7,7 @@ import Firebase from './WallkitFirebase';
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
 import Session from './utils/Session';
-import {isEmpty} from 'lodash';
+import isEmpty from 'lodash.isempty';
 import Event from './utils/Events';
 
 /**
@@ -464,11 +464,11 @@ class Wallkit {
 
     return client.post({path: '/firebase/oauth/token'})
       .then((data) => {
-        this.authUserByToken(data.token);
         Event.send("wk-event-firebase-auth", {
           wk_token: data.token,
           firebase_token: firebase_id_token
         });
+        this.authUserByToken(data.token);
         return data;
       })
       .catch(e => {

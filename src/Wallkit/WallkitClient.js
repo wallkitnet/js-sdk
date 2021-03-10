@@ -1,7 +1,8 @@
 import 'whatwg-fetch';
 import Config from './Config'
 import Wallkit from './Wallkit';
-import {assign, keysIn} from 'lodash';
+import assign from 'lodash.assign';
+import keysIn from 'lodash.keysin';
 import Promise from 'bluebird';
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';

@@ -35,7 +35,6 @@
     "esdoc-standard-plugin": "^1.0.0",
     "jquery": "^3.2.0",
     "jsdoc": "^3.4.0",
-    "lodash": "^4.17.4",
     "uglify-js": "^3.5.2",
     "validate.js": "^0.11.1",
     "webpack": "^4.29.6",
@@ -44,9 +43,12 @@
     "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
     "bluebird": "^3.5.0",
-    "es6-promise": "^4.1.1"
+    "es6-promise": "^4.1.1",
+    "lodash.assign": "^4.2.0",
+    "lodash.isempty": "^4.4.0",
+    "lodash.keysin": "^4.2.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2"
   }
 }
