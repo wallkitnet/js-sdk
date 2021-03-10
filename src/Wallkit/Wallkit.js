@@ -1438,7 +1438,7 @@ class Wallkit {
    *
    * @returns {Promise<any>}
    */
-  getTiEvents() {
+  getTicketsEvents() {
     return this.client.get({path: '/ti-events'})
       .then(response => {
         Event.send("wk-event-tickets", response);
@@ -1447,7 +1447,7 @@ class Wallkit {
   }
 
   /**
-   * Get available event for tickets
+   * Get available tickets
    *
    * @returns {Promise<any>}
    */
@@ -1456,7 +1456,33 @@ class Wallkit {
       .then(response => {
         Event.send("wk-tickets", response);
         return response;
-      })
+      });
+  }
+
+  /**
+   * Get user passes tickets
+   *
+   * @returns {Promise<any>}
+   */
+  getUserPassesTickets(id) {
+    return this.client.get({path: `/user/ti-event/${id}/passes`})
+        .then(response => {
+          Event.send("wk-tickets-passes", response);
+          return response;
+      });
+  }
+
+  /**
+   * Assign tickets
+   *
+   * @returns {Promise<any>}
+   */
+  assignTicket(ticketId, userId) {
+    return this.client.put({path: `/user/pass/${ticketId}/assign`, data: {assign_id: userId}})
+        .then(response => {
+          Event.send("wk-tickets", response);
+          return response;
+        });
   }
 
 }
