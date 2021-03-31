@@ -1485,6 +1485,71 @@ class Wallkit {
         });
   }
 
+  /**
+   * Send Ticket Pass Invite to user
+   *
+   * @param ticketId<string>
+   * @param email<string>
+   * @returns {Promise<any>}
+   */
+  sendTicketPassInviteToUser(ticketId, email) {
+    return this.client.post({ path: `/user/pass/${ticketId}/invite`, data: { email } })
+      .then(response => {
+        return response;
+      });
+  }
+
+  /**
+   * Validate Ticket Pass Invite
+   *
+   * @param code<string>
+   * @returns {Promise<any>}
+   */
+  validateTicketPassInvite(code) {
+    return this.client.post({ path: `/ti-event/pass/invite-validation`, data: { code } })
+      .then(response => {
+        return response;
+      });
+  }
+
+  /**
+   * Activate Ticket Pass Invite
+   *
+   * @param code<string>
+   * @returns {Promise<any>}
+   */
+  activateTicketPassInvite(code) {
+    return this.client.post({ path: `/ti-event/pass/invite-activation`, data: { code } })
+      .then(response => {
+        return response;
+      });
+  }
+
+  /**
+   * Delete Ticket Pass Invite
+   *
+   * @param passId<string>
+   * @returns {Promise<any>}
+   */
+  removeTicketPassInvite(passId) {
+    return this.client.del({ path: `/user/pass/${passId}/invite` })
+      .then(response => {
+        return response;
+      });
+  }
+
+  /**
+   * Get User Tickets
+   *
+   * @returns {Promise<any>}
+   */
+  getUserTickets() {
+    return this.client.get({ path: `/user/ti-event-tickets` })
+      .then(response => {
+        return response;
+      });
+  }
+
 }
 
 let instance = new Wallkit();
