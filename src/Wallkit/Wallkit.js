@@ -1495,6 +1495,7 @@ class Wallkit {
   sendTicketPassInviteToUser(ticketId, email) {
     return this.client.post({ path: `/user/pass/${ticketId}/invite`, data: { email } })
       .then(response => {
+        Event.send("wk-send-ticket-pass-invite", response);
         return response;
       });
   }
@@ -1508,6 +1509,7 @@ class Wallkit {
   validateTicketPassInvite(code) {
     return this.client.post({ path: `/ti-event/pass/invite-validation`, data: { code } })
       .then(response => {
+        Event.send("wk-validate-ticket-pass-invite", response);
         return response;
       });
   }
@@ -1521,6 +1523,7 @@ class Wallkit {
   activateTicketPassInvite(code) {
     return this.client.post({ path: `/ti-event/pass/invite-activation`, data: { code } })
       .then(response => {
+        Event.send("wk-activate-ticket-pass-invite", response);
         return response;
       });
   }
@@ -1534,6 +1537,7 @@ class Wallkit {
   removeTicketPassInvite(passId) {
     return this.client.del({ path: `/user/pass/${passId}/invite` })
       .then(response => {
+        Event.send("wk-removed-ticket-pass-invite", response);
         return response;
       });
   }
@@ -1546,6 +1550,34 @@ class Wallkit {
   getUserTickets() {
     return this.client.get({ path: `/user/ti-event-tickets` })
       .then(response => {
+        Event.send("wk-user-tickets", response);
+        return response;
+      });
+  }
+
+  /**
+   * Assign Mailchimp Tags to user
+   *
+   * @returns {Promise<any>}
+   */
+  assignMailchimpTags(insert_tags) {
+    return this.client.post({ path: `/integrations/mailchimp/add-tags` , data: { insert_tags }})
+      .then(response => {
+        Event.send("wk-mailchimp-assign-tags", response);
+        return response;
+      });
+  }
+
+  /**
+   * Ticket Pass Information
+   *
+   * @param passId<string>
+   * @returns {Promise<any>}
+   */
+  getTicketPassInfo(passId) {
+    return this.client.get({ path: `/user/pass/${passId}` })
+      .then(response => {
+        Event.send("wk-ticket-pass-info", response);
         return response;
       });
   }
