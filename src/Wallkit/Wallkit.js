@@ -456,7 +456,7 @@ class Wallkit {
    * @return {Promise} returns Promise
    *
    */
-  firebaseReCaptchaSettings() {
+  getReCaptchaSettings() {
     return client.get({path: '/integrations/resource/recaptcha-settings'})
         .then((data) => {
           return data;
