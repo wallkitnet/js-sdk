@@ -450,19 +450,36 @@ class Wallkit {
   }
 
   /**
+   * Method gets ReCaptcha Settings of Resource.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  firebaseReCaptchaSettings() {
+    return client.get({path: '/integrations/resource/recaptcha-settings'})
+        .then((data) => {
+          return data;
+        })
+        .catch(e => {
+          return Promise.reject(e);
+        })
+  }
+
+  /**
    * Method login user with Firebase.
    *
    * @public
    * @return {Promise} returns Promise
    *
    */
-  authenticateWithFirebase(firebase_id_token) {
+  authenticateWithFirebase(firebase_id_token, captchaToken) {
     if (!firebase_id_token) throw new Error('Token is not provided as argument');
 
     this.setFirebaseToken(firebase_id_token);
     Session.removeSession();
 
-    return client.post({path: '/firebase/oauth/token'})
+    return client.post({path: '/firebase/oauth/token', data: { recaptcha_token: captchaToken }})
       .then((data) => {
         Event.send("wk-event-firebase-auth", {
           wk_token: data.token,
