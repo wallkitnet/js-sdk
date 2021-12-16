@@ -467,6 +467,27 @@ class Wallkit {
   }
 
   /**
+   * Method exchanges Ticket Pass Token on Auth Tokens.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  getAuthTokensByTicketPassToken(authToken) {
+    if (!authToken) {
+      return Promise.reject("Token is not provided");
+    }
+
+    return client.post({
+        path: '/ti-event/ticket/pass/authorization',
+        data: { authorization_token: authToken }
+      }).then((data) => {
+        Event.send("wk-event-ticket-pass-token", data);
+        return data;
+      }).catch(e => Promise.reject(e));
+  }
+
+  /**
    * Method login user with Firebase.
    *
    * @public
