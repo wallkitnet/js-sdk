@@ -467,6 +467,31 @@ class Wallkit {
   }
 
   /**
+   * Method validates recaptcha token from google.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  validateReCaptchaToken(recaptchaToken) {
+    if (!recaptchaToken) {
+      return Promise.reject("Token is not provided");
+    }
+
+    return client.post({
+      path: '/integrations/google-recaptcha/validate',
+      data: {
+        recaptcha_token: recaptchaToken
+      }
+    }).then((data) => {
+      Event.send("wk-event-recaptcha-validate", data);
+      return data;
+    }).catch((error) => {
+      return Promise.reject(error);
+    });
+  }
+
+  /**
    * Method exchanges Ticket Pass Token on Auth Tokens.
    *
    * @public
