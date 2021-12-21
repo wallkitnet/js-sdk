@@ -505,7 +505,8 @@ class Wallkit {
 
     return client.post({
         path: '/ti-event/ticket/pass/authorization',
-        data: { authorization_token: authToken }
+        data: { authorization_token: authToken },
+        options: { ignoreTokens: true }
       }).then((data) => {
         Event.send("wk-event-ticket-pass-token", data);
         return data;
@@ -525,8 +526,10 @@ class Wallkit {
     this.setFirebaseToken(firebase_id_token);
     Session.removeSession();
 
-    return client.post({path: '/firebase/oauth/token', data: { recaptcha_token: captchaToken }})
-      .then((data) => {
+    return client.post({
+      path: '/firebase/oauth/token',
+      data: { recaptcha_token: captchaToken }
+    }).then((data) => {
         Event.send("wk-event-firebase-auth", {
           wk_token: data.token,
           firebase_token: firebase_id_token

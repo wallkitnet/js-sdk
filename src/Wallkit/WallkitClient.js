@@ -98,8 +98,8 @@ class WallkitClient {
    *     console.log('response:', response);
    * }).catch(e => console.log('error:', e));
    */
-  get({path, params}) {
-    return this.makeRequest({path, params})
+  get({path, params, options}) {
+    return this.makeRequest({path, params, options})
   }
 
   /**
@@ -110,6 +110,7 @@ class WallkitClient {
    * @param {Object} data
    * @property {String} path - request path
    * @property {Object} data - request data
+   * @property {Object} options - request options
    * @return {Promise} returns promise
    *
    * @example
@@ -124,7 +125,7 @@ class WallkitClient {
    *     console.log('response:', response);
    * }).catch(e => console.log('error:', e));
    */
-  post({path, data}) {
+  post({path, data, options}) {
     return this.makeRequest({
       path,
       method: 'POST',
@@ -132,6 +133,7 @@ class WallkitClient {
       headers: {
         'Content-Type': 'application/json'
       },
+      options
     })
   }
 
@@ -154,7 +156,7 @@ class WallkitClient {
    *     console.log('response:', response);
    * }).catch(e => console.log('error:', e));
    */
-  nativePost({path, data}) {
+  nativePost({path, data,  options}) {
     return this.makeNativeRequest({
       path,
       method: 'POST',
@@ -162,6 +164,7 @@ class WallkitClient {
       headers: {
         'Content-Type': 'application/json'
       },
+      options
     })
   }
 
@@ -280,7 +283,7 @@ class WallkitClient {
    * @ignore
    */
 
-  makeNativeRequest({path, method = 'GET', headers = {}, body = {}}) {
+  makeNativeRequest({path, method = 'GET', headers = {}, body = {}, options = {}}) {
     function checkStatus(response) {
       if (response.status >= 200 && response.status < 300) {
         return response.json()
@@ -304,11 +307,13 @@ class WallkitClient {
       assign(headers, {'session': this.session});
     }
 
-    if (this.token)
-      assign(headers, {'token': this.token});
+    if (!options.ignoreTokens) {
+      if (this.token)
+        assign(headers, {'token': this.token});
 
-    if (this.firebaseToken) {
-      assign(headers, {'firebase-token': this.firebaseToken});
+      if (this.firebaseToken) {
+        assign(headers, {'firebase-token': this.firebaseToken});
+      }
     }
 
     let request = {
@@ -335,7 +340,7 @@ class WallkitClient {
    *
    * @ignore
    */
-  makeRequest({path, method = 'GET', headers = {}, body = {}}) {
+  makeRequest({path, method = 'GET', headers = {}, body = {}, options = {}}) {
 
     function checkStatus(response) {
 
@@ -374,11 +379,13 @@ class WallkitClient {
       assign(headers, {'session': this.session});
     }
 
-    if (this.token)
-      assign(headers, {'token': this.token});
+    if (!options.ignoreTokens) {
+      if (this.token)
+        assign(headers, {'token': this.token});
 
-    if (this.firebaseToken) {
-      assign(headers, {'firebase-token': this.firebaseToken});
+      if (this.firebaseToken) {
+        assign(headers, {'firebase-token': this.firebaseToken});
+      }
     }
 
     let request = {
