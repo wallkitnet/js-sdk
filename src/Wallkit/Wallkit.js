@@ -482,6 +482,10 @@ class Wallkit {
       path: '/integrations/google-recaptcha/validate',
       data: {
         recaptcha_token: recaptchaToken
+      },
+      options: {
+        ignoreTokens: true,
+        ignoreSession: true
       }
     }).then((data) => {
       Event.send("wk-event-recaptcha-validate", data);
@@ -528,7 +532,7 @@ class Wallkit {
 
     return client.post({
       path: '/firebase/oauth/token',
-      data: { recaptcha_token: captchaToken }
+      data: { recaptcha_token: captchaToken },
     }).then((data) => {
         Event.send("wk-event-firebase-auth", {
           wk_token: data.token,
@@ -572,9 +576,6 @@ class Wallkit {
    * });
    */
   logout(event = true) {
-    if (event) {
-      Event.send("wk-event-logout", true);
-    }
     this.user = null;
     if (this.token) {
       return client.get({path: '/logout'})
@@ -583,9 +584,13 @@ class Wallkit {
             LocalStorage.removeItem(User.storageKey);
             LocalStorage.removeItem(Token.storageKey);
             Cookies.removeItem('wk-token', '/');
-            Cookies.removeItem('wk-token', '/');
+            Cookies.removeItem('wk-refresh', '/');
             this.firebase.removeFirebaseToken();
             this.dispatchLocalEvent('logout');
+            if (event) {
+              Event.send("wk-event-logout", true);
+            }
+            return result;
           })
     } else {
       return new Promise((resolve) => {
@@ -724,6 +729,7 @@ class Wallkit {
           this.resource.serialize();
 
           Event.send("wk-event-resource", resource);
+          this.dispatchLocalEvent('resource', resource);
 
           return this.resource
         })

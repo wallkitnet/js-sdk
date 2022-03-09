@@ -6,6 +6,8 @@ import keysIn from 'lodash.keysin';
 import Promise from 'bluebird';
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
+import Session from "./utils/Session";
+import Token from "./WallkitToken";
 
 /**
  * @desc Class to manipulate with Wallkit API.
@@ -99,7 +101,19 @@ class WallkitClient {
    * }).catch(e => console.log('error:', e));
    */
   get({path, params, options}) {
-    return this.makeRequest({path, params, options})
+    return this.makeRequest({path, params, options});
+  }
+
+  /**
+   * Reset credentials of user tokens, session.
+   *
+   * @private
+   */
+  resetCredentials() {
+    Session.removeSession();
+    LocalStorage.removeItem(Token.storageKey);
+    LocalStorage.removeItem('wk-token');
+    Cookies.removeItem('wk-token', '/');
   }
 
   /**
@@ -284,7 +298,7 @@ class WallkitClient {
    */
 
   makeNativeRequest({path, method = 'GET', headers = {}, body = {}, options = {}}) {
-    function checkStatus(response) {
+    const checkStatus = (response) => {
       if (response.status >= 200 && response.status < 300) {
         return response.json()
       } else {
@@ -295,6 +309,19 @@ class WallkitClient {
         return promise.then((json) => {
           let error = new Error(response.statusText);
           error.response = json;
+
+          if (error.statusCode === 401) {
+            this.resetCredentials();
+
+            if (error.response) {
+              switch (error.response.error) {
+                case 'token_compromised':
+                  this.resetCredentials();
+                  break;
+              }
+            }
+          }
+
           throw error
         });
       }
@@ -342,7 +369,7 @@ class WallkitClient {
    */
   makeRequest({path, method = 'GET', headers = {}, body = {}, options = {}}) {
 
-    function checkStatus(response) {
+    const checkStatus = (response) => {
 
 
       if (response.status >= 200 && response.status < 300) {
@@ -364,6 +391,17 @@ class WallkitClient {
               error.statusCode = response.status;
               error.requestUrl = response.url;
               error.response = json;
+
+              if (error.statusCode === 401) {
+                if (error.response) {
+                  switch (error.response.error) {
+                    case 'token_compromised':
+                      this.resetCredentials();
+                      break;
+                  }
+                }
+              }
+
               throw error
             })
 
@@ -375,7 +413,7 @@ class WallkitClient {
     assign(headers, {'resource': this.resource});
     assign(headers, {'Wallkit-Client': 'JsSDK v0.0.37'});
 
-    if (this.session) {
+    if (this.session && !options.ignoreSession) {
       assign(headers, {'session': this.session});
     }
 
