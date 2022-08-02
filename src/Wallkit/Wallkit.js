@@ -799,6 +799,33 @@ class Wallkit {
         })
   }
 
+  /**
+   * Method changes user subscription settings.
+   *
+   * @public
+   * @param {number} subscription_id - subscription id
+   * @param {object} settings - subscription settings
+   * @returns {Promise<any>}
+   */
+  changeUserSubscriptionSettings(subscription_id, settings) {
+    if (typeof subscription_id !== "number") {
+      throw new Error('No subscription id provided!');
+    }
+
+    if (typeof settings !== "object") {
+      throw new Error('No settings provided!');
+    }
+
+    return this.client.put({
+        path: `/user/subscriptions/${subscription_id}`,
+        data: {
+          ...settings
+        }
+      }).then(response => {
+          return response;
+      })
+  }
+
 
   /**
    *
