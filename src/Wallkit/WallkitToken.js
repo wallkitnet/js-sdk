@@ -1,5 +1,6 @@
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
+import Resource from './utils/Resource';
 
 /**
  * Class to manipulate with Tokens.
@@ -20,7 +21,7 @@ export default class WallkitToken {
      *  expire: "1553700315"
      * });
      */
-    constructor({value, refresh, expire}) {
+    constructor({value, refresh, expire, resource}) {
 
     /**
        * @type {string} value - token key
@@ -36,11 +37,33 @@ export default class WallkitToken {
        * @type {number} expire - timestamp of token expire
        */
       this.expire = expire;
+
+      /**
+       * @type {string} resource - resource key
+       */
+      this.resource = resource;
+      debugger;
+      // /**
+      //  * @type {Object} keys for access the storage
+      //  */
+      // this.storageKeys = {
+      //   refresh: Resource.formatKey('wk-refresh', resource),
+      //   token: Resource.formatKey('wk-token', resource),
+      // }
+    }
+
+
+    get getResource() {
+      if (typeof this.resource === 'object' && this.resource) {
+        return this.resource.public_key;
+      }
+
+      return this.resource;
     }
 
     exist() {
 
-      if(this.value && typeof this.value !== "undefined")
+      if (this.value && typeof this.value !== "undefined")
       {
         return true;
       }
@@ -61,20 +84,37 @@ export default class WallkitToken {
 
         if(typeof this.value !== "undefined" && this.value)
         {
-          Cookies.setItem('wk-token',this.value, Infinity, '/');
+          Cookies.setItem(WallkitToken.getStorageKey(this.getResource), this.value, Infinity, '/');
         }
 
         if(typeof this.refresh !== "undefined")
         {
-          Cookies.setItem('wk-refresh',this.refresh, Infinity, '/');
+          Cookies.setItem(WallkitToken.getRefreshKey(this.getResource), this.refresh, Infinity, '/');
         }
 
-        return LocalStorage.setItem(WallkitToken.storageKey,JSON.stringify(this))
+        return LocalStorage.setItem(WallkitToken.getStorageKey(this.getResource), JSON.stringify(this))
 
     }
 }
 
 WallkitToken.storageKey = 'WallkitToken';
+WallkitToken.storageRefreshKey = 'WallkitRefreshToken';
+
+WallkitToken.getStorageKey = (resource) => {
+  if (resource) {
+    return Resource.formatKey(WallkitToken.storageKey, resource);
+  }
+
+  return WallkitToken.storageKey;
+}
+
+WallkitToken.getRefreshKey = (resource) => {
+  if (resource) {
+    return Resource.formatKey(WallkitToken.storageRefreshKey, resource);
+  }
+
+  return WallkitToken.storageKey;
+}
 
 /**
  * Deserialize token from localStorage and creates instance of {@link WallkitToken}
@@ -85,26 +125,56 @@ WallkitToken.storageKey = 'WallkitToken';
  * @example
  * WallkitToken.deserialize();
  */
-WallkitToken.deserialize = function () {
-    let data = Cookies.getItem('wk-token');
-    let refresh = Cookies.getItem('wk-refresh');
+WallkitToken.deserialize = function (resource) {
+  console.log('deserialize resource', resource)
+    const wkTokenStorageKey = Resource.formatKey(WallkitToken.storageKey, resource);
+    const wkRefreshTokenStorageKey = Resource.formatKey(WallkitToken.storageRefreshKey, resource);
+
+    let data = Cookies.getItem(wkTokenStorageKey);
+    let refresh = Cookies.getItem(wkRefreshTokenStorageKey);
 
     if (data || refresh) {
-      return new WallkitToken({value: data, refresh: refresh});
+      return new WallkitToken({
+        value: data,
+        refresh: refresh,
+        resource: resource
+      });
     }
 
-    let storedToken = JSON.parse(LocalStorage.getItem(WallkitToken.storageKey));
+    let storedToken = JSON.parse(LocalStorage.getItem(wkTokenStorageKey));
 
     if (storedToken && storedToken.value)
     {
-      Cookies.setItem('wk-token', storedToken.value, Infinity, '/');
+      Cookies.setItem(wkTokenStorageKey, storedToken.value, Infinity, '/');
 
       if(typeof storedToken.refresh !== "undefined")
       {
-        Cookies.setItem('wk-refresh',storedToken.refresh, Infinity, '/');
+        Cookies.setItem(wkRefreshTokenStorageKey, refresh.refresh, Infinity, '/');
       }
       return new WallkitToken(storedToken);
     }
 
     return null
 };
+
+/**
+ * Remove tokens from the storage
+ *
+ * @public
+ * @return void
+ *
+ * @example
+ * WallkitToken.remove();
+ */
+WallkitToken.remove = function (resource) {
+  const wkTokenStorageKey = Resource.formatKey(WallkitToken.storageKey, resource);
+  const wkRefreshTokenStorageKey = Resource.formatKey(WallkitToken.storageRefreshKey, resource);
+
+  Cookies.removeItem(wkTokenStorageKey, '/');
+  Cookies.removeItem(wkRefreshTokenStorageKey, '/');
+
+  if (LocalStorage.isAvailable()) {
+    LocalStorage.removeItem(wkTokenStorageKey);
+    LocalStorage.removeItem(wkRefreshTokenStorageKey);
+  }
+}

@@ -77,9 +77,13 @@ class Wallkit {
      * Token.
      * @type {Object}
      */
-    this.token = Token.deserialize();
+    this.token = Token.deserialize(resource);
 
-    this.firebase = new Firebase();
+    /**
+     * Firebase Token.
+     * @type {Object}
+     */
+    this.firebase = new Firebase(resource);
 
     /**
      * Resource
@@ -163,7 +167,8 @@ class Wallkit {
             this.token = new Token({
               value: event.data.value.token,
               refresh: event.data.value.refresh_token,
-              expire: event.data.value.expires
+              expire: event.data.value.expires,
+              resource: Config.resource
             });
             this.token.serialize();
           }
@@ -175,9 +180,7 @@ class Wallkit {
 
         case "wk-event-logout" :
           LocalStorage.removeItem(User.storageKey);
-          LocalStorage.removeItem(Token.storageKey);
-          Cookies.removeItem('wk-token', '/');
-          Cookies.removeItem('wk-refresh', '/');
+          Token.remove(Config.resource);
           this.token = null;
           this.user = null;
 
@@ -196,6 +199,7 @@ class Wallkit {
             value: event.data.value,
             refresh: null,
             expire: null,
+            resource: Config.resource
           });
           this.token.serialize();
           this.getUser();
@@ -253,7 +257,7 @@ class Wallkit {
    * @return void
    */
   setToken(token) {
-    this.token = new Token({value: token});
+    this.token = new Token({value: token, resource: Config.resource});
     this.token.serialize();
   }
 
@@ -347,9 +351,7 @@ class Wallkit {
             this.token = null;
             this.user = null;
             this.firebase.removeFirebaseToken();
-            LocalStorage.removeItem(User.storageKey);
-            LocalStorage.removeItem(Token.storageKey);
-            Cookies.removeItem('wk-token', '/');
+            Token.remove(Config.resource);
             throw new Error('Unauthorized');
           }
           return Promise.reject(e.response);
@@ -370,7 +372,12 @@ class Wallkit {
     return client.post({path: '/registration', data})
         .then(response => {
           //this.token = new Token({value: response.token});
-          this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
+          this.token = new Token({
+            value: response.token,
+            refresh: response.refresh_token,
+            expire: response.expires,
+            resource: Config.resource
+          });
           this.token.serialize();
 
           this.user = new User(response, false);
@@ -421,7 +428,12 @@ class Wallkit {
 
     return client.post({path: '/authorization', data})
         .then(response => {
-          this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
+          this.token = new Token({
+            value: response.token,
+            refresh: response.refresh_token,
+            expire: response.expires,
+            resource: Config.resource
+          });
           this.token.serialize();
           this.user = new User(response, false);
           this.user.serialize();
@@ -582,9 +594,7 @@ class Wallkit {
           .then(result => {
             this.token = null;
             LocalStorage.removeItem(User.storageKey);
-            LocalStorage.removeItem(Token.storageKey);
-            Cookies.removeItem('wk-token', '/');
-            Cookies.removeItem('wk-refresh', '/');
+            Token.remove(Config.resource);
             this.firebase.removeFirebaseToken();
             this.dispatchLocalEvent('logout');
             if (event) {
@@ -596,9 +606,7 @@ class Wallkit {
       return new Promise((resolve) => {
         this.token = null;
         LocalStorage.removeItem(User.storageKey);
-        LocalStorage.removeItem(Token.storageKey);
-        Cookies.removeItem('wk-token', '/');
-        Cookies.removeItem('wk-refresh', '/');
+        Token.remove(Config.resource);
         this.firebase.removeFirebaseToken();
         resolve(true);
       });
@@ -620,11 +628,8 @@ class Wallkit {
     let removeAllData = () => {
       this.token = null;
       LocalStorage.removeItem(User.storageKey);
-      LocalStorage.removeItem(Token.storageKey);
-      Cookies.removeItem('wk-token', '/');
-      Cookies.removeItem('wk-refresh', '/');
-      Cookies.removeItem('wk-session', '/');
-      LocalStorage.removeItem('wk-session');
+      Token.remove(Config.resource);
+      Session.removeSession(Config.resource);
       this.firebase.removeFirebaseToken();
     };
 
@@ -705,7 +710,10 @@ class Wallkit {
     }
 
     if (this.getToken() !== token) {
-      this.token = new Token({value: token});
+      this.token = new Token({
+        value: token,
+        resource: Config.resource
+      });
       this.token.serialize();
       Event.send("wk-event-token", token);
     }
@@ -945,7 +953,12 @@ class Wallkit {
     return client.post({path: '/social-registration', data})
       .then(response => {
         //this.token = new Token({value: response.token});
-        this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
+        this.token = new Token({
+          value: response.token,
+          refresh: response.refresh_token,
+          expire: response.expires,
+          resource: Config.resource
+        });
         this.token.serialize();
 
         this.user = new User(response, false);
@@ -970,7 +983,12 @@ class Wallkit {
   socialAuthorization(data) {
     return client.post({path: '/social-authorization', data})
       .then(response => {
-        this.token = new Token({value: response.token, refresh: response.refresh_token, expire:response.expires});
+        this.token = new Token({
+          value: response.token,
+          refresh: response.refresh_token,
+          expire: response.expires,
+          resource: Config.resource
+        });
         this.token.serialize();
         this.user = new User(response, false);
         this.user.serialize();
@@ -1038,7 +1056,12 @@ class Wallkit {
     return this.client.post({path: '/authorization/refresh', data: data})
         .then(response => {
           if (!isEmpty(response.token)) {
-            this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
+            this.token = new Token({
+              value: response.token,
+              refresh: response.refresh_token,
+              expire: response.expires,
+              resource: Config.resource
+            });
             this.token.serialize();
             Event.send("wk-event-token", response.token);
           }
@@ -1147,7 +1170,12 @@ class Wallkit {
         .then(response => {
 
           if (!isEmpty(response.token)) {
-            this.token = new Token({value: response.token, refresh: response.refresh_token, expire: response.expires});
+            this.token = new Token({
+              value: response.token,
+              refresh: response.refresh_token,
+              expire: response.expires,
+              resource: Config.resource
+            });
             this.token.serialize();
 
             this.user = new User(response, true);
@@ -1680,6 +1708,19 @@ class Wallkit {
         return response;
       });
   }
+
+  /**
+   * Card Attempt
+   *
+   * @returns {Promise<any>}
+   */
+   cardAttemptAttach() {
+     return this.client.post({ path: '/user/card/attempt-attach' })
+         .then(response => {
+           Event.send("wk-attempt-attach", response);
+           return response;
+         });
+   }
 
 }
 

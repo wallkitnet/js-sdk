@@ -55,14 +55,13 @@ class WallkitClient {
    */
 
   get session () {
-    const session = LocalStorage.getItem('wk-session') || Cookies.getItem('wk-session');
+    const session = Session.getSession(this.resource);
 
     if (session) {
       return session;
     } else {
       const newSession = this.generateHash(32);
-      LocalStorage.setItem('wk-session', newSession);
-      Cookies.setItem('wk-session', newSession,  Infinity, '/');
+      Session.setSession(newSession, this.resource);
 
       return newSession;
     }
@@ -111,9 +110,7 @@ class WallkitClient {
    */
   resetCredentials() {
     Session.removeSession();
-    LocalStorage.removeItem(Token.storageKey);
-    LocalStorage.removeItem('wk-token');
-    Cookies.removeItem('wk-token', '/');
+    Token.remove(this.resource);
   }
 
   /**
