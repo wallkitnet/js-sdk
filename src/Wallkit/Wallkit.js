@@ -53,10 +53,11 @@ class Wallkit {
    *    resource: "3535",
    *    version: "v1",
    *    host: "api.dev.wallkit.net",
+   *    firebase: "true",
    * });
    *
    */
-  init({resource, api_url}) {
+  init({resource, api_url, firebase}) {
     if (this.initialized) {
       return true;
     }
@@ -71,7 +72,7 @@ class Wallkit {
      * User information.
      * @type {WallkitUser}
      */
-    this.user = User.deserialize();
+    this.user = User.deserialize(resource);
 
     /**
      * Token.
@@ -83,18 +84,19 @@ class Wallkit {
      * Firebase Token.
      * @type {Object}
      */
-    this.firebase = new Firebase(resource);
+    this.firebase = new Firebase(resource, firebase);
 
     /**
      * Resource
      */
-    this.resource = Resource.deserialize();
+    this.resource = Resource.deserialize(resource);
 
     /**
      * check and retrieve user if exist token on token not match
      */
-    if (this.user === null && this.token ||
-        (!isEmpty(this.user) && !isEmpty(this.user.token) && !isEmpty(this.token) && this.user.token !== this.token.value)
+    if (this.user === null && this.token && this.firebase.enabled === false ||
+        this.user === null && this.token && this.firebase.token ||
+        (!isEmpty(this.user) && !isEmpty(this.user.token) && !isEmpty(this.token) && !isEmpty(this.firebase.token) && this.user.token !== this.token.value)
     ) {
       this.getUser()
           .catch(e => {
@@ -174,7 +176,7 @@ class Wallkit {
           }
 
           this.user = new User(event.data.value, false);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           this.dispatchLocalEvent('user', this.user);
           break;
 
@@ -339,7 +341,7 @@ class Wallkit {
     return client.get({path: '/user'})
         .then(user => {
           this.user = new User(user, true);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
@@ -381,7 +383,7 @@ class Wallkit {
           this.token.serialize();
 
           this.user = new User(response, false);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
@@ -436,7 +438,7 @@ class Wallkit {
           });
           this.token.serialize();
           this.user = new User(response, false);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           this.dispatchLocalEvent('user', this.user);
           if (!this.resource && this.token) {
             this.getResource();
@@ -680,7 +682,7 @@ class Wallkit {
     return User.reload()
         .then(user => {
           this.user = new User(user, true);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           if (!this.resource && this.token) {
             this.getResource();
           }
@@ -928,7 +930,7 @@ class Wallkit {
     return this.client.put({path: '/user', data: data})
         .then(response => {
           this.user = new User(response, false);
-          this.user.serialize();
+          this.user.serialize(Config.resource);
           Event.send("wk-event-user-update", response);
           return response;
         })
@@ -962,7 +964,7 @@ class Wallkit {
         this.token.serialize();
 
         this.user = new User(response, false);
-        this.user.serialize();
+        this.user.serialize(Config.resource);
         this.dispatchLocalEvent('user', this.user);
         if(!this.resource && this.token)
         {
@@ -991,7 +993,7 @@ class Wallkit {
         });
         this.token.serialize();
         this.user = new User(response, false);
-        this.user.serialize();
+        this.user.serialize(Config.resource);
         this.dispatchLocalEvent('user', this.user);
         if(!this.resource && this.token)
         {
@@ -1179,7 +1181,7 @@ class Wallkit {
             this.token.serialize();
 
             this.user = new User(response, true);
-            this.user.serialize();
+            this.user.serialize(Config.resource);
             this.dispatchLocalEvent('user', this.user);
 
             if (!this.resource && this.token) {

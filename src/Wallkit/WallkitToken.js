@@ -42,7 +42,6 @@ export default class WallkitToken {
        * @type {string} resource - resource key
        */
       this.resource = resource;
-      debugger;
       // /**
       //  * @type {Object} keys for access the storage
       //  */
@@ -126,7 +125,6 @@ WallkitToken.getRefreshKey = (resource) => {
  * WallkitToken.deserialize();
  */
 WallkitToken.deserialize = function (resource) {
-  console.log('deserialize resource', resource)
     const wkTokenStorageKey = Resource.formatKey(WallkitToken.storageKey, resource);
     const wkRefreshTokenStorageKey = Resource.formatKey(WallkitToken.storageRefreshKey, resource);
 

@@ -1,5 +1,6 @@
 import client from './WallkitClient';
 import LocalStorage from './utils/LocalStorage';
+import Resource from "./utils/Resource";
 
 /**
  * Class to manipulate with Resources.
@@ -39,12 +40,20 @@ export default class WallkitResource {
      * WallkitResource.serialize();
      */
     serialize() {
-        return LocalStorage.setItem(WallkitResource.storageKey,JSON.stringify(this))
+        return LocalStorage.setItem(WallkitResource.getStorageKey(this.public_key), JSON.stringify(this))
     }
 
 }
 
 WallkitResource.storageKey = 'WallkitResource';
+
+WallkitResource.getStorageKey = (resource) => {
+    if (resource) {
+        return Resource.formatKey(WallkitResource.storageKey, resource);
+    }
+
+    return WallkitResource.storageKey;
+}
 
 WallkitResource.allOrigins =  [
   'http://127.0.0.1:8000',
@@ -68,9 +77,9 @@ WallkitResource.getOrigins = function () {
  * @example
  * WallkitResource.deserialize();
  */
-WallkitResource.deserialize = function () {
+WallkitResource.deserialize = function (resource) {
 
-    let storedResource = JSON.parse(LocalStorage.getItem(WallkitResource.storageKey));
+    const storedResource = JSON.parse(LocalStorage.getItem(WallkitResource.getStorageKey(resource)));
 
     if (storedResource)
     {

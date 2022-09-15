@@ -2,6 +2,7 @@ import isEmpty from 'lodash.isempty';
 import client from './WallkitClient';
 import Event from "./utils/Events";
 import LocalStorage from './utils/LocalStorage';
+import Resource from "./utils/Resource";
 
 /**
  * Class to manipulate with User.
@@ -55,14 +56,14 @@ export default class WallkitUser {
      * @example
      * WallkitUser.serialize();
      */
-    serialize() {
+    serialize(resource) {
         let user = {
           id: this.id,
           active: this.active,
           confirm: this.confirm
         };
 
-        return LocalStorage.setItem(WallkitUser.storageKey,JSON.stringify(user))
+        return LocalStorage.setItem(WallkitUser.getStorageKey(resource), JSON.stringify(user))
     }
 
     /**
@@ -135,6 +136,15 @@ export default class WallkitUser {
 
 WallkitUser.storageKey = 'WallkitUser';
 
+
+WallkitUser.getStorageKey = (resource) => {
+    if (resource) {
+        return Resource.formatKey(WallkitUser.storageKey, resource);
+    }
+
+    return WallkitUser.storageKey;
+}
+
 /**
  * Deserialize user from localStorage and creates instance of {@link WallkitUser}
  *
@@ -144,9 +154,9 @@ WallkitUser.storageKey = 'WallkitUser';
  * @example
  * WallkitToken.deserialize();
  */
-WallkitUser.deserialize = function () {
+WallkitUser.deserialize = function (resource) {
 
-    let storedUser = JSON.parse(LocalStorage.getItem(WallkitUser.storageKey));
+    let storedUser = JSON.parse(LocalStorage.getItem(WallkitUser.getStorageKey(resource)));
 
     if (storedUser && storedUser.id)
     {

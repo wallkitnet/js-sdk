@@ -3,9 +3,10 @@ import LocalStorage from './utils/LocalStorage';
 const FIREBASE_TOKEN_KEY = 'firebase-token';
 
 export default class WallkitFirebase {
-  constructor(resource) {
-    this.token = this.getStoredFirebaseToken() || null;
+  constructor(resource, enabled) {
+    this.enabled = enabled !== false;
     this.resource = resource;
+    this.token = this.getStoredFirebaseToken() || null;
   }
 
   get tokenKey() {
