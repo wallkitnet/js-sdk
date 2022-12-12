@@ -147,7 +147,7 @@ WallkitToken.deserialize = function (resource) {
 
       if(typeof storedToken.refresh !== "undefined")
       {
-        Cookies.setItem(wkRefreshTokenStorageKey, refresh.refresh, Infinity, '/');
+        Cookies.setItem(wkRefreshTokenStorageKey, storedToken.refresh, Infinity, '/');
       }
       return new WallkitToken(storedToken);
     }
