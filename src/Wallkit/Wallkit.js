@@ -464,6 +464,24 @@ class Wallkit {
   }
 
   /**
+   * Method gets Password Resets.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  firebasePasswordReset() {
+    return client.get({path: '/firebase/password-reset'})
+      .then((data) => {
+        Event.send("wk-event-firebase-password-reset", data);
+        return data;
+      })
+      .catch(e => {
+        return Promise.reject(e);
+      });
+  }
+
+  /**
    * Method gets ReCaptcha Settings of Resource.
    *
    * @public
@@ -1724,6 +1742,48 @@ class Wallkit {
          });
    }
 
+  /**
+   * Checks if user exists in firebase relation
+   *
+   * @param email<string>
+   * @param resources<Array>
+   * @returns {Promise<any>}
+   */
+  checkUserFirebaseRelation (email, resources) {
+    if (!email) {
+      throw new Error('Email is not provided.');
+    }
+
+    const params = new URLSearchParams({
+      email: email,
+    });
+
+    if (Array.isArray(resources)) {
+      resources.forEach((item) => {
+        params.set('resources[]', item);
+      });
+    }
+
+    return this.client.get({
+      path: `/firebase/check/email?${params}`
+    }).then(response => {
+          Event.send("wk-check-user-firebase-relation", response);
+          return response;
+    });
+  }
+
+  /**
+   * Cascade Access
+   *
+   * @returns {Promise<any>}
+   */
+  cascadeAccess() {
+    return this.client.get({ path: '/user/cascade-access' })
+        .then(response => {
+          Event.send("wk-cascade-access", response);
+          return response;
+        });
+  }
 }
 
 let instance = new Wallkit();
