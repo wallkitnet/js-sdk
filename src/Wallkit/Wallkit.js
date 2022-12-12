@@ -464,7 +464,7 @@ class Wallkit {
   }
 
   /**
-   * Method gets Password Resets.
+   * Method resets user password by firebase flow.
    *
    * @public
    * @return {Promise} returns Promise
