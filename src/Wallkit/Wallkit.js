@@ -181,7 +181,7 @@ class Wallkit {
           break;
 
         case "wk-event-logout" :
-          LocalStorage.removeItem(User.storageKey);
+          User.remove(Config.resource);
           Token.remove(Config.resource);
           this.token = null;
           this.user = null;
@@ -470,8 +470,17 @@ class Wallkit {
    * @return {Promise} returns Promise
    *
    */
-  firebasePasswordReset() {
-    return client.get({path: '/firebase/password-reset'})
+  firebasePasswordReset (email) {
+    if (!email) {
+      return Promise.reject("Email is not provided");
+    }
+
+    return client.post({
+      path: '/firebase/password-reset',
+      data: {
+        email
+      }
+    })
       .then((data) => {
         Event.send("wk-event-firebase-password-reset", data);
         return data;
@@ -613,7 +622,7 @@ class Wallkit {
       return client.get({path: '/logout'})
           .then(result => {
             this.token = null;
-            LocalStorage.removeItem(User.storageKey);
+            User.remove(Config.resource);
             Token.remove(Config.resource);
             this.firebase.removeFirebaseToken();
             this.dispatchLocalEvent('logout');
@@ -625,7 +634,7 @@ class Wallkit {
     } else {
       return new Promise((resolve) => {
         this.token = null;
-        LocalStorage.removeItem(User.storageKey);
+        User.remove(Config.resource);
         Token.remove(Config.resource);
         this.firebase.removeFirebaseToken();
         resolve(true);
@@ -647,7 +656,7 @@ class Wallkit {
   logoutFromFirebase() {
     let removeAllData = () => {
       this.token = null;
-      LocalStorage.removeItem(User.storageKey);
+      User.remove(Config.resource);
       Token.remove(Config.resource);
       Session.removeSession(Config.resource);
       this.firebase.removeFirebaseToken();

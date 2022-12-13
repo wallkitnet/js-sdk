@@ -169,3 +169,13 @@ WallkitUser.reload = function () {
     return client.get({path: '/user'});
 };
 
+/**
+ * Destroys user
+ *
+ * @public
+ * @return void
+ *
+ */
+WallkitUser.remove = function (resource) {
+  LocalStorage.removeItem(WallkitUser.getStorageKey(resource));
+}
