@@ -1,6 +1,8 @@
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
 import Resource from './utils/Resource';
+import { getDomainWithoutSubdomain } from "./utils/Location";
+import Config from './Config';
 
 /**
  * Class to manipulate with Tokens.
@@ -80,19 +82,17 @@ export default class WallkitToken {
      * WallkitToken.serialize();
      */
     serialize() {
+      const domain = Config.subDomainCookie ? `.${getDomainWithoutSubdomain(window.location)}` : '';
 
-        if(typeof this.value !== "undefined" && this.value)
-        {
-          Cookies.setItem(WallkitToken.getStorageKey(this.getResource), this.value, Infinity, '/');
-        }
+      if(typeof this.value !== "undefined" && this.value) {
+        Cookies.setItem(WallkitToken.getStorageKey(this.getResource), this.value, Infinity, '/', domain);
+      }
 
-        if(typeof this.refresh !== "undefined")
-        {
-          Cookies.setItem(WallkitToken.getRefreshKey(this.getResource), this.refresh, Infinity, '/');
-        }
+      if(typeof this.refresh !== "undefined") {
+        Cookies.setItem(WallkitToken.getRefreshKey(this.getResource), this.refresh, Infinity, '/', domain);
+      }
 
-        return LocalStorage.setItem(WallkitToken.getStorageKey(this.getResource), JSON.stringify(this))
-
+      return LocalStorage.setItem(WallkitToken.getStorageKey(this.getResource), JSON.stringify(this));
     }
 }
 

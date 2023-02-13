@@ -54,10 +54,11 @@ class Wallkit {
    *    version: "v1",
    *    host: "api.dev.wallkit.net",
    *    firebase: "true",
+   *    subDomainCookie: "true",
    * });
    *
    */
-  init({resource, api_url, firebase}) {
+  init({resource, api_url, firebase, subDomainCookie}) {
     if (this.initialized) {
       return true;
     }
@@ -66,6 +67,10 @@ class Wallkit {
 
     if (typeof api_url !== "undefined") {
       Config.api_url = api_url;
+    }
+
+    if (typeof subDomainCookie !== "undefined") {
+      Config.subDomainCookie = Boolean(subDomainCookie);
     }
 
     /**
