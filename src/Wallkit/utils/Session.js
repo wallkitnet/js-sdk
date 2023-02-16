@@ -17,10 +17,10 @@ let Session = {
   },
   setSession: (newSession, resource) => {
     LocalStorage.setItem(Session.getSessionKey(resource), newSession);
-    Cookies.setItem(Session.getSessionKey(resource), newSession,  Infinity, '/');
+    Cookies.setItem(Session.getSessionKey(resource), newSession,  Infinity, '/', Cookies.cookieDomain());
   },
   removeSession: (resource) => {
-    Cookies.removeItem(Session.getSessionKey(resource), '/');
+    Cookies.removeItem(Session.getSessionKey(resource), '/', Cookies.cookieDomain());
     LocalStorage.removeItem(Session.getSessionKey(resource));
   }
 };

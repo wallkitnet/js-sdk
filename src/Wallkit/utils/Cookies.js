@@ -23,6 +23,9 @@
  |*|
  \*/
 
+import Config from "../Config";
+import { getDomainWithoutSubdomain } from "./Location";
+
 /**
     @ignore
  */
@@ -63,6 +66,9 @@ var docCookies = {
         var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
         for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) { aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]); }
         return aKeys;
+    },
+    cookieDomain: function () {
+      return Config.subDomainCookie ? `.${getDomainWithoutSubdomain(window.location)}` : '';
     }
 };
 
