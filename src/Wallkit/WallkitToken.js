@@ -1,8 +1,6 @@
 import Cookies from './utils/Cookies';
 import LocalStorage from './utils/LocalStorage';
 import Resource from './utils/Resource';
-import { getDomainWithoutSubdomain } from "./utils/Location";
-import Config from './Config';
 
 /**
  * Class to manipulate with Tokens.
