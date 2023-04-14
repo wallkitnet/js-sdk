@@ -1798,6 +1798,23 @@ class Wallkit {
           return response;
         });
   }
+
+  /**
+   * Check User Session
+   *
+   * @returns {Promise<any>}
+   */
+  checkUserActivity(email) {
+    if (!email) {
+      throw new Error('Email is not provided.');
+    }
+
+    return this.client.post({ path: '/check-user-activity', data: { email } })
+      .then(response => {
+        Event.send('wk-check-user-activity', response);
+        return response;
+      });
+  }
 }
 
 let instance = new Wallkit();
