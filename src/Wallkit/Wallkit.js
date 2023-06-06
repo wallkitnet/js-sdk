@@ -564,6 +564,29 @@ class Wallkit {
   }
 
   /**
+   * Method exchanges external user id on Auth Tokens.
+   *
+   * @public
+   * @return {Promise} returns Promise
+   *
+   */
+  getAuthTokensByExternalUserId(extUserId) {
+    if (!extUserId) {
+      return Promise.reject("External user id is not provided");
+    }
+
+    extUserId = window.btoa(extUserId);
+
+    return client.get({
+        path: `/auth/external/${extUserId}`,
+        options: { ignoreTokens: true }
+      }).then((data) => {
+        Event.send("wk-event-external-provider-token", data);
+        return data;
+      }).catch(e => Promise.reject(e));
+  }
+
+  /**
    * Method login user with Firebase.
    *
    * @public
