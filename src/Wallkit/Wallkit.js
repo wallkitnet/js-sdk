@@ -184,18 +184,18 @@ class Wallkit {
           this.user.serialize(Config.resource);
           this.dispatchLocalEvent('user', this.user);
           break;
-
-        case "wk-event-logout" :
-          User.remove(Config.resource);
-          Token.remove(Config.resource);
-          this.token = null;
-          this.user = null;
-
-          if (this.firebase.token) {
-            this.firebase.removeFirebaseToken();
-          }
-
-          break;
+        //
+        // case "wk-event-logout" :
+        //   User.remove(Config.resource);
+        //   Token.remove(Config.resource);
+        //   this.token = null;
+        //   this.user = null;
+        //
+        //   if (this.firebase.token) {
+        //     this.firebase.removeFirebaseToken();
+        //   }
+        //
+        //   break;
 
         case "wk-firebase-token" :
           this.setFirebaseToken(event.data.value);
@@ -626,16 +626,18 @@ class Wallkit {
     if (this.token) {
       return client.get({path: '/logout'})
           .then(result => {
+            return result;
+          }).finally(() => {
             this.token = null;
             User.remove(Config.resource);
             Token.remove(Config.resource);
             this.firebase.removeFirebaseToken();
+
             this.dispatchLocalEvent('logout');
             if (event) {
-              Event.send("wk-event-logout", true);
+              Event.send('wk-event-logout', true);
             }
-            return result;
-          })
+          });
     } else {
       return new Promise((resolve) => {
         this.token = null;
