@@ -2,6 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
 
+const pkg = require('../package.json');
+const banner = `Package name: ${pkg.name}.
+Package description: ${pkg.description}.
+Package version: ${pkg.version}.`
+
 module.exports = env => {
 
     return {
@@ -32,7 +37,8 @@ module.exports = env => {
             ],
         },
         plugins: [
-            new EsmWebpackPlugin()
+            new EsmWebpackPlugin(),
+            new webpack.BannerPlugin(banner)
         ]
     }
 };

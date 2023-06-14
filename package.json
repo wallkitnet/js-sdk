@@ -1,7 +1,7 @@
 {
   "name": "wallkit-js-sdk",
   "version": "0.0.50",
-  "description": "Wallkit",
+  "description": "Wallkit JS SDK. Library to communicate with Wallkit API",
   "main": "dist/wallkit.umd.min.js",
   "private": true,
   "scripts": {

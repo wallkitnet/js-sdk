@@ -1,0 +1,126 @@
+name: Build and deploy prod version Wallkit JS-SDK
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  S3_BUCKET: 'cdn1.wallkit.net'
+  SYNC_DIR: './dist/.'
+  FILE_NAME_LIBRARY: 'wallkit.umd.min.js'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Get package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+
+      - name: Deploy to S3
+        run: |
+          DEPLOYING_VERSION=${{ steps.package-version.outputs.current-version }}
+          echo "DEPLOYING_VERSION: $DEPLOYING_VERSION"
+          
+          LATEST_CDN_VERSION=$(aws s3 ls s3://${S3_BUCKET}/js/sdk/ | grep -v "latest" | sort -Vr | head -n 1 | sed -n -e 's/^.*PRE \([^\/]*\)\//\1/p')
+          if [ -z "$LATEST_CDN_VERSION" ];
+          then
+            LATEST_CDN_VERSION="0.0.0"
+          fi
+          echo "LATEST_CDN_VERSION: $LATEST_CDN_VERSION"
+        
+          # Check if the version already exists in the S3 bucket
+          total_found_objects=$(aws s3 ls s3://${S3_BUCKET}/js/sdk/${DEPLOYING_VERSION}/${FILE_NAME_LIBRARY} --summarize | grep "Total Objects: " | sed 's/[^0-9]*//g')
+          echo "total_found_objects: $total_found_objects"
+          
+          if [ $total_found_objects == 0 ];
+          then
+            echo "DEPLOYING_VERSION $DEPLOYING_VERSION does not exists."
+          else
+            echo "DEPLOYING_VERSION $DEPLOYING_VERSION already exists."
+          fi
+          
+          aws s3 sync ${SYNC_DIR} s3://$S3_BUCKET/js/sdk/$DEPLOYING_VERSION/'
+
+          chmod +x ./.github/semver2.sh
+          compareResult=$(bash ./.github/semver2.sh $DEPLOYING_VERSION $LATEST_CDN_VERSION)
+          echo "compareResult: $compareResult"
+
+          if [ $compareResult == 0 ];
+          then
+            echo "DEPLOYING_VERSION equals LATEST_CDN_VERSION. Creating symlink."
+            aws s3 cp s3://$S3_BUCKET/js/sdk/$DEPLOYING_VERSION/ s3://$S3_BUCKET/js/sdk/latest/ --recursive
+          fi
+
+          if [ $compareResult == 1 ];
+          then
+            echo "DEPLOYING_VERSION greater than LATEST_CDN_VERSION. Creating symlink."
+            aws s3 cp s3://$S3_BUCKET/js/sdk/$DEPLOYING_VERSION/ s3://$S3_BUCKET/js/sdk/latest/ --recursive
+          fi
+
+          if [ $compareResult == -1 ];
+          then
+            echo "DEPLOYING_VERSION lower than LATEST_CDN_VERSION. Not creating symlink."
+          fi
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.PROD_DISTRIBUTION_ID }}
+          PATHS: "/js/sdk/*"
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Slack Notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: repo,commit,message,author,took,pullRequest
+          custom_payload: |
+            {
+              text: "Build Wallkit JS-SDK",
+              attachments: [{
+                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                text: `repo: ${process.env.AS_REPO}\n message: ${process.env.AS_MESSAGE}\n commit: ${process.env.AS_COMMIT}\n PR: ${process.env.AS_PULL_REQUEST}\n author: ${process.env.AS_AUTHOR}\n status: ${{ job.status }} in ${process.env.AS_TOOK}`,
+                fields: [
+                  {
+                    title: "branch",
+                    value: "master",
+                    short: true
+                  },
+                  {
+                    title: "version",
+                    value: "${{ steps.package-version.outputs.current-version }}",
+                    short: true
+                  }
+                ]
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()

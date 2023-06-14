@@ -1,0 +1,82 @@
+name: Build and deploy dev version Wallkit JS-SDK
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  S3_BUCKET: 'cdn1.dev.wallkit.net'
+  SYNC_DIR: './dist/.'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Get package version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@main
+
+      - name: Deploy to S3
+        run: aws s3 sync ${SYNC_DIR} s3://${S3_BUCKET}/js/sdk/latest'
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.DEV_DISTRIBUTION_ID }}
+          PATHS: "/js/sdk/latest/*"
+          AWS_REGION: us-east-1
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Slack Notification
+        uses: 8398a7/action-slack@v3
+        with:
+          status: custom
+          fields: repo,commit,message,author,took,pullRequest
+          custom_payload: |
+            {
+              text: "Build Wallkit JS-SDK",
+              attachments: [{
+                color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+                text: `repo: ${process.env.AS_REPO}\n message: ${process.env.AS_MESSAGE}\n commit: ${process.env.AS_COMMIT}\n PR: ${process.env.AS_PULL_REQUEST}\n author: ${process.env.AS_AUTHOR}\n status: ${{ job.status }} in ${process.env.AS_TOOK}`,
+                fields: [
+                  {
+                    title: "branch",
+                    value: "dev",
+                    short: true
+                  },
+                  {
+                    title: "version",
+                    value: "${{ steps.package-version.outputs.current-version }}",
+                    short: true
+                  }
+                ]
+              }]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()

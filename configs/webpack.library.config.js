@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const pkg = require('../package.json');
+const banner = `Package name: ${pkg.name}.
+Package description: ${pkg.description}.
+Package version: ${pkg.version}.`
+
 module.exports = env => {
     return {
         entry: ["@babel/polyfill", './src/Wallkit/index.js'],
@@ -10,6 +15,9 @@ module.exports = env => {
             libraryTarget: 'umd',
             // library: "Wallkit",
         },
+        plugins: [
+            new webpack.BannerPlugin(banner)
+        ],
         optimization: {
             minimize: true
         },

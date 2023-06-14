@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const pkg = require('../package.json');
+const banner = `Package name: ${pkg.name}.
+Package description: ${pkg.description}.
+Package version: ${pkg.version}.`
+
 module.exports = {
     entry: './src',
     output: {
@@ -25,6 +30,7 @@ module.exports = {
                 unsafe      : true
             }
         }),
+        new webpack.BannerPlugin(banner)
     ],
     module: {
         rules: [
