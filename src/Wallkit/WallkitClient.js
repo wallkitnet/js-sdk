@@ -325,7 +325,7 @@ class WallkitClient {
     }
 
     assign(headers, {'resource': this.resource});
-    assign(headers, {'Wallkit-Client': 'JsSDK v0.0.37'});
+    assign(headers, {'Wallkit-Client': 'JsSDK v0.0.51'});
 
     if (this.session) {
       assign(headers, {'session': this.session});
@@ -408,7 +408,7 @@ class WallkitClient {
 
 
     assign(headers, {'resource': this.resource});
-    assign(headers, {'Wallkit-Client': 'JsSDK v0.0.37'});
+    assign(headers, {'Wallkit-Client': 'JsSDK v0.0.51'});
 
     if (this.session && !options.ignoreSession) {
       assign(headers, {'session': this.session});
