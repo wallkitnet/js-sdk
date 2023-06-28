@@ -64,7 +64,7 @@ jobs:
             echo "DEPLOYING_VERSION $DEPLOYING_VERSION already exists."
           fi
           
-          aws s3 sync ${SYNC_DIR} s3://$S3_BUCKET/js/sdk/$DEPLOYING_VERSION/'
+          aws s3 sync ${SYNC_DIR} s3://$S3_BUCKET/js/sdk/$DEPLOYING_VERSION/
 
           chmod +x ./.github/semver2.sh
           compareResult=$(bash ./.github/semver2.sh $DEPLOYING_VERSION $LATEST_CDN_VERSION)
