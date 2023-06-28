@@ -41,7 +41,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@main
 
       - name: Deploy to S3
-        run: aws s3 sync ${SYNC_DIR} s3://${S3_BUCKET}/js/sdk/latest'
+        run: aws s3 sync ${SYNC_DIR} s3://${S3_BUCKET}/js/sdk/latest
 
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
