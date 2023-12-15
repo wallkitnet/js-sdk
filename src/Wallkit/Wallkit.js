@@ -1840,6 +1840,74 @@ class Wallkit {
         return response;
       });
   }
+
+  /**
+   * Get Stripe Customer from Wallkit API
+   * if Stripe Customer already exists for current user - return it
+   * if Stripe Customer not exists for current user - create it and return
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsGetCustomer() {
+    return this.client.get({path: '/user/payment/stripe/customer'})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-get-customer", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-get-customer", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+  /**
+   * Setup Intents for Stripe Payment Elements
+   * @param wallkitCustomer
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsSetupIntents(wallkitCustomer) {
+    if (!wallkitCustomer) {
+      throw new Error('No wallkit customer passed as argument');
+    }
+    const {payment_customer: {customer_id: stripeCustomerId}} = wallkitCustomer;
+
+    if (!stripeCustomerId) {
+      throw new Error('No stripe customer id passed as argument');
+    }
+
+    return this.client.post({path: '/user/payment/stripe/setup-intents', data: {stripe_customer_id: stripeCustomerId}})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-setup-intents", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-setup-intents", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+  /**
+   * Save Intents for future payments
+   * @param setupIntent
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsSaveIntents(setupIntent) {
+    if (!setupIntent) {
+      throw new Error('No setupIntent passed as argument');
+    }
+
+    return this.client.post({path: '/user/payment/stripe/save-intents', data: setupIntent})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-save-intents", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-save-intents", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+
+
 }
 
 let instance = new Wallkit();
