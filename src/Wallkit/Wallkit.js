@@ -1887,15 +1887,15 @@ class Wallkit {
 
   /**
    * Save Intents for future payments
-   * @param setupIntent
+   * @param confirmedSetupIntent
    * @returns {Promise<any>}
    */
-  stripePaymentElementsSaveIntents(setupIntent) {
-    if (!setupIntent) {
-      throw new Error('No setupIntent passed as argument');
+  stripePaymentElementsSaveIntents(confirmedSetupIntent) {
+    if (!confirmedSetupIntent) {
+      throw new Error('No confirmedSetupIntent passed as argument');
     }
 
-    return this.client.post({path: '/user/payment/stripe/save-intents', data: setupIntent})
+    return this.client.post({path: '/user/payment/stripe/save-intents', data: {setup_intent: confirmedSetupIntent}})
         .then(response => {
           Event.send("wk-event-stripe-payment-elements-save-intents", response);
           return response;
