@@ -1906,7 +1906,87 @@ class Wallkit {
         });
   }
 
+  /**
+   * Get Payment Methods for Stripe Payment Elements
+   *
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsGetPaymentMethods() {
+    return this.client.get({path: '/user/payment-methods'})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-payment-methods", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-payment-methods", e.response);
+          return Promise.reject(e.response);
+        })
+  }
 
+  /**
+   * Get Payment Method by id for Stripe Payment Elements
+   *
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsGetPaymentMethod(id) {
+    if (!id) {
+      throw new Error('No payment method id passed as argument');
+    }
+
+    return this.client.get({path: `/user/payment-methods/${id}`})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-payment-method", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-payment-method", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  /**
+   * Set Default Payment Method for Stripe Payment Elements
+   *
+   * @param id
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsDefaultPaymentMethod(id) {
+    if (!id) {
+      throw new Error('No payment method id passed as argument');
+    }
+
+    return this.client.put({path: `/user/payment-methods/${id}/default`})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-default-payment-method", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-default-payment-method", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  /**
+   * Remove Payment Method for Stripe Payment Elements
+   *
+   * @param id
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsRemovePaymentMethod(id) {
+    if (!id) {
+      throw new Error('No payment method id passed as argument');
+    }
+
+    return this.client.del({path: `/user/payment-methods/${id}`})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-remove-payment-method", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-remove-payment-method", e.response);
+          return Promise.reject(e.response);
+        })
+  }
 
 }
 
