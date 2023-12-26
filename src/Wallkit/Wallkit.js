@@ -1907,83 +1907,76 @@ class Wallkit {
   }
 
   /**
-   * Get Payment Methods for Stripe Payment Elements
+   * Get Payment Sources for Stripe Payment Elements
    *
    * @returns {Promise<any>}
    */
-  stripePaymentElementsGetPaymentMethods() {
-    return this.client.get({path: '/user/payment-methods'})
+  stripePaymentElementsGetPaymentSources() {
+    return this.client.get({path: '/user/payment-sources'})
         .then(response => {
-          Event.send("wk-event-stripe-payment-elements-payment-methods", response);
+          Event.send("wk-event-stripe-payment-elements-payment-sources", response);
           return response;
         })
         .catch(e => {
-          Event.send("wk-event-stripe-payment-elements-payment-methods", e.response);
+          Event.send("wk-event-stripe-payment-elements-payment-sources", e.response);
           return Promise.reject(e.response);
         })
   }
 
   /**
-   * Get Payment Method by id for Stripe Payment Elements
-   *
-   * @returns {Promise<any>}
-   */
-  stripePaymentElementsGetPaymentMethod(id) {
-    if (!id) {
-      throw new Error('No payment method id passed as argument');
-    }
-
-    return this.client.get({path: `/user/payment-methods/${id}`})
-        .then(response => {
-          Event.send("wk-event-stripe-payment-elements-payment-method", response);
-          return response;
-        })
-        .catch(e => {
-          Event.send("wk-event-stripe-payment-elements-payment-method", e.response);
-          return Promise.reject(e.response);
-        })
-  }
-
-  /**
-   * Set Default Payment Method for Stripe Payment Elements
+   * Set Default Payment Source for Stripe Payment Elements
    *
    * @param id
+   * @param sourceType - payment-method or user-card
    * @returns {Promise<any>}
    */
-  stripePaymentElementsDefaultPaymentMethod(id) {
+  stripePaymentElementsDefaultPaymentSource(id, sourceType) {
     if (!id) {
-      throw new Error('No payment method id passed as argument');
+      throw new Error('No payment source id passed as argument');
     }
 
-    return this.client.put({path: `/user/payment-methods/${id}/default`})
+    const allowedPaymentSourceTypes = ['payment-method', 'user-card'];
+
+    if (!allowedPaymentSourceTypes.includes(sourceType)) {
+        throw new Error('Incorrect source type passed as argument');
+    }
+
+    return this.client.put({path: `/user/payment-sources/${sourceType}/${id}/default`})
         .then(response => {
-          Event.send("wk-event-stripe-payment-elements-default-payment-method", response);
+          Event.send("wk-event-stripe-payment-elements-default-payment-source", response);
           return response;
         })
         .catch(e => {
-          Event.send("wk-event-stripe-payment-elements-default-payment-method", e.response);
+          Event.send("wk-event-stripe-payment-elements-default-payment-source", e.response);
           return Promise.reject(e.response);
         })
   }
 
   /**
-   * Remove Payment Method for Stripe Payment Elements
+   * Remove Payment Source for Stripe Payment Elements
    *
    * @param id
+   * @param sourceType - payment-method or user-card
    * @returns {Promise<any>}
    */
-  stripePaymentElementsRemovePaymentMethod(id) {
+  stripePaymentElementsRemovePaymentSource(id, sourceType) {
     if (!id) {
-      throw new Error('No payment method id passed as argument');
+      throw new Error('No payment source id passed as argument');
     }
 
-    return this.client.del({path: `/user/payment-methods/${id}`})
+    const allowedPaymentSourceTypes = ['payment-method', 'user-card'];
+
+    if (!allowedPaymentSourceTypes.includes(sourceType)) {
+      throw new Error('Incorrect source type passed as argument');
+    }
+
+    return this.client.del({path: `/user/payment-sources/${sourceType}/${id}`})
         .then(response => {
-          Event.send("wk-event-stripe-payment-elements-remove-payment-method", response);
+          Event.send("wk-event-stripe-payment-elements-remove-payment-sources", response);
           return response;
         })
         .catch(e => {
-          Event.send("wk-event-stripe-payment-elements-remove-payment-method", e.response);
+          Event.send("wk-event-stripe-payment-elements-remove-payment-sources", e.response);
           return Promise.reject(e.response);
         })
   }
