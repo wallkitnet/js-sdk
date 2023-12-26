@@ -1848,7 +1848,7 @@ class Wallkit {
    * @returns {Promise<any>}
    */
   stripePaymentElementsGetCustomer() {
-    return this.client.get({path: '/user/payment/stripe/customer'})
+    return this.client.get({path: '/user/payment-provider/stripe/customer'})
         .then(response => {
           Event.send("wk-event-stripe-payment-elements-get-customer", response);
           return response;
@@ -1874,7 +1874,7 @@ class Wallkit {
       throw new Error('No stripe customer id passed as argument');
     }
 
-    return this.client.post({path: '/user/payment/stripe/setup-intents', data: {stripe_customer_id: stripeCustomerId}})
+    return this.client.post({path: '/user/payment-provider/stripe/setup-intents', data: {stripe_customer_id: stripeCustomerId}})
         .then(response => {
           Event.send("wk-event-stripe-payment-elements-setup-intents", response);
           return response;
@@ -1895,7 +1895,7 @@ class Wallkit {
       throw new Error('No confirmedSetupIntent passed as argument');
     }
 
-    return this.client.post({path: '/user/payment/stripe/save-intents', data: {setup_intent: confirmedSetupIntent}})
+    return this.client.post({path: '/user/payment-provider/stripe/save-intents', data: {setup_intent: confirmedSetupIntent}})
         .then(response => {
           Event.send("wk-event-stripe-payment-elements-save-intents", response);
           return response;
