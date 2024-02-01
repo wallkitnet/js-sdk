@@ -1,4 +1,5 @@
 import Config from './Config';
+import Debug from './utils/Debug';
 import client from './WallkitClient';
 import User from './WallkitUser';
 import Resource from './WallkitResource';
@@ -36,9 +37,9 @@ class Wallkit {
    * @example
    * Wallkit.log('Some data'); // Wallkit LOG: Some data
    */
-  log(log) {
+  log(...log) {
     if (Config.debug) {
-      console.log("Wallkit LOG: ", log);
+      console.log(...log);
     }
   }
 
@@ -58,7 +59,7 @@ class Wallkit {
    * });
    *
    */
-  init({resource, api_url, firebase, subDomainCookie}) {
+  init({resource, api_url, firebase, subDomainCookie, debug}) {
     if (this.initialized) {
       return true;
     }
@@ -71,6 +72,10 @@ class Wallkit {
 
     if (typeof subDomainCookie !== "undefined") {
       Config.subDomainCookie = Boolean(subDomainCookie);
+    }
+
+    if (typeof debug !== "undefined") {
+        Config.debug = Boolean(debug);
     }
 
     /**
@@ -140,6 +145,8 @@ class Wallkit {
 
     this.isLocalStorageAvailable = LocalStorage.isAvailable();
 
+    Debug.setDebugMode(Config.debug);
+
     return this.initialized = true;
   }
 
@@ -161,7 +168,7 @@ class Wallkit {
         typeof event.data === "object" &&
         typeof event.data.name !== "undefined" &&
         typeof event.data.value !== "undefined") {
-      console.log("WkJsSDK <==", event.data);
+        this.log("WkJsSDK <==", event.data);
 
       switch (event.data.name) {
         case "wk-event-registration" :
@@ -1595,7 +1602,7 @@ class Wallkit {
           try {
             item.callback(params);
           } catch (e) {
-            console.log('Error', e);
+            this.log('Error', e);
           }
         }
       })
