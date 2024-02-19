@@ -1,39 +1,24 @@
+import Debug from './Debug';
 
-var Events = {
-
-
-  send(name, value, params)
-  {
-
-    let data = {
-      name: name,
-      value: value,
-      params: params
-    };
-
-    let frames = document.getElementsByTagName('iframe');
-
-    if(window && top && window === top && !!frames.length)
-    {
-      for (let i = 0; i < frames.length; i++) {
-
-        if(typeof frames[i] !== "undefined")
-        {
-          frames[i].contentWindow.postMessage(data, '*');
+const Events = {
+    send(name, value, params) {
+        const data = {
+            name: name,
+            value: value,
+            params: params
+        };
+        const frames = document.getElementsByTagName('iframe');
+        if (window && top && window === top && !!frames.length) {
+            for (let i = 0; i < frames.length; i++) {
+                if (typeof frames[i] !== "undefined") {
+                    frames[i].contentWindow.postMessage(data, '*');
+                }
+            }
+        } else {
+            top.postMessage(data, '*');
         }
-      }
-
+        Debug.log("WkJsSDK ==>", data);
     }
-    else
-    {
-      top.postMessage(data, '*');
-    }
-
-    console.log("WkJsSDK ==>", data);
-  }
-
 };
 
-if(typeof module !== "undefined" && typeof module.exports !== "undefined") {
-  module.exports = Events;
-}
+export default Events;
