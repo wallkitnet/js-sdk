@@ -1847,6 +1847,147 @@ class Wallkit {
         return response;
       });
   }
+
+  /**
+   * Get Stripe Customer from Wallkit API
+   * if Stripe Customer already exists for current user - return it
+   * if Stripe Customer not exists for current user - create it and return
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsGetCustomer() {
+    return this.client.get({path: '/user/payment-provider/stripe/customer'})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-get-customer", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-get-customer", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+  /**
+   * Setup Intents for Stripe Payment Elements
+   * @param wallkitCustomer
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsSetupIntents(wallkitCustomer) {
+    if (!wallkitCustomer) {
+      throw new Error('No wallkit customer passed as argument');
+    }
+    const {payment_customer: {customer_id: stripeCustomerId}} = wallkitCustomer;
+
+    if (!stripeCustomerId) {
+      throw new Error('No stripe customer id passed as argument');
+    }
+
+    return this.client.post({path: '/user/payment-provider/stripe/setup-intents', data: {stripe_customer_id: stripeCustomerId}})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-setup-intents", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-setup-intents", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+  /**
+   * Save Intents for future payments
+   * @param confirmedSetupIntent
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsSaveIntents(confirmedSetupIntent) {
+    if (!confirmedSetupIntent) {
+      throw new Error('No confirmedSetupIntent passed as argument');
+    }
+
+    return this.client.post({path: '/user/payment-provider/stripe/save-intents', data: {setup_intent: confirmedSetupIntent}})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-save-intents", response);
+          return response;
+        })
+        .catch((e) => {
+          Event.send("wk-event-stripe-payment-elements-save-intents", e.response);
+          return Promise.reject(e.response);
+        });
+  }
+
+  /**
+   * Get Payment Sources for Stripe Payment Elements
+   *
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsGetPaymentSources() {
+    return this.client.get({path: '/user/payment-sources'})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-payment-sources", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-payment-sources", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  /**
+   * Set Default Payment Source for Stripe Payment Elements
+   *
+   * @param id
+   * @param sourceType - payment-method or user-card
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsDefaultPaymentSource(id, sourceType) {
+    if (!id) {
+      throw new Error('No payment source id passed as argument');
+    }
+
+    const allowedPaymentSourceTypes = ['payment-method', 'user-card'];
+
+    if (!allowedPaymentSourceTypes.includes(sourceType)) {
+        throw new Error('Incorrect source type passed as argument');
+    }
+
+    return this.client.put({path: `/user/payment-sources/${sourceType}/${id}/default`})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-default-payment-source", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-default-payment-source", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  /**
+   * Remove Payment Source for Stripe Payment Elements
+   *
+   * @param id
+   * @param sourceType - payment-method or user-card
+   * @returns {Promise<any>}
+   */
+  stripePaymentElementsRemovePaymentSource(id, sourceType) {
+    if (!id) {
+      throw new Error('No payment source id passed as argument');
+    }
+
+    const allowedPaymentSourceTypes = ['payment-method', 'user-card'];
+
+    if (!allowedPaymentSourceTypes.includes(sourceType)) {
+      throw new Error('Incorrect source type passed as argument');
+    }
+
+    return this.client.del({path: `/user/payment-sources/${sourceType}/${id}`})
+        .then(response => {
+          Event.send("wk-event-stripe-payment-elements-remove-payment-sources", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-stripe-payment-elements-remove-payment-sources", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
 }
 
 let instance = new Wallkit();
