@@ -849,8 +849,8 @@ class Wallkit {
    *
    * @returns {Promise<any>}
    */
-  getSubscriptions() {
-    return this.client.get({path: '/subscriptions'})
+  getSubscriptions({page = 1, limit = 10} = {}) {
+    return this.client.get({path: '/subscriptions', params: {page, limit}})
         .then(response => {
           Event.send("wk-event-subscriptions", response);
           return response;
@@ -1984,6 +1984,163 @@ class Wallkit {
         })
         .catch(e => {
           Event.send("wk-event-stripe-payment-elements-remove-payment-sources", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  /**
+   * Invite recipient to sponsored subscription slot
+   *
+   * @param slotId
+   * @param email
+   * @returns {Promise<any>}
+   * @throws {Error}
+   */
+  inviteRecipientToSponsoredSubscriptionSlot(slotId, email) {
+    if (!slotId) {
+      throw new Error('No slot id passed as argument');
+    }
+
+    if (!email) {
+      throw new Error('No email passed as argument');
+    }
+
+    return this.client.put(
+        {
+          path: `/sponsor/sponsored-subscriptions/slots/${slotId}/invitation`,
+          data: {recipient_email: email}
+        })
+        .then(response => {
+          Event.send("wk-event-invite-recipient-to-sponsored-subscription-slot", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-invite-recipient-to-sponsored-subscription-slot", e.response);
+          return Promise.reject(e.response);
+        })
+
+  }
+
+  getSponsoredSubscriptions() {
+    return this.client.get({path: '/sponsor/sponsored-subscriptions'})
+        .then(response => {
+          Event.send("wk-event-get-sponsored-subscriptions", response);
+          return response;
+        }).catch(e => {
+          Event.send("wk-event-get-sponsored-subscriptions", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  getSponsoredSubscription(id) {
+    if (!id) {
+      throw new Error('No id passed as argument');
+    }
+
+    return this.client.get({path: `/sponsor/sponsored-subscriptions/${id}`})
+        .then(response => {
+          Event.send("wk-event-get-sponsored-subscription", response);
+          return response;
+        }).catch(e => {
+          Event.send("wk-event-get-sponsored-subscription", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  getSponsoredSubscriptionByGiftCode(giftCode) {
+    if (!giftCode) {
+      throw new Error('No gift code passed as argument');
+    }
+
+    return this.client.get({path: `/recipient/sponsored-subscriptions/slots/${giftCode}`})
+        .then(response => {
+          Event.send("wk-event-get-sponsored-subscription-by-gift-code", response);
+          return response;
+        }).catch(e => {
+          Event.send("wk-event-get-sponsored-subscription-by-gift-code", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  activateSponsoredSubscription(giftCode) {
+    if (!giftCode) {
+      throw new Error('No gift code passed as argument');
+    }
+
+    return this.client.put(
+        {
+          path: `/recipient/sponsored-subscriptions/slots/activate`,
+          data: {activation_code: giftCode}
+        })
+        .then(response => {
+          Event.send("wk-event-activate-sponsored-subscription", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-activate-sponsored-subscription", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  changeSponsoredSubscriptionSettings(sponsoredSubscriptionId, settings = {}) {
+    if (typeof sponsoredSubscriptionId !== "number") {
+      throw new Error('No subscription id provided!');
+    }
+
+    if (typeof settings !== "object") {
+      throw new Error('No settings provided!');
+    }
+
+    return this.client.put(
+        {
+          path: `/sponsor/sponsored-subscriptions/${sponsoredSubscriptionId}`,
+          data: settings
+        })
+        .then(response => {
+          Event.send("wk-event-change-sponsored-subscription-settings", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-change-sponsored-subscription-settings", e.response);
+          return Promise.reject(e.response);
+        })
+
+  }
+
+  clearSponsoredSubscriptionSlot(slotId) {
+    if (!slotId) {
+      throw new Error('No slot id passed as argument');
+    }
+
+    return this.client.put(
+        {
+          path: `/sponsor/sponsored-subscriptions/slots/${slotId}/clear`
+        })
+        .then(response => {
+          Event.send("wk-event-clear-sponsored-subscription-slot", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-clear-sponsored-subscription-slot", e.response);
+          return Promise.reject(e.response);
+        })
+  }
+
+  turnOffPayingBySponsorForGiftSubscription(slotId) {
+    if (!slotId) {
+      throw new Error('No slot id passed as argument');
+    }
+
+    return this.client.put(
+        {
+          path: `/recipient/sponsored-subscriptions/slots/${slotId}//sponsor/turn-off`
+        })
+        .then(response => {
+          Event.send("wk-event-turn-off-paying-by-sponsor-for-gift-subscription", response);
+          return response;
+        })
+        .catch(e => {
+          Event.send("wk-event-turn-off-paying-by-sponsor-for-gift-subscription", e.response);
           return Promise.reject(e.response);
         })
   }
