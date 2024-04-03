@@ -364,7 +364,7 @@ class WallkitClient {
    *
    * @ignore
    */
-  makeRequest({path, method = 'GET', headers = {}, body = {}, options = {}}) {
+  makeRequest({path, params = {}, method = 'GET', headers = {}, body = {}, options = {}}) {
 
     const checkStatus = (response) => {
 
@@ -429,9 +429,6 @@ class WallkitClient {
     };
 
     try {
-      // if(Object.keys(body).length > 0 || body instanceof FormData){
-      //   assign(request,{'body': body});
-      // }
 
       if (keysIn(body).length > 0 || body instanceof FormData) {
         assign(request, {'body': body});
@@ -441,8 +438,17 @@ class WallkitClient {
       console.log('make request error', err);
     }
 
-    // return fetch(new URL(`${this.host}${path}`),request).then(checkStatus)
-    return fetch(`${this.host}${path}`, request).then(checkStatus)
+    let url = new URL(`${this.host}${path}`);
+
+    try {
+      if(params && typeof params === 'object' && params.constructor === Object && keysIn(params).length > 0){
+        Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+      }
+    } catch (err) {
+      console.log('make query params error', err, params);
+    }
+
+    return fetch(url, request).then(checkStatus)
   }
 }
 
