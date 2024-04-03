@@ -441,8 +441,15 @@ class WallkitClient {
     let url = new URL(`${this.host}${path}`);
 
     try {
-      if(params && typeof params === 'object' && params.constructor === Object && keysIn(params).length > 0){
-        Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+      if (params && typeof params === 'object' && params.constructor === Object && keysIn(params).length > 0) {
+        Object.keys(params).forEach(key => {
+          const value = params[key];
+          if (typeof value === "string" || typeof value === "number") {
+            url.searchParams.append(key, value);
+          } else if (typeof value === 'object' && value.constructor === Object && keysIn(value).length > 0) {
+            url.searchParams.append(key, JSON.stringify(value));
+          }
+        });
       }
     } catch (err) {
       console.log('make query params error', err, params);

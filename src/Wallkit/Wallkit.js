@@ -849,8 +849,8 @@ class Wallkit {
    *
    * @returns {Promise<any>}
    */
-  getSubscriptions({page = 1, limit = 10} = {}) {
-    return this.client.get({path: '/subscriptions', params: {page, limit}})
+  getSubscriptions({page = 1, limit = 10, filter = {"subscriptions.type": "standard"}} = {}) {
+    return this.client.get({path: '/subscriptions', params: {page, limit, filter}})
         .then(response => {
           Event.send("wk-event-subscriptions", response);
           return response;
